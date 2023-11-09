@@ -341,42 +341,46 @@ string CheckNum(int Number)
         return "Entered Number must be < 0 \n";
     }
 }
+
 void PrintPrim(string Message)
 {
     cout << "Your Entered Number is " << Message << endl;
 
 }
+
 ///////////////////////////////
 int main()
 {
     // [31] print n^2 n^3 n^4 (n => entered Number)
-    // PrintResult(CalcResult(ReadEnterNum()));
+    PrintResult(CalcResult(ReadEnterNum()));
 
     // [32] build in function pow(n,m) => n^m
-    // PrintPowerofN(PowofNumber(ReadEnter2Nums()));
+    PrintPowerofN(PowofNumber(ReadEnter2Nums()));
 
     // [33] Print Mark of Student grade (A,B,C,D,E,F)
-    // PrintMark(MarkofGrade(ReadStudentGrade()));
+    PrintMark(MarkofGrade(ReadStudentGrade()));
 
     // [34] Calculate the Net Profit Based on Total Sales
-    // int TotalSales;
-    // ReadTotalSales(TotalSales);
-    // PrintSellerProfit(CalcSellerRatio(TotalSales),TotalSales);
+    int TotalSales;
+    ReadTotalSales(TotalSales);
+    PrintSellerProfit(CalcSellerRatio(TotalSales),TotalSales);
 
     // [35] Currency Exchange from (Penny,Nickel,Dime,Quarter,Dollar) to => (Pennies,Dollar)
-    // stCurrency Currency;
-    // ReadEnteredCurrency(Currency);
-    // PrintResultsofExchangeCurrency(ExchangeCurrencyToPenny(Currency),ExchangeCurrencyToDollar(Currency));
+    stCurrency Currency;
+    ReadEnteredCurrency(Currency);
+    PrintResultsofExchangeCurrency(ExchangeCurrencyToPenny(Currency),ExchangeCurrencyToDollar(Currency));
 
     // [36] Calc(n1,n2,+) 
-    //  PrintResults(Calc(ReadOperationInputs()));
+     PrintResults(Calc(ReadOperationInputs()));
 
     // [37] Print Sum of Numbers
     int Number;
-    // PrintSumofNumbers(SumofNumbers(Number));
+    PrintSumofNumbers(SumofNumbers(Number));
 
     // [38] Print Prim or not 
     PrintPrim(CheckNum(ReadInputNumber()));
+
+    // [39 : 50 ] Solved before
 
 
     return 0;
