@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 
@@ -325,53 +326,57 @@ int ReadInputNumber()
 string CheckNum(int Number)
 {
     if(Number > 0){
-        int counter = 2;
-        if(Number > counter)
+        int M = round(Number / 2);
+        for(int Counter = 2; Counter <= M; Counter++)
         {
-            counter += 1;
-            // 
-            
-        }else
-        {
-            return "Prim";
+            if(Number % Counter == 0)
+            {
+                return "Not Prime \n";
+            }
+
         }
+        return "Prime \n";
     }else
     {
-        return "Entered Number must be < 0";
+        return "Entered Number must be < 0 \n";
     }
 }
+void PrintPrim(string Message)
+{
+    cout << "Your Entered Number is " << Message << endl;
 
+}
 ///////////////////////////////
 int main()
 {
     // [31] print n^2 n^3 n^4 (n => entered Number)
-    PrintResult(CalcResult(ReadEnterNum()));
+    // PrintResult(CalcResult(ReadEnterNum()));
 
     // [32] build in function pow(n,m) => n^m
-    PrintPowerofN(PowofNumber(ReadEnter2Nums()));
+    // PrintPowerofN(PowofNumber(ReadEnter2Nums()));
 
     // [33] Print Mark of Student grade (A,B,C,D,E,F)
-    PrintMark(MarkofGrade(ReadStudentGrade()));
+    // PrintMark(MarkofGrade(ReadStudentGrade()));
 
     // [34] Calculate the Net Profit Based on Total Sales
-    int TotalSales;
-    ReadTotalSales(TotalSales);
-    PrintSellerProfit(CalcSellerRatio(TotalSales),TotalSales);
+    // int TotalSales;
+    // ReadTotalSales(TotalSales);
+    // PrintSellerProfit(CalcSellerRatio(TotalSales),TotalSales);
 
     // [35] Currency Exchange from (Penny,Nickel,Dime,Quarter,Dollar) to => (Pennies,Dollar)
-    stCurrency Currency;
-    ReadEnteredCurrency(Currency);
-    PrintResultsofExchangeCurrency(ExchangeCurrencyToPenny(Currency),ExchangeCurrencyToDollar(Currency));
+    // stCurrency Currency;
+    // ReadEnteredCurrency(Currency);
+    // PrintResultsofExchangeCurrency(ExchangeCurrencyToPenny(Currency),ExchangeCurrencyToDollar(Currency));
 
     // [36] Calc(n1,n2,+) 
-     PrintResults(Calc(ReadOperationInputs()));
+    //  PrintResults(Calc(ReadOperationInputs()));
 
     // [37] Print Sum of Numbers
     int Number;
-    PrintSumofNumbers(SumofNumbers(Number));
+    // PrintSumofNumbers(SumofNumbers(Number));
 
     // [38] Print Prim or not 
-    // PrintPrim(CheckNum(ReadInputNumber()));
+    PrintPrim(CheckNum(ReadInputNumber()));
 
 
     return 0;
