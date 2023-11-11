@@ -11,10 +11,10 @@ struct stPowerofNum
     int N3;
     int N4;
 };
-int ReadEnterNum()
+int ReadNumber(string Massage)
 {
     int Number;
-    cout << "Enter Number n=> n^2 n^3 n^4 : ";
+    cout << Massage;
     cin >> Number;
     return Number;
 }
@@ -69,13 +69,6 @@ void PrintPowerofN(int Result)
 ///////////////////////////////
 
 enum enMark {A = 1, B = 2, C = 3, D = 4, E = 5, F = 0};
-int ReadStudentGrade()
-{
-    int Grade;
-    cout << "Enter your Grade\n";
-    cin >> Grade;
-    return Grade;
-}
 
 enMark MarkofGrade(int Grade)
 {
@@ -126,12 +119,6 @@ void PrintMark(enMark Mark)
 ///////////////////////////////
 
 enum enPercent {onePercent = 1, twoPercent = 2, threePercent = 3, fivePercent = 5, zeroPercent = 0};
-
-void ReadTotalSales(int &TotalSales)
-{
-    cout << "Enter Total of Sales\n";
-    cin >> TotalSales;
-}
 
 enPercent CalcSellerRatio(int &TotalSales)
 {
@@ -315,14 +302,6 @@ void PrintResults(float Result)
 
 ///////////////////////////////
 
-int ReadInputNumber()
-{
-    int Number;
-    cout << " Check Entered Number\n";
-    cin >> Number;
-    return Number;
-}
-
 string CheckNum(int Number)
 {
     if(Number > 0){
@@ -349,39 +328,49 @@ void PrintPrim(string Message)
 }
 
 ///////////////////////////////
+
+float CalcReminder( int CashPaid,int TotalBill)
+{
+    float Result = CashPaid - TotalBill ;
+    return (float) Result;
+}
+
+///////////////////////////////
 int main()
 {
     // [31] print n^2 n^3 n^4 (n => entered Number)
-    PrintResult(CalcResult(ReadEnterNum()));
+    // PrintResult(CalcResult(ReadNumber("Enter n output will be n^2 n^3 n^4")));
 
     // [32] build in function pow(n,m) => n^m
-    PrintPowerofN(PowofNumber(ReadEnter2Nums()));
+    // PrintPowerofN(PowofNumber(ReadEnter2Nums()));
 
     // [33] Print Mark of Student grade (A,B,C,D,E,F)
-    PrintMark(MarkofGrade(ReadStudentGrade()));
+    // PrintMark(MarkofGrade(ReadNumber("Enter your Grade : ")));
 
     // [34] Calculate the Net Profit Based on Total Sales
-    int TotalSales;
-    ReadTotalSales(TotalSales);
-    PrintSellerProfit(CalcSellerRatio(TotalSales),TotalSales);
+    // int TotalSales= ReadNumber("Enter Total of Sales : ");
+    // PrintSellerProfit(CalcSellerRatio(TotalSales),TotalSales);
 
     // [35] Currency Exchange from (Penny,Nickel,Dime,Quarter,Dollar) to => (Pennies,Dollar)
-    stCurrency Currency;
-    ReadEnteredCurrency(Currency);
-    PrintResultsofExchangeCurrency(ExchangeCurrencyToPenny(Currency),ExchangeCurrencyToDollar(Currency));
+    // stCurrency Currency;
+    // ReadEnteredCurrency(Currency);
+    // PrintResultsofExchangeCurrency(ExchangeCurrencyToPenny(Currency),ExchangeCurrencyToDollar(Currency));
 
     // [36] Calc(n1,n2,+) 
-     PrintResults(Calc(ReadOperationInputs()));
+    //  PrintResults(Calc(ReadOperationInputs()));
 
     // [37] Print Sum of Numbers
-    int Number;
-    PrintSumofNumbers(SumofNumbers(Number));
+    // int Number;
+    // PrintSumofNumbers(SumofNumbers(Number));
 
     // [38] Print Prim or not 
-    PrintPrim(CheckNum(ReadInputNumber()));
+    // PrintPrim(CheckNum(ReadNumber("Entered Number : ")));
 
-    // [39 : 50 ] Solved before
+    // [39] Solved before
 
-
+    // [40] Calculate the Reminder from Total Bill and Cash Paid
+    int CashPaid = ReadNumber("Enter Cash Paid : ");
+    int TotalBill = ReadNumber("Enter Total Bill : ");
+    PrintResults(CalcReminder(CashPaid, TotalBill));
     return 0;
 }
