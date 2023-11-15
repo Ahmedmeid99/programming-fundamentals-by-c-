@@ -233,39 +233,61 @@ int RandomNumber(int From,int To)
 {
     return (rand() % (To - From + 1) + From );
 }
-enum enChar {A,a,$};
-void RandomOf(char Char)
+
+enum enCharType {SmallLetter = 1,CapitalLetter = 2,SpecialCharacter = 3,Digit = 4};
+
+char RandomOf(char Char)
 {
     if ((int)Char >= 33 && (int)Char <=47 )
     {
-        cout << char(RandomNumber(33,47)) << endl;
+        return char(RandomNumber(33,47));
     
     }
     else if((int)Char >= 48 && (int)Char <=57)
     {
-        cout << char(RandomNumber(48,57))<< endl;
+        return char(RandomNumber(48,57));
     }
     else if((int)Char >= 58 && (int)Char <=64)
     {
-        cout << char(RandomNumber(58,64))<< endl;
+        return char(RandomNumber(58,64));
     }
     else if((int)Char >= 65 && (int)Char <=90)
     {
-        cout << char(RandomNumber(65,90))<< endl;
+        return char(RandomNumber(65,90));
     }
     else if((int)Char >= 91 && (int)Char <=96)
     {
-        cout << char(RandomNumber(91,96))<< endl;
+        return char(RandomNumber(91,96));
     }
     else if((int)Char >= 93 && (int)Char <=122)
     {
-        cout << char(RandomNumber(97,122))<< endl;
+        return char(RandomNumber(97,122));
     }
-    else
+    
+}
+
+char Random_of(enCharType CharType)
+{
+    switch (CharType)
     {
-        cout << "can Not Read Your Entered Char Try again" << endl;
+    case enCharType::SmallLetter :
+        return char(RandomNumber(97,122));
+        break;
+    case enCharType::CapitalLetter :
+        return char(RandomNumber(65,90));
+        break;
+    case enCharType::SpecialCharacter :
+        return char(RandomNumber(33,47));
+        break;
+    case enCharType::Digit :
+        return char(RandomNumber(48,57));
+        break;
+    
+    default:
+        break;
     }
 }
+
 int main()
 {
     // [11] Palindrome Number
@@ -309,12 +331,17 @@ int main()
     // cout <<rand()<<endl; // get random number between 0 and maxNumber in int ex:17641
 
     // [20] Random of same Entered Character
-    enChar Char;
-    RandomOf('A');  // Z
-    RandomOf('%');  // +
-    RandomOf('1');  // 2
-    RandomOf('a');  // s
-    RandomOf('[');  // _
-    RandomOf('<');  // <
+    enCharType CharType;
+    cout<<Random_of(enCharType::CapitalLetter)<<endl;     // C
+    cout<<Random_of(enCharType::SmallLetter)<<endl;       // n
+    cout<<Random_of(enCharType::SpecialCharacter)<<endl;  // #
+    cout<<Random_of(enCharType::Digit)<<endl;             // 7
+    /////////////////////////////////////
+    cout<< RandomOf('A')<<endl;  // Z
+    cout<< RandomOf('%')<<endl;  // +
+    cout<< RandomOf('1')<<endl;  // 2
+    cout<< RandomOf('a')<<endl;  // s
+    cout<< RandomOf('[')<<endl;  // _
+    cout<< RandomOf('<')<<endl;  // <
     return 0;
 }
