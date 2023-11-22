@@ -91,16 +91,19 @@ enLevel Level(enLevel QuestionsLevel)
     switch (QuestionsLevel)
     {
     case enLevel::Easy:
-        enLevel::Easy;
+        return enLevel::Easy;
         break;
     case enLevel::Mid:
-        enLevel::Mid;
+        return enLevel::Mid;
         break;
     case enLevel::Hard:
-        enLevel::Hard;
+        return enLevel::Hard;
         break;
     case enLevel::MixL:
         return RandomLevel();
+        break;
+    default:
+        return enLevel::Easy;
         break;
     }
 }
@@ -117,6 +120,9 @@ int CreatRandNumber(enLevel QuestionsLevel)
         break;
     case enLevel::Hard:
         return RandomNumber(50, 100);
+        break;
+    default:
+        return RandomNumber(1, 10);
         break;
     }
 }
@@ -146,6 +152,9 @@ enOperatorType CreateOP(enOperatorType Operator)
     case enOperatorType::Mix:
         return RandomOp();
         break;
+    default:
+        return enOperatorType::Add;
+        break;
     }
 }
 
@@ -165,7 +174,9 @@ char PrintOP(enOperatorType Operator)
     case enOperatorType::Div:
         return '/';
         break;
-
+    default:
+        return '+';
+        break;
         // enOperatorType::Mix random char + - * /
     }
 }
@@ -277,6 +288,9 @@ string FaceResult(enGameResult GameResult)
     case enGameResult::FAIL:
         return ":-(";
         break;
+    default:
+        return ":-| Error!";
+        break;
     }
 }
 
@@ -326,6 +340,9 @@ string GameLevel(enLevel Level)
     case enLevel::MixL:
         return "Mix";
         break;
+    default:
+        return "Easy";
+        break;
     }
 }
 
@@ -365,13 +382,15 @@ void SoundOfRoundLose()
     cout << "\a";
 }
 
-void RestMathGame()
+void RestMathGame(stMathGameInfo &MathGameInfo)
 {
+    MathGameInfo.RigthQuestions = 0;
+    MathGameInfo.WrongQuestions = 0;
     system("color f0");
     system("cls");
 }
 
-void Game()
+void StartGame()
 {
 
     stMathGameInfo MathGameInfo;
@@ -396,9 +415,9 @@ void Game()
         setGameResult(MathGameInfo);
         PrintGameResult(MathGameInfo);
         GameColorStat(MathGameInfo);
+        RestMathGame(MathGameInfo);
         ReadPlayAgainAnswer(PlayAgainAnswer);
     } while (PlayAgainAnswer == 'Y' || PlayAgainAnswer == 'y');
-    RestMathGame();
 }
 
 int main()
@@ -406,7 +425,7 @@ int main()
     srand((unsigned)time(NULL));
     /////////////////////////////
     //
-    Game();
+    StartGame();
     //
     return 0;
 }
