@@ -1,0 +1,18 @@
+---------------------------------
+          MY INFORMATION         
+---------------------------------
+My Name is   : Ahmed Mohamed Eid 
+My Age is    : 25 
+MY Level is  : 3 
+My Skills is : C++ JS React CSS 
+-------------------------------
+
+---------------------------------
+       MY FATHER INFORMATION      
+---------------------------------
+and My Father: Mohamed Eid 
+his Age is   : 51 
+his Level is : 3 
+his Skills is: Word Excle 
+-------------------------------
+
