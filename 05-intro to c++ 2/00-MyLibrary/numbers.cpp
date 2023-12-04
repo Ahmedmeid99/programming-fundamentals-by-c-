@@ -208,7 +208,7 @@ namespace nums
         while (cin.fail() || Number < 0)
         {
             cin.clear();
-            cin.ignore(100000, '\n');
+            cin.ignore(1000, '\n');
             cout << "UnValid Tray again : \n";
             cin >> Number;
         }
