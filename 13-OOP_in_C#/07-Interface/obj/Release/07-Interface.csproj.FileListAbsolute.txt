@@ -1,0 +1,7 @@
+E:\programming fundamentals by c++\13-OOP_in_C#\07-Interface\bin\Release\07-Interface.exe.config
+E:\programming fundamentals by c++\13-OOP_in_C#\07-Interface\bin\Release\07-Interface.exe
+E:\programming fundamentals by c++\13-OOP_in_C#\07-Interface\bin\Release\07-Interface.pdb
+E:\programming fundamentals by c++\13-OOP_in_C#\07-Interface\obj\Release\07-Interface.csproj.AssemblyReference.cache
+E:\programming fundamentals by c++\13-OOP_in_C#\07-Interface\obj\Release\07-Interface.csproj.CoreCompileInputs.cache
+E:\programming fundamentals by c++\13-OOP_in_C#\07-Interface\obj\Release\07-Interface.exe
+E:\programming fundamentals by c++\13-OOP_in_C#\07-Interface\obj\Release\07-Interface.pdb

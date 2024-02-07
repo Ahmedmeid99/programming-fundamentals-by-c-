@@ -1,0 +1,7 @@
+E:\programming fundamentals by c++\13-OOP_in_C#\06-virsul_overriding_shadow\bin\Release\06-virsul_overriding_shadow.exe.config
+E:\programming fundamentals by c++\13-OOP_in_C#\06-virsul_overriding_shadow\bin\Release\06-virsul_overriding_shadow.exe
+E:\programming fundamentals by c++\13-OOP_in_C#\06-virsul_overriding_shadow\bin\Release\06-virsul_overriding_shadow.pdb
+E:\programming fundamentals by c++\13-OOP_in_C#\06-virsul_overriding_shadow\obj\Release\06-virsul_overriding_shadow.csproj.AssemblyReference.cache
+E:\programming fundamentals by c++\13-OOP_in_C#\06-virsul_overriding_shadow\obj\Release\06-virsul_overriding_shadow.csproj.CoreCompileInputs.cache
+E:\programming fundamentals by c++\13-OOP_in_C#\06-virsul_overriding_shadow\obj\Release\06-virsul_overriding_shadow.exe
+E:\programming fundamentals by c++\13-OOP_in_C#\06-virsul_overriding_shadow\obj\Release\06-virsul_overriding_shadow.pdb

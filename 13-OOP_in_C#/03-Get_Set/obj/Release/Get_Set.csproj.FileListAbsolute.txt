@@ -1,0 +1,7 @@
+E:\programming fundamentals by c++\12-C#-Leval_1\Get_Set\bin\Release\Get_Set.exe.config
+E:\programming fundamentals by c++\12-C#-Leval_1\Get_Set\bin\Release\Get_Set.exe
+E:\programming fundamentals by c++\12-C#-Leval_1\Get_Set\bin\Release\Get_Set.pdb
+E:\programming fundamentals by c++\12-C#-Leval_1\Get_Set\obj\Release\Get_Set.csproj.AssemblyReference.cache
+E:\programming fundamentals by c++\12-C#-Leval_1\Get_Set\obj\Release\Get_Set.csproj.CoreCompileInputs.cache
+E:\programming fundamentals by c++\12-C#-Leval_1\Get_Set\obj\Release\Get_Set.exe
+E:\programming fundamentals by c++\12-C#-Leval_1\Get_Set\obj\Release\Get_Set.pdb

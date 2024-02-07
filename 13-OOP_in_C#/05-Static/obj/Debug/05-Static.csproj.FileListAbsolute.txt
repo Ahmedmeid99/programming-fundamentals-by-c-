@@ -1,0 +1,7 @@
+E:\programming fundamentals by c++\13-OOP_in_C#\05-Static\bin\Debug\05-Static.exe.config
+E:\programming fundamentals by c++\13-OOP_in_C#\05-Static\bin\Debug\05-Static.exe
+E:\programming fundamentals by c++\13-OOP_in_C#\05-Static\bin\Debug\05-Static.pdb
+E:\programming fundamentals by c++\13-OOP_in_C#\05-Static\obj\Debug\05-Static.csproj.AssemblyReference.cache
+E:\programming fundamentals by c++\13-OOP_in_C#\05-Static\obj\Debug\05-Static.csproj.CoreCompileInputs.cache
+E:\programming fundamentals by c++\13-OOP_in_C#\05-Static\obj\Debug\05-Static.exe
+E:\programming fundamentals by c++\13-OOP_in_C#\05-Static\obj\Debug\05-Static.pdb

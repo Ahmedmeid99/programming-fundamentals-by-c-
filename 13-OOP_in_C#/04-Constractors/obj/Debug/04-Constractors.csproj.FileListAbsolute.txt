@@ -1,0 +1,7 @@
+E:\programming fundamentals by c++\13-OOP_in_C#\04-Constractors\bin\Debug\04-Constractors.exe.config
+E:\programming fundamentals by c++\13-OOP_in_C#\04-Constractors\bin\Debug\04-Constractors.exe
+E:\programming fundamentals by c++\13-OOP_in_C#\04-Constractors\bin\Debug\04-Constractors.pdb
+E:\programming fundamentals by c++\13-OOP_in_C#\04-Constractors\obj\Debug\04-Constractors.csproj.AssemblyReference.cache
+E:\programming fundamentals by c++\13-OOP_in_C#\04-Constractors\obj\Debug\04-Constractors.csproj.CoreCompileInputs.cache
+E:\programming fundamentals by c++\13-OOP_in_C#\04-Constractors\obj\Debug\04-Constractors.exe
+E:\programming fundamentals by c++\13-OOP_in_C#\04-Constractors\obj\Debug\04-Constractors.pdb

@@ -1,0 +1,7 @@
+E:\programming fundamentals by c++\13-OOP_in_C#\08-partial_sealed\bin\Release\08-partial_sealed.exe.config
+E:\programming fundamentals by c++\13-OOP_in_C#\08-partial_sealed\bin\Release\08-partial_sealed.exe
+E:\programming fundamentals by c++\13-OOP_in_C#\08-partial_sealed\bin\Release\08-partial_sealed.pdb
+E:\programming fundamentals by c++\13-OOP_in_C#\08-partial_sealed\obj\Release\08-partial_sealed.csproj.AssemblyReference.cache
+E:\programming fundamentals by c++\13-OOP_in_C#\08-partial_sealed\obj\Release\08-partial_sealed.csproj.CoreCompileInputs.cache
+E:\programming fundamentals by c++\13-OOP_in_C#\08-partial_sealed\obj\Release\08-partial_sealed.exe
+E:\programming fundamentals by c++\13-OOP_in_C#\08-partial_sealed\obj\Release\08-partial_sealed.pdb

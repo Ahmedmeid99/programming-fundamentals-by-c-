@@ -1,0 +1,6 @@
+E:\programming fundamentals by c++\13-OOP_in_C#\FirstLibrary\bin\Release\FirstLibrary.dll
+E:\programming fundamentals by c++\13-OOP_in_C#\FirstLibrary\bin\Release\FirstLibrary.pdb
+E:\programming fundamentals by c++\13-OOP_in_C#\FirstLibrary\obj\Release\FirstLibrary.csproj.AssemblyReference.cache
+E:\programming fundamentals by c++\13-OOP_in_C#\FirstLibrary\obj\Release\FirstLibrary.csproj.CoreCompileInputs.cache
+E:\programming fundamentals by c++\13-OOP_in_C#\FirstLibrary\obj\Release\FirstLibrary.dll
+E:\programming fundamentals by c++\13-OOP_in_C#\FirstLibrary\obj\Release\FirstLibrary.pdb

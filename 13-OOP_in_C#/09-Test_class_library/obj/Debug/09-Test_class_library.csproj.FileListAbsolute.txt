@@ -1,0 +1,7 @@
+E:\programming fundamentals by c++\13-OOP_in_C#\09-Test_class_library\bin\Debug\09-Test_class_library.exe.config
+E:\programming fundamentals by c++\13-OOP_in_C#\09-Test_class_library\bin\Debug\09-Test_class_library.exe
+E:\programming fundamentals by c++\13-OOP_in_C#\09-Test_class_library\bin\Debug\09-Test_class_library.pdb
+E:\programming fundamentals by c++\13-OOP_in_C#\09-Test_class_library\obj\Debug\09-Test_class_library.csproj.AssemblyReference.cache
+E:\programming fundamentals by c++\13-OOP_in_C#\09-Test_class_library\obj\Debug\09-Test_class_library.csproj.CoreCompileInputs.cache
+E:\programming fundamentals by c++\13-OOP_in_C#\09-Test_class_library\obj\Debug\09-Test_class_library.exe
+E:\programming fundamentals by c++\13-OOP_in_C#\09-Test_class_library\obj\Debug\09-Test_class_library.pdb
