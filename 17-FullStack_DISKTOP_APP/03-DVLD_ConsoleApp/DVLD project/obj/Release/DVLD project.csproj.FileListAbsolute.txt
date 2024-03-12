@@ -1,0 +1,12 @@
+E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\DVLD project\bin\Release\DVLD project.exe.config
+E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\DVLD project\bin\Release\DVLD project.exe
+E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\DVLD project\bin\Release\DVLD project.pdb
+E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\DVLD project\bin\Release\DVLDBusinessLayer.dll
+E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\DVLD project\bin\Release\DVLDDataAccessLayer.dll
+E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\DVLD project\bin\Release\DVLDBusinessLayer.pdb
+E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\DVLD project\bin\Release\DVLDDataAccessLayer.pdb
+E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\DVLD project\obj\Release\DVLD project.csproj.AssemblyReference.cache
+E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\DVLD project\obj\Release\DVLD project.csproj.CoreCompileInputs.cache
+E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\DVLD project\obj\Release\DVLD project.csproj.CopyComplete
+E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\DVLD project\obj\Release\DVLD project.exe
+E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\DVLD project\obj\Release\DVLD project.pdb

@@ -1,0 +1,6 @@
+E:\programming fundamentals by c++\16-SQL-&-C#\02-ContactsSolution\ContactsDataAccessLayer\bin\Release\ContactsDataAccessLayer.dll
+E:\programming fundamentals by c++\16-SQL-&-C#\02-ContactsSolution\ContactsDataAccessLayer\bin\Release\ContactsDataAccessLayer.pdb
+E:\programming fundamentals by c++\16-SQL-&-C#\02-ContactsSolution\ContactsDataAccessLayer\obj\Release\ContactsDataAccessLayer.csproj.AssemblyReference.cache
+E:\programming fundamentals by c++\16-SQL-&-C#\02-ContactsSolution\ContactsDataAccessLayer\obj\Release\ContactsDataAccessLayer.csproj.CoreCompileInputs.cache
+E:\programming fundamentals by c++\16-SQL-&-C#\02-ContactsSolution\ContactsDataAccessLayer\obj\Release\ContactsDataAccessLayer.dll
+E:\programming fundamentals by c++\16-SQL-&-C#\02-ContactsSolution\ContactsDataAccessLayer\obj\Release\ContactsDataAccessLayer.pdb

@@ -1,0 +1,7 @@
+E:\programming fundamentals by c++\16-SQL-&-C#\04-DataTable_DataView_DataSet\bin\Debug\04-DataTable_DataView_DataSet.exe.config
+E:\programming fundamentals by c++\16-SQL-&-C#\04-DataTable_DataView_DataSet\bin\Debug\04-DataTable_DataView_DataSet.exe
+E:\programming fundamentals by c++\16-SQL-&-C#\04-DataTable_DataView_DataSet\bin\Debug\04-DataTable_DataView_DataSet.pdb
+E:\programming fundamentals by c++\16-SQL-&-C#\04-DataTable_DataView_DataSet\obj\Debug\04-DataTable_DataView_DataSet.csproj.AssemblyReference.cache
+E:\programming fundamentals by c++\16-SQL-&-C#\04-DataTable_DataView_DataSet\obj\Debug\04-DataTable_DataView_DataSet.csproj.CoreCompileInputs.cache
+E:\programming fundamentals by c++\16-SQL-&-C#\04-DataTable_DataView_DataSet\obj\Debug\04-DataTable_DataView_DataSet.exe
+E:\programming fundamentals by c++\16-SQL-&-C#\04-DataTable_DataView_DataSet\obj\Debug\04-DataTable_DataView_DataSet.pdb

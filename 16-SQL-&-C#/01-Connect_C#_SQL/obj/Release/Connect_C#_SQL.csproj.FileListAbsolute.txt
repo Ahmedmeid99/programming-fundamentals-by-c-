@@ -1,0 +1,7 @@
+E:\programming fundamentals by c++\16-SQL-&-C#\Connect_C#_SQL\bin\Release\Connect_C#_SQL.exe.config
+E:\programming fundamentals by c++\16-SQL-&-C#\Connect_C#_SQL\bin\Release\Connect_C#_SQL.exe
+E:\programming fundamentals by c++\16-SQL-&-C#\Connect_C#_SQL\bin\Release\Connect_C#_SQL.pdb
+E:\programming fundamentals by c++\16-SQL-&-C#\Connect_C#_SQL\obj\Release\Connect_C#_SQL.csproj.AssemblyReference.cache
+E:\programming fundamentals by c++\16-SQL-&-C#\Connect_C#_SQL\obj\Release\Connect_C#_SQL.csproj.CoreCompileInputs.cache
+E:\programming fundamentals by c++\16-SQL-&-C#\Connect_C#_SQL\obj\Release\Connect_C#_SQL.exe
+E:\programming fundamentals by c++\16-SQL-&-C#\Connect_C#_SQL\obj\Release\Connect_C#_SQL.pdb
