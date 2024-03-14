@@ -14,7 +14,7 @@ namespace DVLDDataAccessLayer
 
             SqlConnection connection = new SqlConnection(clsSettings.ConnectionString);
 
-            string query = "SELECT * FROM Pepole WHERE PersonID = @PersonID";
+            string query = "SELECT * FROM People WHERE PersonID = @PersonID";
 
             SqlCommand command = new SqlCommand(query, connection);
 
@@ -39,7 +39,7 @@ namespace DVLDDataAccessLayer
                     Phone = (string)reader["Phone"];
                     Address = (string)reader["Address"];
                     DateOfBirth = (DateTime)reader["DateOfBirth"];
-                    CountryID = (int)reader["NationaltyCountryID"];
+                    CountryID = (int)reader["CountryID"];
                     ImagePath = (string)reader["ImagePath"];
                     NationalID = (string)reader["NationalID"];
                     Gander = (string)reader["Gander"];
@@ -71,7 +71,7 @@ namespace DVLDDataAccessLayer
 
             SqlConnection connection = new SqlConnection(clsSettings.ConnectionString);
 
-            string query = "SELECT * FROM Pepole WHERE NationalID = @NationalID";
+            string query = "SELECT * FROM People WHERE NationalID = @NationalID";
 
             SqlCommand command = new SqlCommand(query, connection);
 
@@ -97,7 +97,7 @@ namespace DVLDDataAccessLayer
                     Phone = (string)reader["Phone"];
                     Address = (string)reader["Address"];
                     DateOfBirth = (DateTime)reader["DateOfBirth"];
-                    CountryID = (int)reader["NationaltyCountryID"];
+                    CountryID = (int)reader["CountryID"];
                     ImagePath = (string)reader["ImagePath"];
                     Gander = (string)reader["Gander"];
                     reader.Close();
@@ -129,10 +129,10 @@ namespace DVLDDataAccessLayer
             
             SqlConnection connection = new SqlConnection(clsSettings.ConnectionString);
 
-            string query = @"INSERT INTO Pepole 
-                            (FirstName,SecondName,ThirdName,LastName,Gander,DateOfBirth,Phone,Email,Address,NationaltyCountryID,NationalID,ImagePath)
+            string query = @"INSERT INTO People 
+                            (FirstName,SecondName,ThirdName,LastName,Gander,DateOfBirth,Phone,Email,Address,CountryID,NationalID,ImagePath)
                             VALUES 
-                            (@FirstName,@SecondName,@ThirdName,@LastName, @Gander,@DateOfBirth,@Phone,@Email,@Address,@NationaltyCountryID,@NationalID,@ImagePath);
+                            (@FirstName,@SecondName,@ThirdName,@LastName, @Gander,@DateOfBirth,@Phone,@Email,@Address,@CountryID,@NationalID,@ImagePath);
                              SELECT SCOPE_IDENTITY();";
 
             SqlCommand command = new SqlCommand(query, connection);
@@ -146,7 +146,7 @@ namespace DVLDDataAccessLayer
             command.Parameters.AddWithValue("@Phone", Phone);
             command.Parameters.AddWithValue("@Address", Address);
             command.Parameters.AddWithValue("@NationalID", NationalID);
-            command.Parameters.AddWithValue("@NationaltyCountryID", CountryID);
+            command.Parameters.AddWithValue("@CountryID", CountryID);
             command.Parameters.AddWithValue("@ImagePath", ImagePath);
             command.Parameters.AddWithValue("@DateOfBirth", DateOfBirth);
 
@@ -185,7 +185,7 @@ namespace DVLDDataAccessLayer
             int rowsAffected = 0;
             SqlConnection connection = new SqlConnection(clsSettings.ConnectionString);
 
-            string query = @"Update Pepole  
+            string query = @"Update People  
                             set FirstName = @FirstName, 
                                 SecondName = @SecondName, 
                                 ThirdName = @ThirdName, 
@@ -196,7 +196,7 @@ namespace DVLDDataAccessLayer
                                 Phone = @Phone, 
                                 Address = @Address, 
                                 DateOfBirth = @DateOfBirth,
-                                NationaltyCountryID = @NationaltyCountryID,
+                                CountryID = @CountryID,
                                 ImagePath =@ImagePath
 
                                 where PersonID = @PersonID";
@@ -213,7 +213,7 @@ namespace DVLDDataAccessLayer
             command.Parameters.AddWithValue("@Phone", Phone);
             command.Parameters.AddWithValue("@Address", Address);
             command.Parameters.AddWithValue("@NationalID", NationalID);
-            command.Parameters.AddWithValue("@NationaltyCountryID", CountryID);
+            command.Parameters.AddWithValue("@CountryID", CountryID);
             command.Parameters.AddWithValue("@DateOfBirth", DateOfBirth);
             command.Parameters.AddWithValue("@ImagePath", ImagePath);
 
@@ -239,12 +239,12 @@ namespace DVLDDataAccessLayer
             return (rowsAffected > 0);
         }
 
-        public static DataTable GetAllPepole()
+        public static DataTable GetAllPeople()
         {
 
             SqlConnection connection = new SqlConnection(clsSettings.ConnectionString);
 
-            string query = "SELECT * FROM PepoleFullData"; //  PepoleFullData
+            string query = "SELECT * FROM PeopleImportantData"; //  PeopleFullData
 
             SqlCommand command = new SqlCommand(query, connection);
 
@@ -280,7 +280,7 @@ namespace DVLDDataAccessLayer
         {
             
             SqlConnection connection = new SqlConnection(clsSettings.ConnectionString);
-            string query = "DELETE FROM Pepole WHERE PersonID = @PersonID";
+            string query = "DELETE FROM People WHERE PersonID = @PersonID";
 
             int RowAffected = 0;
             SqlCommand command = new SqlCommand(query, connection);
@@ -309,7 +309,7 @@ namespace DVLDDataAccessLayer
         {
 
             SqlConnection connection = new SqlConnection(clsSettings.ConnectionString);
-            string query = "SELECT FOUND = 1 FROM Pepole WHERE PersonID = @PersonID";
+            string query = "SELECT FOUND = 1 FROM People WHERE PersonID = @PersonID";
 
             bool IsFound = false;
             SqlCommand command = new SqlCommand(query, connection);
@@ -335,18 +335,49 @@ namespace DVLDDataAccessLayer
 
             return IsFound;
         }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+        public static bool IsPersonExists(string NationalN)
+        {
+
+            SqlConnection connection = new SqlConnection(clsSettings.ConnectionString);
+            string query = "SELECT FOUND = 1 FROM People WHERE NationalID = @NationalID";
+
+            bool IsFound = false;
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@NationalID", NationalN);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                IsFound = reader.HasRows;
+
+                reader.Close();
+            }
+            catch (Exception Ex)
+            {
+                IsFound = false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return IsFound;
+        }
+
+
+
+
+
+
+
+
+
+
+
     }
 
 }

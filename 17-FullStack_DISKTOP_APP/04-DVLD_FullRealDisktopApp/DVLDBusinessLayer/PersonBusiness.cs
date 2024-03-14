@@ -154,9 +154,9 @@ namespace DVLDBusinessLayer
             return false;
         }
 
-        public static DataTable GetAllPepole()
+        public static DataTable GetAllPeople()
         {
-            return clsPersonDataAccess.GetAllPepole();
+            return clsPersonDataAccess.GetAllPeople();
         }
 
         public static bool Delete(int ID)
@@ -165,11 +165,15 @@ namespace DVLDBusinessLayer
         }
 
 
-         public static bool IsExists(int ID)
-         {
-            return clsPersonDataAccess.IsPersonExists(ID);
-         }
+        public static bool IsExists(int ID)
+        {
+           return clsPersonDataAccess.IsPersonExists(ID);
+        }
 
+        public static bool IsExists(string NationalN)
+        {
+            return clsPersonDataAccess.IsPersonExists(NationalN);
+        }
 
 
     }

@@ -18,11 +18,11 @@ namespace DVLD_WindowsForm
 
 
         
-        private void pepoleToolStripMenuItem_Click(object sender, EventArgs e)
+        private void PeopleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-                Form frmPepole = new Manage_Pepole();
-                frmPepole.MdiParent = this;
-                frmPepole.Show();
+                Form frmPeople = new Manage_People();
+                frmPeople.MdiParent = this;
+                frmPeople.Show();
         }
 
         private void MainForm_Load(object sender, EventArgs e)

@@ -9,9 +9,11 @@ E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisk
 E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Release\DVLD_WindowsForm.MainForm.resources
 E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Release\DVLD_WindowsForm.Manage_Pepole.resources
 E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Release\DVLD_WindowsForm.Properties.Resources.resources
-E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Release\DVLD_WindowsForm.UsAdd_Update.resources
 E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Release\DVLD_WindowsForm.csproj.GenerateResource.cache
 E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Release\DVLD_WindowsForm.csproj.CoreCompileInputs.cache
 E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Release\DVLD_WindowsForm.csproj.CopyComplete
 E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Release\DVLD_WindowsForm.exe
 E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Release\DVLD_WindowsForm.pdb
+E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Release\DVLD_WindowsForm.AddEditPersonForm.resources
+E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Release\DVLD_WindowsForm.ShowPersonForm.resources
+E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Release\DVLD_WindowsForm.UC_Add_Edite.resources

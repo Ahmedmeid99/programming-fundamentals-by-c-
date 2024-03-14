@@ -62,6 +62,13 @@ namespace DVLD_WindowsForm
         private void _FillControlsWithData( int PersonID)
         {
             _Person = clsPersonBusiness.Find(PersonID);
+
+            if (_Person == null)
+            {
+                UC_Add_Edit.SetCountryID(0);
+                return;
+            }
+
             PersonID = _Person.PersonID;
             UC_Add_Edit.SetUIPersonID(_PersonID);
             UC_Add_Edit.SetUIFirstName(_Person.FirstName);
@@ -81,18 +88,8 @@ namespace DVLD_WindowsForm
 
 
             // handel country selected
-            clsCountry country1 = clsCountry.Find(_Person.CountryID);
-            if(country1 != null)
-            {   // Set  CountryID
-                UC_Add_Edit.SetCountryID(_Person.CountryID);
-
-               
-                // Set Cmb Country name
-                string countryName =country1.CountryName;
-                UC_Add_Edit.SetCountryInCompobox(countryName);
-
-
-            }
+            // on AddEditPersonForm Load
+            UC_Add_Edit.SetCountryID(_Person.CountryID);
 
         }
 
@@ -116,8 +113,12 @@ namespace DVLD_WindowsForm
         }
         private void _FillPersonWithData( clsPersonBusiness _Person)
         {
+            clsCountry countryobj = clsCountry.Find(UC_Add_Edit.GetUICountryName());
 
-            _Person.CountryID  = clsCountry.Find(UC_Add_Edit.GetUICountryName()).CountryID;
+            if (countryobj != null)
+                _Person.CountryID = countryobj.CountryID;
+            else
+                _Person.CountryID = 1;
 
             // in Update Mode
             if (UC_Add_Edit.GetPersonID() != -1 && UC_Add_Edit.GetPersonID() != 0)
@@ -125,15 +126,7 @@ namespace DVLD_WindowsForm
                  _Person.PersonID = UC_Add_Edit.GetPersonID();   // error her !?
                  _PersonID = _Person.PersonID;
             }
-            else 
-            {
-                // in Add New Mode Update/Get PersonID
-               // clsPersonBusiness  Person = clsPersonBusiness.Find(UC_Add_Edit.GetUINationalN());
-               // _PersonID = Person.PersonID;
-
-                // reset PersonId IN UI
-                //UC_Add_Edit.SetUIPersonID(_PersonID);
-            }
+            
 
             _Person.FirstName = UC_Add_Edit.GetUIFirstName();
             _Person.SecondName = UC_Add_Edit.GetUISecondName();
@@ -166,13 +159,19 @@ namespace DVLD_WindowsForm
                 return;
 
             if (_Person.Save())
+            {
                 MessageBox.Show("Data Saved Successfuly");
+                if(_PersonID <= 0)
+                {
+                    _PersonID = clsPersonBusiness.Find(_Person.NationalID).PersonID;
+                    UC_Add_Edit.SetUIPersonID(_PersonID);
+                }
+            }
             else
                 MessageBox.Show("Error : Data is not Saved Successfuly");
 
             // handle Header
             UC_Add_Edit.SetUIMode(UC_Add_Edite.enMode.Update);
-            // UC_Add_Edit.SetUIPersonID(_PersonID);  // error her !?         
         }
 
         private void btnSave_Click_1(object sender, EventArgs e)
@@ -180,12 +179,32 @@ namespace DVLD_WindowsForm
             _Save(); 
         }
 
+        private void SetPersonCountryInCompoBox(int CountryID)
+        {
+            
+            clsCountry country1 = clsCountry.Find(CountryID);
+            if (country1 != null)
+            {
+                // Set Cmb Country name
+                string countryName = country1.CountryName;
+                UC_Add_Edit.SetCountryInCompobox(countryName);
+
+            }
+        }
         private void AddEditPersonForm_Load(object sender, EventArgs e)
         {
 
-            _FillCountriesInCompobox();
-          
             UC_Add_Edit.SetUIGandor("M");
+          
+            _FillCountriesInCompobox();
+
+            if (_Person != null)
+            { 
+                // delete prev selected item
+                SetPersonCountryInCompoBox(_Person.CountryID);
+                UC_Add_Edit.SetUIPersonID(_PersonID);
+            }
+            
 
         }
 

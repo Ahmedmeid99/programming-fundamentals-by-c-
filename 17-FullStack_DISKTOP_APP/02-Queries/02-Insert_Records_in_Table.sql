@@ -1,7 +1,7 @@
 USE [DVLD]
 GO
 
-INSERT INTO [dbo].[Pepole]
+INSERT INTO [dbo].[People]
            ([FirstName]
            ,[SecondName]
            ,[ThirdName]
@@ -11,7 +11,7 @@ INSERT INTO [dbo].[Pepole]
            ,[Phone]
            ,[Email]
            ,[Address]
-           ,[NationaltyCountryID]
+           ,[CountryID]
            ,[NationalID]
            ,[ImagePath])
      VALUES
@@ -33,4 +33,25 @@ INSERT INTO [dbo].[Countries]
 	 ('USA'),
 	 ('Jordan')
 GO
+
+
+---------------------------------------------
+-- Updaet Person
+---------------------------------------------
+
+Update Pepole  
+                set FirstName = 'Ali', 
+                    SecondName ='Eid', 
+                    ThirdName = 'mo', 
+                    LastName = 'hassan', 
+                    Gander = 'M', 
+                    NationalID = '13244252', 
+                    Email = 'ali@gmail.com', 
+                    Phone ='01022342223', 
+                    Address ='str 123 egy', 
+                    DateOfBirth = GetDate(),
+                    NationaltyCountryID = 1,
+                    ImagePath ='E:\Test\images\friend-04.png'
+
+                                where PersonID = 3;
 

@@ -1,7 +1,6 @@
 ﻿using System;
 
 using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -33,12 +32,16 @@ namespace DVLD_WindowsForm
         public string ImagePath { get; set; }
         public DateTime DateOfBirth { get; set; }
         public int CountryID { get; set; }
-       
+
+        private string _Path = @"C:\DVLD_People_Images\";
+        private string _ImgExtintion = ".png";
 
         // set method properties
         public void SetUIPersonID(int PersonId)
         {
             // check if requird
+            if (PersonId <= 0)
+                return;
 
             this.PersonID = PersonId;
             lbPersonID.Text = PersonID.ToString();
@@ -67,9 +70,9 @@ namespace DVLD_WindowsForm
                 {
                     cmbCountries.Items.Add(row["CountryName"]);
                 }
-            if(Countries.Rows.Count > 0 )
+
+            if (cmbCountries.Items.Count > 0)
                 cmbCountries.SelectedIndex = 0;
-            
         }
 
         public void SetUIFirstName(string firstName)
@@ -117,11 +120,13 @@ namespace DVLD_WindowsForm
         {
             try
             {
+                // on save
+                // delete prev img from app folder
 
-                this.ImagePath = imagePath;
-                if (ImagePath != "" && ImagePath != null)
-                    pbPersonImage.Load(imagePath);
-                // pbPersonImage.ImageLocation = ImagePath;
+                this.ImagePath = _Path + imagePath + _ImgExtintion;
+                if (!string.IsNullOrEmpty(imagePath))
+                    pbPersonImage.Load(ImagePath);
+
             } catch (Exception Ex)
             {
                 this.ImagePath = "";
@@ -171,27 +176,31 @@ namespace DVLD_WindowsForm
         {
             this.CountryID = countryID;
         }
-        public void SetUICountryID(string countryName)
+        
+        public void SetCountryInCompobox(int selectedIndex)
+        {
+            if(cmbCountries.Items.Count > 0)
+            {
+                cmbCountries.Text = "";
+                cmbCountries.SelectedIndex = -1;
+                cmbCountries.SelectedIndex = selectedIndex;
+
+            }
+        } 
+        
+        public void SetCountryInCompobox(string selectedCountry)
         {
             if (cmbCountries.Items.Count > 0)
             {
-                int countryID = cmbCountries.FindString(countryName);
-                  
-                cmbCountries.SelectedIndex = countryID;
+                cmbCountries.Text = "";
+                cmbCountries.SelectedIndex = -1;
+                cmbCountries.SelectedText = selectedCountry;
             }
         }
 
-        public void SetCountryInCompobox(int selectedIndex)
-        {
-                cmbCountries.SelectedIndex = selectedIndex;
-        } 
-        public void SetCountryInCompobox(string selectedCountry)
-        {
-                cmbCountries.SelectedText = selectedCountry;
-        }
 
-
-        // get Mothods properties
+        //---------------------------------
+       
         public int GetPersonID()
         {
             return this.PersonID;
@@ -241,8 +250,8 @@ namespace DVLD_WindowsForm
      
         public string GetUIImagePath()
         {
-            if (pbPersonImage.ImageLocation != "" || pbPersonImage.ImageLocation != null)
-                return pbPersonImage.ImageLocation;
+            if (pbPersonImage.ImageLocation != "" || pbPersonImage.ImageLocation != null || ImagePath != "")
+                return ImagePath;
             else
                 return "";
         }
@@ -273,7 +282,7 @@ namespace DVLD_WindowsForm
 
         public string GetUICountryName( )
         {
-           return cmbCountries.Text;
+           return (cmbCountries.Text == "")?"Egypt" : cmbCountries.Text;
         }
 
         private void rdFemale_CheckedChanged(object sender, EventArgs e)
@@ -290,31 +299,66 @@ namespace DVLD_WindowsForm
 
         }
 
+        private void _DeletePrevImage()
+        {
+            try
+            {
+                
+                 File.Delete(ImagePath);
+            }
+            catch(IOException Error)
+            {
+                MessageBox.Show("Error " + Error);
+            }  
+            catch(UnauthorizedAccessException Error)
+            {
+                MessageBox.Show("Error " + Error);
+            }
+        }
+        private void _SaveImage(string OldImgPath)
+        {
+            
+
+            if (!Directory.Exists(_Path))
+                Directory.CreateDirectory(_Path);
+
+            Guid guid =Guid.NewGuid();
+            string ImgGuidName = guid.ToString();
+            string NewImagePath = _Path + ImgGuidName + _ImgExtintion;
+
+            File.Copy(OldImgPath, NewImagePath);
+
+            pbPersonImage.ImageLocation = NewImagePath;
+            ImagePath = ImgGuidName;
+
+        }
         private void linkSetImage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             
             saveFileDialog.InitialDirectory = @"E:\Test\images\";
-            saveFileDialog.DefaultExt = ".png";
+            saveFileDialog.DefaultExt = _ImgExtintion;
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                ImagePath = saveFileDialog.FileName;
-                pbPersonImage.ImageLocation = ImagePath;
+                string imagePath = saveFileDialog.FileName;
+                _DeletePrevImage();
+                _SaveImage(imagePath);
             }
            
         }
 
         // btn to remove image...
 
+        // On Form Load
         private void UC_Add_Edite_Load(object sender, EventArgs e)
         {
             dtmDateOfBirth.MaxDate = new DateTime(DateTime.Now.Year - 18, DateTime.Now.Month, DateTime.Now.Day);
 
-            // select Country Name
-            if(cmbCountries.SelectedText != "")
-                cmbCountries.SelectedText = clsCountry.Find(CountryID).CountryName;
         }
 
+        // --------------------
+        // Validate the Form
+        // --------------------
         private bool _CheckTextBox(TextBox textBox)
         {
             if (string.IsNullOrEmpty(textBox.Text))
@@ -324,6 +368,17 @@ namespace DVLD_WindowsForm
             }
             else
                 txtErrorProvider.SetError(textBox, ""); // remove the error
+            return true;
+        }
+        private bool _CheckCmbBox(ComboBox cmbBox)
+        {
+            if (cmbBox.SelectedItem == null)
+            {
+                txtErrorProvider.SetError(cmbBox, "Enter Value in this Field !!!");
+                return false;
+            }
+            else
+                txtErrorProvider.SetError(cmbBox, ""); // remove the error
             return true;
         }
 
@@ -339,6 +394,25 @@ namespace DVLD_WindowsForm
             return true;
 
         }
+       
+        private bool IsUniqueNationalN(TextBox txtBox)
+        {
+            if(Mode == enMode.Update)
+            {
+                return (clsPersonBusiness.IsExists(txtBox.Text));
+            }
+            if(clsPersonBusiness.IsExists(txtBox.Text))
+            {
+                txtErrorProvider.SetError(txtBox, "This ( National Number ) is Exists in System ( The Person is Exists )");
+                return false;
+            }
+            else
+            {
+                txtErrorProvider.SetError(txtBox, "");
+                return true;
+            }
+        }
+        
         public bool CheckFormIsValid()
         {
             bool txt1 = _CheckTextBox(txtFirstName);
@@ -348,12 +422,14 @@ namespace DVLD_WindowsForm
             bool txt5 = _CheckTextBox(txtPhone);
             bool txt6 = _CheckTextBox(txtNationalN);
             bool txt7 = _CheckTextBox(txtAddress);
-            bool img8 = _CheckPersonImage(pbPersonImage);
+            bool txt8 = _CheckCmbBox(cmbCountries);
+            bool img9 = _CheckPersonImage(pbPersonImage);
+            bool IsUnique = IsUniqueNationalN(txtNationalN);
 
             // Country Gander DateOfBirth having default value
             // Email may be null 
 
-            if (txt1 && txt2 && txt3 && txt4 && txt5 && txt6 && txt7 && img8)
+            if (txt1 && txt2 && txt3 && txt4 && txt5 && txt6 && txt7 && txt8 && img9 && IsUnique)
                 return true;
             else 
                 return false;
@@ -368,35 +444,39 @@ namespace DVLD_WindowsForm
             
             else
                 txtErrorProvider.SetError(textBox, ""); // remove the error
-        }
-        
+        }     
 
         private bool _CheckIsDigit(KeyPressEventArgs e)
         {
             if (!(e is KeyPressEventArgs KeyPressEventArgs))
                 return false;
 
-            if (!char.IsDigit(e.KeyChar) &&
-                e.KeyChar != (char)Keys.Back &&
-                e.KeyChar != '(' &&
-                e.KeyChar != ')' &&
-                e.KeyChar != '{' &&
-                e.KeyChar != '}' &&
-                e.KeyChar != '-' &&
-                e.KeyChar != ' '
-                )
+            if (char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back)
             {
-                return false;
-            }
                 return true;
+            }
+                return false;
         }
 
+        private bool _CheckIsChar(KeyPressEventArgs e)
+        {
+            if (!(e is KeyPressEventArgs KeyPressEventArgs))
+                return false;
+
+            if (!char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back )
+            {
+                return true;
+            }
+            return false;
+        }
+      
         private void _CheckStringField(object sender, KeyPressEventArgs e)
         {
-            if (_CheckIsDigit(e))
+            if (!_CheckIsChar(e))
                 e.Handled = true; // ignore the input char;
 
         }  
+        
         private void _CheckNumField(object sender, KeyPressEventArgs e)
         {
             if (!_CheckIsDigit(e))
@@ -404,7 +484,6 @@ namespace DVLD_WindowsForm
 
         }
        
-
         private bool _CheckEmailIsValid(string EmailText)
         {
             return (EmailText.Contains("@gmail.com"));
@@ -425,6 +504,9 @@ namespace DVLD_WindowsForm
                     txtErrorProvider.SetError(textBox, "");
             }
         }
+    
+    
+    
     }
 
 

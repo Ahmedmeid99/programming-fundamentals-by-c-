@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.applicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pepoleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.PeopleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.driversToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.accountSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,13 +57,13 @@
             this.applicationToolStripMenuItem.Size = new System.Drawing.Size(105, 24);
             this.applicationToolStripMenuItem.Text = "Applications";
             // 
-            // pepoleToolStripMenuItem
+            // PeopleToolStripMenuItem
             // 
-            this.pepoleToolStripMenuItem.Image = global::DVLD_WindowsForm.Properties.Resources.People_64;
-            this.pepoleToolStripMenuItem.Name = "pepoleToolStripMenuItem";
-            this.pepoleToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
-            this.pepoleToolStripMenuItem.Text = "People";
-            this.pepoleToolStripMenuItem.Click += new System.EventHandler(this.pepoleToolStripMenuItem_Click);
+            this.PeopleToolStripMenuItem.Image = global::DVLD_WindowsForm.Properties.Resources.People_64;
+            this.PeopleToolStripMenuItem.Name = "PeopleToolStripMenuItem";
+            this.PeopleToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
+            this.PeopleToolStripMenuItem.Text = "People";
+            this.PeopleToolStripMenuItem.Click += new System.EventHandler(this.PeopleToolStripMenuItem_Click);
             // 
             // driversToolStripMenuItem
             // 
@@ -91,7 +91,7 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.applicationToolStripMenuItem,
-            this.pepoleToolStripMenuItem,
+            this.PeopleToolStripMenuItem,
             this.driversToolStripMenuItem,
             this.usersToolStripMenuItem,
             this.accountSettingsToolStripMenuItem});
@@ -125,7 +125,7 @@
 
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.ToolStripMenuItem applicationToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pepoleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem PeopleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem driversToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem accountSettingsToolStripMenuItem;

@@ -66,7 +66,10 @@ namespace DVLD_WindowsForm
             _HandelGendor(Person.Gander);
 
             // handel Image
-            _HandelImage(Person.ImagePath, Person.Gander);
+            string _Path = @"C:\DVLD_People_Images\";
+            string ImgExtintion = ".png";
+            string ImagePath = _Path + Person.ImagePath + ImgExtintion;
+            _HandelImage(ImagePath, Person.Gander);
 
 
             // handel country selected

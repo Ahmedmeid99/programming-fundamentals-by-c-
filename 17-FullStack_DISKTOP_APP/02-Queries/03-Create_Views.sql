@@ -1,11 +1,21 @@
 
-Create View PepoleFullData AS 
-		SELECT Pepole.PersonID, Pepole.FirstName, Pepole.SecondName, Pepole.ThirdName, Pepole.LastName,
-		Pepole.Gander, Pepole.DateOfBirth, Pepole.Phone, Pepole.Email, Pepole.Address, Countries.CountrName,
-		Pepole.NationalID, Pepole.ImagePath
+Create View PeopleFullData AS 
+		SELECT People.PersonID, People.FirstName, People.SecondName, People.ThirdName, People.LastName,
+		People.Gander, People.DateOfBirth, People.Phone, People.Email, People.Address, Countries.CountryName,
+		People.NationalID, People.ImagePath
                         
 		FROM Countries 
-		INNER JOIN Pepole ON Countries.CountrID = Pepole.NationaltyCountryID
+		INNER JOIN People ON Countries.CountryID = People.CountryID
 
 ---------------------------------------------------------------------------------
-select * from PepoleFullData
+
+Create View PeopleImportantData AS 
+		SELECT People.PersonID, People.FirstName, People.SecondName, People.ThirdName, People.LastName,
+		People.Gander, People.DateOfBirth, People.Phone, People.Email, People.Address, Countries.CountryName,
+		People.NationalID
+                        
+		FROM Countries 
+		INNER JOIN People ON Countries.CountryID = People.CountryID;
+---------------------------------------------------------------------------------
+
+select * from PeopleImportantData
