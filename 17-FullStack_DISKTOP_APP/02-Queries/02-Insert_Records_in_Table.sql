@@ -23,8 +23,18 @@ INSERT INTO [dbo].[People]
 
 GO
 
+-------------------------------------------
+INSERT INTO [dbo].[Users]
+           ([PersonID]
+		   ,[UserName]
+		   ,[Password]
+		   ,[Permission]
+		   ,[Active])
+     VALUES
+	 (2,'Ahmed','123456789',2,0);
+	 --(1,'Abu_Eid','123456789',-1,1);
 
-
+------------------------------------------
 
 INSERT INTO [dbo].[Countries]
            (CountrName)
@@ -33,11 +43,56 @@ INSERT INTO [dbo].[Countries]
 	 ('USA'),
 	 ('Jordan')
 GO
+----------------------------------------- 
+INSERT INTO [dbo].[Applications]
+           (ApplicationPersonID,ApplicationDate,ApplicationTypeID,lastStatusDate,ApplicationStatus,PaidFees,CreatedByUserID)
+     VALUES
+	 (2,GETDATE(),1,GETDATE(),1,15,1)
+GO
+-------------------------------------------
+INSERT INTO [dbo].LocalDrivingLicenseApplications
+           (ApplicationID,LicenseClassID)
+     VALUES
+	 (1,1)
+GO
 
 
+---------------------------------------------
+INSERT INTO LocalDrivingLicenseApplications 
+                            (ApplicationID,LicenseClassID)
+							values
+							(23,2)
 ---------------------------------------------
 -- Updaet Person
 ---------------------------------------------
+INSERT INTO ApplicationTypes (ApplicationTypes.Title,ApplicationTypes.Description,ApplicationTypes.Fees)
+     VALUES
+	 ('New Local Driving License Services',null,15),	 
+	 ('ReNew Driving License Services',null,7),
+	 ('Replacement for a Lost Driving License',null,10),
+	 ('Replacement for a Damaged Driving License',null,5),
+	  ('Release Detained Driving License',null,15),
+	  ('New International License',null,51),
+	  ('ReTake Test',null,5)
+---------------------------------------------------
+INSERT INTO TestTypes (TestTypes.Title,TestTypes.Description,TestTypes.Fees)
+     VALUES
+	 ('Vision Test',null,10),	 
+	 ('Written (Theory) Test',null,20),
+	 ('Practical (Street) Test',null,35)
+------------------------------------------
+
+INSERT INTO LicenseClasses (ClassName,ClassDescription,MinimumAllowedAge ,DefaultValidityLength ,ClassFees )
+	VALUES
+	('Class 1 - SmallMotorcycle',null,18,5,15),
+	('Class 2 - Heavy Motorcycle License',null,21,5,30),
+	('Class 3 - Ordinary diving License',null,18,10,20),
+	('Class 4 - Commerical',null,21,10,200),
+	('Class 5 - Agricultural',null,21,10,50),
+	('Class 6 - Small and medium bus',null,21,10,250),
+	('Class 7 - Truck and heavy vehicle',null,21,10,300)
+
+
 
 Update Pepole  
                 set FirstName = 'Ali', 
@@ -54,4 +109,6 @@ Update Pepole
                     ImagePath ='E:\Test\images\friend-04.png'
 
                                 where PersonID = 3;
+
+--------------------------------------------------------
 

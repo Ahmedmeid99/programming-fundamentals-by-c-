@@ -41,9 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CountryData.cs" />
-    <Compile Include="Settings.cs" />
-    <Compile Include="PersonDataAccess.cs" />
+    <Compile Include="Applications\ApplicationDataAccess.cs" />
+    <Compile Include="Applications\ApplicationType.cs" />
+    <Compile Include="Applications\Tests\TestTypeDataAccess.cs" />
+    <Compile Include="People\CountryData.cs" />
+    <Compile Include="Applications\LicenseClasseDataAccess.cs" />
+    <Compile Include="Applications\LocalDrivingLicenseAppDataAccess.cs" />
+    <Compile Include="People\PersonDataAccess.cs" />
+    <Compile Include="Global\Settings.cs" />
+    <Compile Include="Users\UserDataAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
