@@ -18,3 +18,13 @@ E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisk
 E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Debug\DVLD_WindowsForm.UC_Add_Edite.resources
 E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Debug\DVLD_WindowsForm.csproj.GenerateResource.cache
 E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Debug\DVLD_WindowsForm.csproj.CoreCompileInputs.cache
+E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\bin\Debug\DVLD_WindowsForm.exe.config
+E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\bin\Debug\DVLD_WindowsForm.exe
+E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\bin\Debug\DVLD_WindowsForm.pdb
+E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\bin\Debug\DVLDBusinessLayer.dll
+E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\bin\Debug\DVLDDataAccessLayer.dll
+E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\bin\Debug\DVLDBusinessLayer.pdb
+E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\bin\Debug\DVLDDataAccessLayer.pdb
+E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Debug\DVLD_WindowsForm.csproj.CopyComplete
+E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Debug\DVLD_WindowsForm.exe
+E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Debug\DVLD_WindowsForm.pdb

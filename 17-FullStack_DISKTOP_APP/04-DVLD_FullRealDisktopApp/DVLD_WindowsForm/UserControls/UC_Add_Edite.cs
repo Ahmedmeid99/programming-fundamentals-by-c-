@@ -486,13 +486,13 @@ namespace DVLD_WindowsForm
             bool txt6 = _CheckTextBox(txtNationalN);
             bool txt7 = _CheckTextBox(txtAddress);
            // bool txt8 = _CheckCmbBox(cmbCountries);
-            //bool img9 = _CheckPersonImage(pbPersonImage);
+            bool img9 = _CheckPersonImage(pbPersonImage);
             bool IsUnique = IsUniqueNationalNo(txtNationalN);
 
             // Country Gendor DateOfBirth having default value
             // Email may be null 
 
-            if (txt1 && txt2 && txt3 && txt4 && txt5 && txt6 && txt7  && IsUnique)
+            if (txt1 && txt2 && txt3 && txt4 && txt5 && txt6 && txt7  && IsUnique && img9)
                 return true;
             else 
                 return false;

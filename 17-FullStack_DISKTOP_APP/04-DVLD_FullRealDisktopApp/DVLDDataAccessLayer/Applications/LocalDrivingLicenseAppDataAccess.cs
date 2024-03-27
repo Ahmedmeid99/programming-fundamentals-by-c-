@@ -241,15 +241,15 @@ namespace DVLDDataAccessLayer
 
             return IsFound;
         }
-         public static bool IsApplicationExists(int LocalDLAppID ,byte LicenseClassID)
+         public static bool IsApplicationExists(int ApplicationPersonID, byte LicenseClassID)
         {
             SqlConnection connection = new SqlConnection(clsSettings.ConnectionString);
-            string query = "SELECT FOUND = 1 FROM LocalDLAppFullInfo WHERE LocalDrivingLicenseApplicationID = @LocalDLAppID and LicenseClassID = @LicenseClassID";
+            string query = "SELECT FOUND = 1 FROM LocalDLAppFullInfo WHERE ApplicationPersonID = @ApplicationPersonID and LicenseClassID = @LicenseClassID";
 
             bool IsFound = false;
             SqlCommand command = new SqlCommand(query, connection);
 
-            command.Parameters.AddWithValue("@ApplicationID", LocalDLAppID);
+            command.Parameters.AddWithValue("@ApplicationPersonID", ApplicationPersonID);
             command.Parameters.AddWithValue("@LicenseClassID", LicenseClassID);
 
             try

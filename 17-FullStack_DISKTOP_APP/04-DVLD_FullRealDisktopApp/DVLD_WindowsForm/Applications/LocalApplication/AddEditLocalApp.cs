@@ -334,7 +334,7 @@ namespace DVLD_WindowsForm.Applications.LocalApplication
             //  Person is used before to create LocalDLApp
             if (IsPersonAndAppClassExist(_PersonID,_LocalDLApp.LicenseClassID) && Mode == enMode.AddNew)
             {
-                MessageBox.Show($"This LocalDLApp is Exists in _LocalDLAppID = {_LocalDLAppID}(You cannot add hem again)");
+                MessageBox.Show($"This LocalDLApp is Exists in ApplicationID = {_LocalDLApp.ApplicationID} (You cannot add hem again)");
                 return;
             }
             else if (IsPersonAndAppClassExist(_PersonID, _LocalDLApp.LicenseClassID) && Mode == enMode.Update)

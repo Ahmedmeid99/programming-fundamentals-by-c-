@@ -48,9 +48,9 @@ namespace DVLDBusinessLayer
 
         }
 
-        public bool UpdateStatus()
+        public static bool CancelApplication(int ApplicationPersonID, byte ApplicationStatus)
         {
-            return ApplicationDataAccess.UpdateApplicationStatus(this.ApplicationID, this.ApplicationStatus);
+            return ApplicationDataAccess.UpdateApplicationStatus(ApplicationPersonID, ApplicationStatus);
         }
 
 
