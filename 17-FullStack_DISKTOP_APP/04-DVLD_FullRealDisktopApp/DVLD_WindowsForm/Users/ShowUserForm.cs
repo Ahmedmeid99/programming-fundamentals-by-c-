@@ -27,7 +27,7 @@ namespace DVLD_WindowsForm
 
             this._UserID = UserID;
 
-            _FillControlsWithData(UserID);
+            _FillControlsWithData();
         }
 
         private void _HandelImage(string ImagePath, string GendorChar)
@@ -75,22 +75,22 @@ namespace DVLD_WindowsForm
                 return;
 
             lbPersonID.Text = _PersonID.ToString();
-            lbFirstName.Text = Person.FirstName;
-            lbLastName.Text = Person.LastName;
-            lbThirdName.Text = Person.ThirdName;
-            lbSecondName.Text = Person.SecondName;
+            lbName.Text = Person.FullName;
             lbEmail.Text = Person.Email;
             lbAddress.Text = Person.Address;
             lbDateOfBirth.Text = Person.DateOfBirth.ToString();
             lbPhone.Text = Person.Phone;
             lbNationalNo.Text = Person.NationalNo;
 
+            // Change color of label name to red
+            lbName.ForeColor = Color.Red;
+
             // handel Gerder
             _HandelGendor(Person.Gendor);
 
             // handel Image
 
-            string ImagePath = Global.Path + Person.ImagePath + Global.ImgExtintion;
+            string ImagePath = Global.GlobalVars.Path + Person.ImagePath + Global.GlobalVars.ImgExtintion;
             _HandelImage(ImagePath, Person.Gendor);
 
 
@@ -105,7 +105,7 @@ namespace DVLD_WindowsForm
             lbIsActive.Text = (User.Active == true) ? "Yes" : "No";
         }
 
-        private void _FillControlsWithData(int UsreID)
+        private void _FillControlsWithData()
         {
             //--------------------------------
             // if use edit button
@@ -116,7 +116,7 @@ namespace DVLD_WindowsForm
             // person = PersonDataView[0] 
             //--------------------------------
             // this will work onle in Update mode
-            _User = clsUser.Find(UsreID);
+            _User = clsUser.Find(_UserID);
 
             // Fill ather data if you need
             _PersonID = _User.PersonID;
@@ -137,7 +137,18 @@ namespace DVLD_WindowsForm
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             AddEditPersonForm frmAdd_Update = new AddEditPersonForm(_PersonID);
+            frmAdd_Update.PersonAdded += People_PersonAdded;
             frmAdd_Update.Show();
+        }
+
+        private void FrmAdd_Update_PersonAdded(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void People_PersonAdded(object sender, EventArgs e)
+        {
+            _FillControlsWithData();
         }
     }
 }

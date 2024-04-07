@@ -2,7 +2,6 @@
 
 using System.Data;
 using DVLDBusinessLayer;
-
 using System.Windows.Forms;
 
 namespace DVLD_WindowsForm.Applications.LocalApplication
@@ -12,24 +11,30 @@ namespace DVLD_WindowsForm.Applications.LocalApplication
         public enum enMode { AddNew = 0, Update = 1 };
         public enMode Mode = enMode.AddNew;
 
-        private int _LocalDLAppID;
+        private int _LocaLDLApplicationID;
         private int _PersonID;
         private clsLocalDLApplication _LocalDLApp;
         private clsPerson _Person;
 
+        //-----------------------------------
+        //---------Delegation----------------
+        //-----------------------------------
+        public delegate void ApplicationTestAddedEventHandler(object sender, EventArgs e);
+        public event ApplicationTestAddedEventHandler ApplicationTestAdded;
+
 
         public static DataTable dtPeople;
         public static DataView dtPeopleView;
-        private Global.enApplicationStatus ApplicationStatus = Global.enApplicationStatus.NewApplication;
-        private Global.enApplicationType ApplicationType = Global.enApplicationType.NewLocalApp;
+        private GlobalEnums.enApplicationStatus ApplicationStatus =GlobalEnums.enApplicationStatus.NewApplication;
+        private GlobalEnums.enApplicationType ApplicationType = GlobalEnums.enApplicationType.NewLocalApp;
 
-        public AddEditLocalApp(int LocalDLAppID)
+        public AddEditLocalApp(int LocaLDLApplicationID)
         {
             InitializeComponent();
                         
 
-             _LocalDLAppID = LocalDLAppID;
-            if (_LocalDLAppID == -1)
+             _LocaLDLApplicationID = LocaLDLApplicationID;
+            if (_LocaLDLApplicationID == -1)
             {
                 // Create Person 
                 _LocalDLApp = new clsLocalDLApplication();
@@ -44,8 +49,8 @@ namespace DVLD_WindowsForm.Applications.LocalApplication
             // when save data will use UpdateMethod in BusinessLayer
             Mode = enMode.Update;
 
-            _LocalDLApp = clsLocalDLApplication.Find(_LocalDLAppID);
-            _LocalDLAppID = _LocalDLApp.LocalDLAppID;
+            _LocalDLApp = clsLocalDLApplication.Find(_LocaLDLApplicationID);
+            _LocaLDLApplicationID = _LocalDLApp.LocaLDLApplicationID;
 
             // else in Update Mode
             _FillControlsWithData();
@@ -61,7 +66,7 @@ namespace DVLD_WindowsForm.Applications.LocalApplication
             lbLocalDLApp.Text = "...";
             lbAppDate.Text = DateTime.Now.ToString();
             lbAppFees.Text = clsApplicationType.Find((int)ApplicationType).Fees.ToString();
-            lbUserName.Text = GlobalMethods.CurrentUser.UserID.ToString();
+            lbUserName.Text =Global.GlobalVars.CurrentUser.UserID.ToString();
         }
        
 
@@ -134,7 +139,7 @@ namespace DVLD_WindowsForm.Applications.LocalApplication
             else if (string.IsNullOrEmpty(txtFilter.Text))
                 FilterString = "";
 
-            else if (cmbFilter.Text == "PersonID" || cmbFilter.Text == "LocalDLAppID")
+            else if (cmbFilter.Text == "PersonID" || cmbFilter.Text == "LocaLDLApplicationID")
             {
                 if (txtFilter.Text != "")
                     FilterString = $"{cmbFilter.SelectedItem} = {txtFilter.Text}";
@@ -249,7 +254,7 @@ namespace DVLD_WindowsForm.Applications.LocalApplication
 
             // handel Image
 
-            string ImagePath = Global.Path + Person.ImagePath + Global.ImgExtintion;
+            string ImagePath =  Global.GlobalVars.Path + Person.ImagePath + Global.GlobalVars.ImgExtintion;
             _HandelImage(ImagePath, Person.Gendor);
 
 
@@ -259,7 +264,7 @@ namespace DVLD_WindowsForm.Applications.LocalApplication
 
         private void _FillLocalDLAppControls()
         {
-            lbLocalDLApp.Text = _LocalDLAppID.ToString();
+            lbLocalDLApp.Text = _LocaLDLApplicationID.ToString();
             lbAppDate.Text = _LocalDLApp.ApplicationDate.ToString(); // or use convert
             lbAppFees.Text = _LocalDLApp.PaidFees.ToString();
 
@@ -295,7 +300,7 @@ namespace DVLD_WindowsForm.Applications.LocalApplication
             LocalDLApp.ApplicationStatus =(byte) ApplicationStatus;
             LocalDLApp.ApplicationTypeID = (byte)ApplicationType;
             LocalDLApp.PaidFees = clsApplicationType.Find((int)ApplicationType).Fees;
-            LocalDLApp.CreatedByUserID = GlobalMethods.CurrentUser.UserID;
+            LocalDLApp.CreatedByUserID = Global.GlobalVars.CurrentUser.UserID;
             LocalDLApp.LicenseClassID =(byte) clsLicenseClass.Find(cmbLicenseClass.Text).LicenseClasseID;
 
         }
@@ -353,8 +358,8 @@ namespace DVLD_WindowsForm.Applications.LocalApplication
                     MessageBox.Show("Error : LocalDLApp is null");
                     return;
                 }
-                _LocalDLAppID = _LocalDLApp.LocalDLAppID;
-                lbLocalDLApp.Text = _LocalDLAppID.ToString();
+                _LocaLDLApplicationID = _LocalDLApp.LocaLDLApplicationID;
+                lbLocalDLApp.Text = _LocaLDLApplicationID.ToString();
 
                 MessageBox.Show("Data Saved Successfuly");
 
@@ -387,6 +392,7 @@ namespace DVLD_WindowsForm.Applications.LocalApplication
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            ApplicationTestAdded?.Invoke(this, e);
             this.Close();
         }
 
@@ -454,7 +460,8 @@ namespace DVLD_WindowsForm.Applications.LocalApplication
                     return;
                 cmbLicenseClass.SelectedIndex = -1;
                 cmbLicenseClass.SelectedText = "";
-                cmbLicenseClass.SelectedText = (string)Class.ClassName;
+                //cmbLicenseClass.SelectedText = (string)Class.ClassName;
+                cmbLicenseClass.SelectedIndex = cmbLicenseClass.FindString((string)Class.ClassName);
             }
             _FullPersonObject();
             _LoadCmbFilterPeople();

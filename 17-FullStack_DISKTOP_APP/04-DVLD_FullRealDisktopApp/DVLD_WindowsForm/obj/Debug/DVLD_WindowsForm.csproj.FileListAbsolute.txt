@@ -28,3 +28,15 @@ E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisk
 E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Debug\DVLD_WindowsForm.csproj.CopyComplete
 E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Debug\DVLD_WindowsForm.exe
 E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Debug\DVLD_WindowsForm.pdb
+E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Debug\DVLD_WindowsForm.Tests.UserControls.UCApplicationInfo.resources
+E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Debug\DVLD_WindowsForm.Tests.UserControls.UCDLApplicationInfo.resources
+E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Debug\DVLD_WindowsForm.Tests.VisionTest.ManageVisionTestForm.resources
+E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Debug\DVLD_WindowsForm.Tests.StreetTest.ManageStreetTestForm.resources
+E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Debug\DVLD_WindowsForm.Tests.WrittenTest.ManageWrittenTestForm.resources
+E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Debug\DVLD_WindowsForm.Tests.UC_TestAppointment.UCAddEidTestAppointment.resources
+E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Debug\DVLD_WindowsForm.Tests.UC_TestAppointment.UCRetakeTest.resources
+E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Debug\DVLD_WindowsForm.Tests.MainTests.Test.TakeTestForm.resources
+E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Debug\DVLD_WindowsForm.Tests.MainTests.Test.AddEditTestAppointment.resources
+E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Debug\DVLD_WindowsForm.Licenses.ShowLicenseForm.resources
+E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Debug\DVLD_WindowsForm.Licenses.UCShowLicenseInfo.resources
+E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Debug\DVLD_WindowsForm.ManageDriversForm.resources

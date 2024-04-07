@@ -6,7 +6,7 @@ namespace DVLDDataAccessLayer
 {
     public static class ApplicationDataAccess
     {
-        public static bool GetApplicationByID(int ApplicationID, ref int ApplicationPersonID,ref DateTime ApplicationDate,ref byte ApplicationTypeID,ref DateTime lastStatusDate, ref byte ApplicationStatus,ref double PaidFees,ref int CreatedByUserID)
+        public static bool GetApplicationByID(int ApplicationID, ref int ApplicationPersonID,ref DateTime ApplicationDate,ref byte ApplicationTypeID,ref DateTime lastStatusDate, ref byte ApplicationStatus, ref byte PassedTests, ref double PaidFees,ref int CreatedByUserID)
         {
             bool isFound = false;
 
@@ -34,6 +34,7 @@ namespace DVLDDataAccessLayer
                     lastStatusDate = (DateTime)reader["lastStatusDate"];
                     ApplicationTypeID = Convert.ToByte(reader["ApplicationTypeID"]);
                     ApplicationStatus = Convert.ToByte(reader["ApplicationStatus"]);
+                    PassedTests = Convert.ToByte(reader["PassedTests"]);
                     PaidFees = Convert.ToDouble(reader["PaidFees"]);
                     CreatedByUserID = (int)reader["CreatedByUserID"];
                    
@@ -58,7 +59,7 @@ namespace DVLDDataAccessLayer
             return isFound;
         }
 
-        public static int AddNewApplication( int ApplicationPersonID, DateTime ApplicationDate, byte ApplicationTypeID, DateTime lastStatusDate, byte ApplicationStatus, double PaidFees, int CreatedByUserID)
+        public static int AddNewApplication( int ApplicationPersonID, DateTime ApplicationDate, byte ApplicationTypeID, DateTime lastStatusDate, byte ApplicationStatus, byte PassedTests, double PaidFees, int CreatedByUserID)
         {
             //this function will return the new contact id if succeeded and -1 if not.
 
@@ -77,6 +78,7 @@ namespace DVLDDataAccessLayer
             command.Parameters.AddWithValue("@ApplicationTypeID", ApplicationTypeID);
             command.Parameters.AddWithValue("@lastStatusDate", lastStatusDate);
             command.Parameters.AddWithValue("@ApplicationStatus", ApplicationStatus);
+            command.Parameters.AddWithValue("@PassedTests", PassedTests);
             command.Parameters.AddWithValue("@PaidFees", PaidFees);
             command.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID);
             
@@ -108,7 +110,7 @@ namespace DVLDDataAccessLayer
             return -1;
         }
 
-        public static bool UpdateApplication(int ApplicationID, int ApplicationPersonID, DateTime ApplicationDate, byte ApplicationTypeID,DateTime lastStatusDate, byte ApplicationStatus, double PaidFees, int CreatedByUserID)
+        public static bool UpdateApplication(int ApplicationID, int ApplicationPersonID, DateTime ApplicationDate, byte ApplicationTypeID,DateTime lastStatusDate, byte ApplicationStatus, byte PassedTests, double PaidFees, int CreatedByUserID)
         {
 
             int rowsAffected = 0;
@@ -120,6 +122,7 @@ namespace DVLDDataAccessLayer
                                 ApplicationTypeID = @ApplicationTypeID, 
                                 lastStatusDate = @lastStatusDate, 
                                 ApplicationStatus = @ApplicationStatus, 
+                                PassedTests = @PassedTests,
                                 PaidFees = @PaidFees, 
                                 CreatedByUserID = @CreatedByUserID
 
@@ -134,6 +137,7 @@ namespace DVLDDataAccessLayer
             command.Parameters.AddWithValue("@ApplicationTypeID", ApplicationTypeID);
             command.Parameters.AddWithValue("@lastStatusDate", lastStatusDate);
             command.Parameters.AddWithValue("@ApplicationStatus", ApplicationStatus);
+            command.Parameters.AddWithValue("@PassedTests", PassedTests);
             command.Parameters.AddWithValue("@PaidFees", PaidFees);
             command.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID);
 
@@ -156,7 +160,7 @@ namespace DVLDDataAccessLayer
 
             return (rowsAffected > 0);
         }
-         public static bool UpdateApplicationStatus(int ApplicationID, byte ApplicationStatus)
+        public static bool UpdateApplicationStatus(int ApplicationID, byte ApplicationStatus)
         {
 
             int rowsAffected = 0;
@@ -170,6 +174,42 @@ namespace DVLDDataAccessLayer
 
             command.Parameters.AddWithValue("@ApplicationID", ApplicationID);
             command.Parameters.AddWithValue("@ApplicationStatus", ApplicationStatus);
+           
+
+            try
+            {
+                connection.Open();
+
+                rowsAffected = command.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                //Console.WriteLine("Error: " + ex.Message);
+            }
+
+            finally
+            {
+                connection.Close();
+            }
+
+            return (rowsAffected > 0);
+        }
+        public static bool UpdateApplicationStatus(int ApplicationID, byte ApplicationStatus, byte PassedTests)
+        {
+
+            int rowsAffected = 0;
+            SqlConnection connection = new SqlConnection(clsSettings.ConnectionString);
+
+            string query = @"Update Applications  
+                            set ApplicationStatus = @ApplicationStatus
+                            where ApplicationID = @ApplicationID";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@ApplicationID", ApplicationID);
+            command.Parameters.AddWithValue("@ApplicationStatus", ApplicationStatus);
+            command.Parameters.AddWithValue("@PassedTests", PassedTests);
            
 
             try

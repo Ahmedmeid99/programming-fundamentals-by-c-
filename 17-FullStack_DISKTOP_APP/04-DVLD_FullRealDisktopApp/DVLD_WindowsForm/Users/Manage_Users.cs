@@ -119,16 +119,16 @@ namespace DVLD_WindowsForm
         private void pictureBox2_Click_1(object sender, EventArgs e)
         {
             // open use control to add person
-            _RefreshUsersList();
             AddEditUserForm frmAdd_Update = new AddEditUserForm(-1);
+            frmAdd_Update.UserAdded += Users_UserAdded;
             frmAdd_Update.Show();
         }
 
         private void mbtnAddNewUser_Click(object sender, EventArgs e)
         {
             // open use control to add person
-            _RefreshUsersList();
             AddEditUserForm frmAdd_Update = new AddEditUserForm(-1);
+            frmAdd_Update.UserAdded += Users_UserAdded;
             frmAdd_Update.Show();
         }
 
@@ -136,8 +136,8 @@ namespace DVLD_WindowsForm
         {
             // open use control to add person
             int UserID = (int)dgvUsers.CurrentRow.Cells[0].Value;
-            _RefreshUsersList();
             AddEditUserForm frmAdd_Update = new AddEditUserForm(UserID);
+            frmAdd_Update.UserAdded += Users_UserAdded;
             frmAdd_Update.Show();
         }
 
@@ -248,7 +248,17 @@ namespace DVLD_WindowsForm
             // open use control to add person
             int UserID = (int)dgvUsers.CurrentRow.Cells[0].Value;
             ChangePasswordForm ChangePasswordFrm = new ChangePasswordForm(UserID);
+            ChangePasswordFrm.UserUpdated += Users_UserUpdated;
             ChangePasswordFrm.Show();
+            _RefreshUsersList();
+        }
+
+        private void Users_UserAdded(object sender, EventArgs e)
+        {
+            _RefreshUsersList();
+        }    
+        private void Users_UserUpdated(object sender, EventArgs e)
+        {
             _RefreshUsersList();
         }
     }

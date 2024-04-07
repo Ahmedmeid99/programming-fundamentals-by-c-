@@ -95,7 +95,7 @@ namespace DVLD_WindowsForm
                 Form MainFrm= new MainForm();                           
                 MainFrm.Show();
 
-                GlobalMethods.CurrentUser  = User; // Set Current User
+                Global.GlobalVars.CurrentUser  = User; // Set Current User
 
                 //  remember this login
                 if (_IsRememberMeChecked())

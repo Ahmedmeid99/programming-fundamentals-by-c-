@@ -1,6 +1,7 @@
 ﻿using System;
 using DVLDBusinessLayer;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace DVLD_WindowsForm
 {
@@ -10,6 +11,11 @@ namespace DVLD_WindowsForm
         private clsUser _User;   
         private int _PersonID;
         private clsPerson _Person;
+        // ----------------------------------- 
+        // -----------[Delegations]-----------
+        // -----------------------------------     
+        public delegate void UserUpdatedEventHandler(object sender, EventArgs e);
+        public event UserUpdatedEventHandler UserUpdated;
 
         public ChangePasswordForm(int UserID)
         {
@@ -70,22 +76,22 @@ namespace DVLD_WindowsForm
                 return;
 
             lbPersonID.Text = _PersonID.ToString();
-            lbFirstName.Text = Person.FirstName;
-            lbLastName.Text = Person.LastName;
-            lbThirdName.Text = Person.ThirdName;
-            lbSecondName.Text = Person.SecondName;
+            lbName.Text = Person.FullName;
             lbEmail.Text = Person.Email;
             lbAddress.Text = Person.Address;
             lbDateOfBirth.Text = Person.DateOfBirth.ToString();
             lbPhone.Text = Person.Phone;
             lbNationalNo.Text = Person.NationalNo;
 
+            // Change color of label name to red
+            lbName.ForeColor =Color.Red;
+
             // handel Gerder
             _HandelGendor(Person.Gendor);
 
             // handel Image
 
-            string ImagePath = Global.Path + Person.ImagePath + Global.ImgExtintion;
+            string ImagePath = Global.GlobalVars.Path + Person.ImagePath + Global.GlobalVars.ImgExtintion;
             _HandelImage(ImagePath, Person.Gendor);
 
 
@@ -256,6 +262,7 @@ namespace DVLD_WindowsForm
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            UserUpdated?.Invoke(this, e);
             this.Close();
         }
     }

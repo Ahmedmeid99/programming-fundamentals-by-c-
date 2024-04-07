@@ -23,17 +23,20 @@ namespace DVLDBusinessLayer
         public int CountryID  {get; set;}
         public string NationalNo  {get; set;}
         public string ImagePath { get; set; }
+        public string FullName { get; set; }
+        
+        
 
 
         // Default Constractor for AddNew Mode 
         public clsPerson()
         {
-
             this.PersonID = -1;
             this.FirstName = "";
             this.SecondName = "";
             this.ThirdName = "";
-            this.LastName = "";
+            this.LastName = ""; 
+            this.FullName = "" ;
             this.Gendor = "";
             this.DateOfBirth = DateTime.Now;
             this.Phone = "";
@@ -58,6 +61,7 @@ namespace DVLDBusinessLayer
             this.SecondName = SecondName;
             this.ThirdName = ThirdName;
             this.LastName = LastName;
+            this.FullName = FirstName + " " + SecondName + " " + ThirdName + " " + LastName;
             this.Gendor = Gendor;
             this.DateOfBirth = DateOfBirth;
             this.Phone = Phone;

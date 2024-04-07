@@ -13,7 +13,7 @@ namespace DVLDBusinessLayer
         
         // ApplicationID,... are inhertance from application     
         
-        public int LocalDLAppID { get; set; }
+        public int LocaLDLApplicationID { get; set; }
         public byte LicenseClassID { get; set; }
         
 
@@ -22,7 +22,7 @@ namespace DVLDBusinessLayer
         public clsLocalDLApplication()
         {
 
-            this.LocalDLAppID = -1;
+            this.LocaLDLApplicationID = -1;
             this.LicenseClassID = 0;
             this.ApplicationID = -1;
             this.ApplicationPersonID = -1;
@@ -30,6 +30,7 @@ namespace DVLDBusinessLayer
             this.lastStatusDate = DateTime.Now;
             this.ApplicationTypeID = 0;
             this.ApplicationStatus = 0;
+            this.PassedTests = 0;
             this.PaidFees = -1;
             this.CreatedByUserID = -1;
 
@@ -39,10 +40,10 @@ namespace DVLDBusinessLayer
         }
 
         // Private Constractor for Update Mode 
-        private clsLocalDLApplication(int ApplicationID, int ApplicationPersonID, DateTime ApplicationDate, byte ApplicationTypeID,DateTime lastStatusDate, byte ApplicationStatus, double PaidFees, int CreatedByUserID,int LocalDLAppID,byte LicenseClassID)
-        :base( ApplicationID, ApplicationPersonID, ApplicationDate, ApplicationTypeID,lastStatusDate, ApplicationStatus, PaidFees, CreatedByUserID)
+        private clsLocalDLApplication(int ApplicationID, int ApplicationPersonID, DateTime ApplicationDate, byte ApplicationTypeID,DateTime lastStatusDate, byte ApplicationStatus, byte PassedTests, double PaidFees, int CreatedByUserID,int LocaLDLApplicationID,byte LicenseClassID)
+        :base( ApplicationID, ApplicationPersonID, ApplicationDate, ApplicationTypeID,lastStatusDate, ApplicationStatus, PassedTests, PaidFees, CreatedByUserID)
         {
-            this.LocalDLAppID = LocalDLAppID;
+            this.LocaLDLApplicationID = LocaLDLApplicationID;
             this.LicenseClassID = LicenseClassID;
             this.ApplicationID = ApplicationID;
            
@@ -51,6 +52,7 @@ namespace DVLDBusinessLayer
             this.ApplicationTypeID = ApplicationTypeID;
             this.lastStatusDate = lastStatusDate;
             this.ApplicationStatus = ApplicationStatus;
+            this.PassedTests = PassedTests;
             this.PaidFees = PaidFees;
             this.CreatedByUserID = CreatedByUserID;
 
@@ -58,9 +60,9 @@ namespace DVLDBusinessLayer
 
         }
                      
-        public static int AddNewGlobalApplication(int ApplicationPersonID, DateTime ApplicationDate, byte ApplicationTypeID,DateTime lastStatusDate, byte ApplicationStatus, double PaidFees, int CreatedByUserID)
+        public static int AddNewGlobalApplication(int ApplicationPersonID, DateTime ApplicationDate, byte ApplicationTypeID,DateTime lastStatusDate, byte ApplicationStatus, byte PassedTests, double PaidFees, int CreatedByUserID)
         {
-            int ApplicationID = ApplicationDataAccess.AddNewApplication(ApplicationPersonID, ApplicationDate, ApplicationTypeID, lastStatusDate, ApplicationStatus, PaidFees, CreatedByUserID);
+            int ApplicationID = ApplicationDataAccess.AddNewApplication(ApplicationPersonID, ApplicationDate, ApplicationTypeID, lastStatusDate, ApplicationStatus, PassedTests, PaidFees, CreatedByUserID);
 
             return ApplicationID ;
         }
@@ -71,18 +73,18 @@ namespace DVLDBusinessLayer
             // add Genral application then Find it to add localApplication 
             if (!IsExists(this.ApplicationPersonID, this.LicenseClassID))
             {
-                this.ApplicationID = clsLocalDLApplication.AddNewGlobalApplication(this.ApplicationPersonID, this.ApplicationDate, this.ApplicationTypeID, this.lastStatusDate, this.ApplicationStatus, this.PaidFees, this.CreatedByUserID);
+                this.ApplicationID = clsLocalDLApplication.AddNewGlobalApplication(this.ApplicationPersonID, this.ApplicationDate, this.ApplicationTypeID, this.lastStatusDate, this.ApplicationStatus, this.PassedTests, this.PaidFees, this.CreatedByUserID);
 
                 if (ApplicationID == -1)
                     return false;
             }
 
-            if (!IsExists(this.LocalDLAppID))
+            if (!IsExists(this.LocaLDLApplicationID))
             {
 
-                this.LocalDLAppID = LocalDrivingLicenseAppDataAccess.AddNewApplication(this.ApplicationID, this.LicenseClassID);
+                this.LocaLDLApplicationID = LocalDrivingLicenseAppDataAccess.AddNewApplication(this.ApplicationID, this.LicenseClassID);
 
-                if (this.LocalDLAppID == -1)
+                if (this.LocaLDLApplicationID == -1)
                     return false;
                 else
                     return true;
@@ -94,22 +96,25 @@ namespace DVLDBusinessLayer
         private bool _UpdateLocalApplication()
         {
             // add this object to database
-            return LocalDrivingLicenseAppDataAccess.UpdateApplication(this.LocalDLAppID,this.ApplicationID, this.LicenseClassID);
+            if (ApplicationDataAccess.UpdateApplication(this.ApplicationID, this.ApplicationPersonID, this.ApplicationDate, this.ApplicationTypeID, this.lastStatusDate, this.ApplicationStatus, this.PassedTests, this.PaidFees, this.CreatedByUserID))
+                return LocalDrivingLicenseAppDataAccess.UpdateApplication(this.LocaLDLApplicationID,this.ApplicationID, this.LicenseClassID);
+           
+            return false;
         }
 
         // find by ID , NationalNo
-        public static clsLocalDLApplication Find(int LocalDLAppID)
+        public static clsLocalDLApplication Find(int LocaLDLApplicationID)
         {
 
             int ApplicationID = -1,ApplicationPersonID = -1, CreatedByUserID = -1;
-            byte LicenseClassID = 0,ApplicationTypeID = 0, ApplicationStatus = 0;
+            byte LicenseClassID = 0,ApplicationTypeID = 0, ApplicationStatus = 0, PassedTests = 0;
             double PaidFees = -1;
             DateTime ApplicationDate = DateTime.Now , lastStatusDate=DateTime.Now;
 
 
-            if(LocalDrivingLicenseAppDataAccess.GetLocalApplicationByID(LocalDLAppID, ref ApplicationID, ref LicenseClassID, ref ApplicationPersonID, ref ApplicationDate, ref ApplicationTypeID, ref lastStatusDate, ref ApplicationStatus, ref PaidFees, ref CreatedByUserID)) 
+            if(LocalDrivingLicenseAppDataAccess.GetLocalApplicationByID(LocaLDLApplicationID, ref ApplicationID, ref LicenseClassID, ref ApplicationPersonID, ref ApplicationDate, ref ApplicationTypeID, ref lastStatusDate, ref ApplicationStatus, ref PassedTests, ref PaidFees, ref CreatedByUserID)) 
             {
-                return new clsLocalDLApplication(ApplicationID, ApplicationPersonID, ApplicationDate, ApplicationTypeID, lastStatusDate, ApplicationStatus, PaidFees, CreatedByUserID ,LocalDLAppID, LicenseClassID);
+                return new clsLocalDLApplication(ApplicationID, ApplicationPersonID, ApplicationDate, ApplicationTypeID, lastStatusDate, ApplicationStatus, PassedTests, PaidFees, CreatedByUserID ,LocaLDLApplicationID, LicenseClassID);
             }
             else 
                 return null;
@@ -145,14 +150,14 @@ namespace DVLDBusinessLayer
             return LocalDrivingLicenseAppDataAccess.GetAllLocalDrivingLicenseApplications();
         }
 
-        public static bool Delete(int LocalDLAppID)
+        public static bool Delete(int LocaLDLApplicationID)
         {
-            return LocalDrivingLicenseAppDataAccess.DeleteApplication(LocalDLAppID);
+            return LocalDrivingLicenseAppDataAccess.DeleteApplication(LocaLDLApplicationID);
         }
         
-        public static bool IsExists(int LocalDLAppID)
+        public static bool IsExists(int LocaLDLApplicationID)
         {
-            return LocalDrivingLicenseAppDataAccess.IsApplicationExists(LocalDLAppID);
+            return LocalDrivingLicenseAppDataAccess.IsApplicationExists(LocaLDLApplicationID);
         }    
         public static bool IsExists(int ApplicationPersonID,byte LicenseClassID)
         {

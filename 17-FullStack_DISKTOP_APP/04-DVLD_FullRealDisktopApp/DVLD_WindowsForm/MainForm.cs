@@ -39,14 +39,14 @@ namespace DVLD_WindowsForm
 
         private void currentUserInfoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ShowUserForm ShowUserFrm = new ShowUserForm(GlobalMethods.CurrentUser.UserID);
+            ShowUserForm ShowUserFrm = new ShowUserForm(Global.GlobalVars.CurrentUser.UserID);
             ShowUserFrm.MdiParent = this;
             ShowUserFrm.Show();
         }
 
         private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ChangePasswordForm ChangePasswordFrm = new ChangePasswordForm(GlobalMethods.CurrentUser.UserID);
+            ChangePasswordForm ChangePasswordFrm = new ChangePasswordForm(Global.GlobalVars.CurrentUser.UserID);
             ChangePasswordFrm.MdiParent = this;
             ChangePasswordFrm.Show();
         }
@@ -54,7 +54,7 @@ namespace DVLD_WindowsForm
         private void signOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
-            GlobalMethods.CurrentUser = null;
+            Global.GlobalVars.CurrentUser = null;
             LoginForm LoginFrm = new LoginForm();
             //LoginFrm.MdiParent = this;
             LoginFrm.Show();
@@ -77,9 +77,8 @@ namespace DVLD_WindowsForm
 
         private void localLicenseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ManageLocalDLApplication ManageLocalFrm = new ManageLocalDLApplication();
-            ManageLocalFrm.MdiParent = this;
-            ManageLocalFrm.Show();
+            AddEditLocalApp frmAdd_Update = new AddEditLocalApp(-1);
+            frmAdd_Update.Show();
 
         }
 
@@ -88,6 +87,14 @@ namespace DVLD_WindowsForm
             ManageLocalDLApplication ManageLocalFrm = new ManageLocalDLApplication();
             ManageLocalFrm.MdiParent = this;
             ManageLocalFrm.Show();
+        }
+
+        private void driversToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ManageDriversForm frm = new ManageDriversForm();
+            frm.MdiParent = this;
+            frm.Show();
+
         }
     }
 }

@@ -29,89 +29,46 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.cmIssueDriving = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmCancelApplication = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmDeleteApplication = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmEditApplication = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmShowApplication = new System.Windows.Forms.ToolStripMenuItem();
             this.txtFilter = new System.Windows.Forms.TextBox();
-            this.cmSechduleTests = new System.Windows.Forms.ToolStripMenuItem();
             this.cmbFilter = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lbLDLAppsCount = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.cmpApplication = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cmShowApplication = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmEditApplication = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmDeleteApplication = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripSeparator();
+            this.cmCancelApplication = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmSechduleTests = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmVisionTest = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmWrittenTest = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmStreetTest = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
+            this.cmIssueDriving = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
             this.cmShowLicense = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripSeparator();
             this.cmShowPersonHistory = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnRefresh = new System.Windows.Forms.Button();
             this.dgvLDLApps = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cmpApplication.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLDLApps)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // cmIssueDriving
-            // 
-            this.cmIssueDriving.Image = global::DVLD_WindowsForm.Properties.Resources.IssueDrivingLicense_321;
-            this.cmIssueDriving.Name = "cmIssueDriving";
-            this.cmIssueDriving.Size = new System.Drawing.Size(245, 22);
-            this.cmIssueDriving.Text = "Issue Driving License (First Time)";
-            // 
-            // cmCancelApplication
-            // 
-            this.cmCancelApplication.Image = global::DVLD_WindowsForm.Properties.Resources.Delete_32;
-            this.cmCancelApplication.Name = "cmCancelApplication";
-            this.cmCancelApplication.Size = new System.Drawing.Size(245, 22);
-            this.cmCancelApplication.Text = "Cancel Application";
-            this.cmCancelApplication.Click += new System.EventHandler(this.cmCancelApplication_Click);
-            // 
-            // cmDeleteApplication
-            // 
-            this.cmDeleteApplication.Image = global::DVLD_WindowsForm.Properties.Resources.Delete_32_21;
-            this.cmDeleteApplication.Name = "cmDeleteApplication";
-            this.cmDeleteApplication.Size = new System.Drawing.Size(245, 22);
-            this.cmDeleteApplication.Text = "Delete Application";
-            this.cmDeleteApplication.Click += new System.EventHandler(this.cmDeleteApplication_Click);
-            // 
-            // cmEditApplication
-            // 
-            this.cmEditApplication.Image = global::DVLD_WindowsForm.Properties.Resources.edit_32;
-            this.cmEditApplication.Name = "cmEditApplication";
-            this.cmEditApplication.Size = new System.Drawing.Size(245, 22);
-            this.cmEditApplication.Text = "Edit Application";
-            this.cmEditApplication.Click += new System.EventHandler(this.cmEditApplication_Click);
-            // 
-            // cmShowApplication
-            // 
-            this.cmShowApplication.Image = global::DVLD_WindowsForm.Properties.Resources.PersonDetails_321;
-            this.cmShowApplication.Name = "cmShowApplication";
-            this.cmShowApplication.Size = new System.Drawing.Size(245, 22);
-            this.cmShowApplication.Text = "Show Application Details";
             // 
             // txtFilter
             // 
             this.txtFilter.Location = new System.Drawing.Point(230, 173);
             this.txtFilter.Name = "txtFilter";
-            this.txtFilter.Size = new System.Drawing.Size(100, 20);
+            this.txtFilter.Size = new System.Drawing.Size(153, 20);
             this.txtFilter.TabIndex = 20;
             this.txtFilter.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // cmSechduleTests
-            // 
-            this.cmSechduleTests.Image = global::DVLD_WindowsForm.Properties.Resources.TestType_32;
-            this.cmSechduleTests.Name = "cmSechduleTests";
-            this.cmSechduleTests.Size = new System.Drawing.Size(245, 22);
-            this.cmSechduleTests.Text = "Sechdule Tests";
             // 
             // cmbFilter
             // 
@@ -151,18 +108,6 @@
             this.label2.TabIndex = 15;
             this.label2.Text = "# Records : ";
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Image = global::DVLD_WindowsForm.Properties.Resources.New_Application_64;
-            this.pictureBox2.Location = new System.Drawing.Point(994, 161);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(55, 33);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 14;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -173,16 +118,6 @@
             this.label1.Size = new System.Drawing.Size(367, 29);
             this.label1.TabIndex = 13;
             this.label1.Text = "Local Driving License Application";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::DVLD_WindowsForm.Properties.Resources.Applications;
-            this.pictureBox1.Location = new System.Drawing.Point(450, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(202, 112);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
             // 
             // toolStripMenuItem1
             // 
@@ -212,17 +147,91 @@
             this.toolStripMenuItem5,
             this.cmShowPersonHistory});
             this.cmpApplication.Name = "contextMenuStrip1";
-            this.cmpApplication.Size = new System.Drawing.Size(246, 216);
+            this.cmpApplication.Size = new System.Drawing.Size(246, 238);
+            // 
+            // cmShowApplication
+            // 
+            this.cmShowApplication.Image = global::DVLD_WindowsForm.Properties.Resources.PersonDetails_321;
+            this.cmShowApplication.Name = "cmShowApplication";
+            this.cmShowApplication.Size = new System.Drawing.Size(245, 22);
+            this.cmShowApplication.Text = "Show Application Details";
+            // 
+            // cmEditApplication
+            // 
+            this.cmEditApplication.Image = global::DVLD_WindowsForm.Properties.Resources.edit_32;
+            this.cmEditApplication.Name = "cmEditApplication";
+            this.cmEditApplication.Size = new System.Drawing.Size(245, 22);
+            this.cmEditApplication.Text = "Edit Application";
+            this.cmEditApplication.Click += new System.EventHandler(this.cmEditApplication_Click);
+            // 
+            // cmDeleteApplication
+            // 
+            this.cmDeleteApplication.Image = global::DVLD_WindowsForm.Properties.Resources.Delete_32_21;
+            this.cmDeleteApplication.Name = "cmDeleteApplication";
+            this.cmDeleteApplication.Size = new System.Drawing.Size(245, 22);
+            this.cmDeleteApplication.Text = "Delete Application";
+            this.cmDeleteApplication.Click += new System.EventHandler(this.cmDeleteApplication_Click);
             // 
             // toolStripMenuItem6
             // 
             this.toolStripMenuItem6.Name = "toolStripMenuItem6";
             this.toolStripMenuItem6.Size = new System.Drawing.Size(242, 6);
             // 
+            // cmCancelApplication
+            // 
+            this.cmCancelApplication.Image = global::DVLD_WindowsForm.Properties.Resources.Delete_32;
+            this.cmCancelApplication.Name = "cmCancelApplication";
+            this.cmCancelApplication.Size = new System.Drawing.Size(245, 22);
+            this.cmCancelApplication.Text = "Cancel Application";
+            this.cmCancelApplication.Click += new System.EventHandler(this.cmCancelApplication_Click);
+            // 
+            // cmSechduleTests
+            // 
+            this.cmSechduleTests.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cmVisionTest,
+            this.cmWrittenTest,
+            this.cmStreetTest});
+            this.cmSechduleTests.Image = global::DVLD_WindowsForm.Properties.Resources.TestType_32;
+            this.cmSechduleTests.Name = "cmSechduleTests";
+            this.cmSechduleTests.Size = new System.Drawing.Size(245, 22);
+            this.cmSechduleTests.Text = "Sechdule Tests";
+            // 
+            // cmVisionTest
+            // 
+            this.cmVisionTest.Image = global::DVLD_WindowsForm.Properties.Resources.Vision_Test_32;
+            this.cmVisionTest.Name = "cmVisionTest";
+            this.cmVisionTest.Size = new System.Drawing.Size(187, 22);
+            this.cmVisionTest.Text = "Schedule Vision Test";
+            this.cmVisionTest.Click += new System.EventHandler(this.cmVisionTest_Click);
+            // 
+            // cmWrittenTest
+            // 
+            this.cmWrittenTest.Image = global::DVLD_WindowsForm.Properties.Resources.Written_Test_32;
+            this.cmWrittenTest.Name = "cmWrittenTest";
+            this.cmWrittenTest.Size = new System.Drawing.Size(187, 22);
+            this.cmWrittenTest.Text = "Schedule Written Test";
+            this.cmWrittenTest.Click += new System.EventHandler(this.cmWrittenTest_Click);
+            // 
+            // cmStreetTest
+            // 
+            this.cmStreetTest.Image = global::DVLD_WindowsForm.Properties.Resources.Street_Test_32;
+            this.cmStreetTest.Name = "cmStreetTest";
+            this.cmStreetTest.Size = new System.Drawing.Size(187, 22);
+            this.cmStreetTest.Text = "Schedule Street Test";
+            this.cmStreetTest.Click += new System.EventHandler(this.cmStreetTest_Click);
+            // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
             this.toolStripMenuItem3.Size = new System.Drawing.Size(242, 6);
+            // 
+            // cmIssueDriving
+            // 
+            this.cmIssueDriving.Image = global::DVLD_WindowsForm.Properties.Resources.IssueDrivingLicense_321;
+            this.cmIssueDriving.Name = "cmIssueDriving";
+            this.cmIssueDriving.Size = new System.Drawing.Size(245, 22);
+            this.cmIssueDriving.Text = "Issue Driving License (First Time)";
+            this.cmIssueDriving.Click += new System.EventHandler(this.cmIssueDriving_Click);
             // 
             // toolStripMenuItem4
             // 
@@ -235,6 +244,7 @@
             this.cmShowLicense.Name = "cmShowLicense";
             this.cmShowLicense.Size = new System.Drawing.Size(245, 22);
             this.cmShowLicense.Text = "Show License";
+            this.cmShowLicense.Click += new System.EventHandler(this.cmShowLicense_Click);
             // 
             // toolStripMenuItem5
             // 
@@ -247,16 +257,7 @@
             this.cmShowPersonHistory.Name = "cmShowPersonHistory";
             this.cmShowPersonHistory.Size = new System.Drawing.Size(245, 22);
             this.cmShowPersonHistory.Text = "Show Person License History";
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Location = new System.Drawing.Point(336, 172);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(57, 21);
-            this.btnRefresh.TabIndex = 17;
-            this.btnRefresh.Text = "Refresh";
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            this.cmShowPersonHistory.Click += new System.EventHandler(this.cmShowPersonHistory_Click);
             // 
             // dgvLDLApps
             // 
@@ -272,6 +273,28 @@
             this.dgvLDLApps.TabIndex = 11;
             this.dgvLDLApps.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvLDLApps_CellMouseDown);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox2.Image = global::DVLD_WindowsForm.Properties.Resources.New_Application_64;
+            this.pictureBox2.Location = new System.Drawing.Point(994, 161);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(55, 33);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 14;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::DVLD_WindowsForm.Properties.Resources.Applications;
+            this.pictureBox1.Location = new System.Drawing.Point(450, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(202, 112);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
             // ManageLocalDLApplication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -285,14 +308,14 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.dgvLDLApps);
             this.Name = "ManageLocalDLApplication";
             this.Text = "ManageLocalDLApplication";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Load += new System.EventHandler(this.ManageLocalDLApplication_Load_1);
             this.cmpApplication.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLDLApps)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -317,7 +340,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ContextMenuStrip cmpApplication;
-        private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.DataGridView dgvLDLApps;
         private System.Windows.Forms.ToolStripMenuItem cmShowLicense;
         private System.Windows.Forms.ToolStripMenuItem cmShowPersonHistory;
@@ -325,5 +347,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem4;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem5;
+        private System.Windows.Forms.ToolStripMenuItem cmVisionTest;
+        private System.Windows.Forms.ToolStripMenuItem cmWrittenTest;
+        private System.Windows.Forms.ToolStripMenuItem cmStreetTest;
     }
 }

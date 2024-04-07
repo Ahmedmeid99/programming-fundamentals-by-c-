@@ -20,7 +20,11 @@ namespace DVLD_WindowsForm
         public static DataTable dtPeople;
         public static DataView dtPeopleView;
 
-
+        // ----------------------------------- 
+        // -----------[Delegations]-----------
+        // -----------------------------------     
+        public delegate void UserAddedEventHandler(object sender, EventArgs e);
+        public event UserAddedEventHandler UserAdded;
         public AddEditUserForm(int UserID)
         {
             InitializeComponent();
@@ -253,7 +257,7 @@ namespace DVLD_WindowsForm
 
             // handel Image
 
-            string ImagePath = Global.Path + Person.ImagePath + Global.ImgExtintion;
+            string ImagePath = Global.GlobalVars.Path + Person.ImagePath + Global.GlobalVars.ImgExtintion;
             _HandelImage(ImagePath, Person.Gendor);
 
 
@@ -473,6 +477,7 @@ namespace DVLD_WindowsForm
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            UserAdded?.Invoke(this, e);
             this.Close();
         }
 

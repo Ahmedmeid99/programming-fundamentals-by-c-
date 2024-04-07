@@ -7,17 +7,17 @@ namespace DVLDDataAccessLayer
 {
     public static class LocalDrivingLicenseAppDataAccess
     {
-        public static bool GetLocalApplicationByID(int LocalDLAppID,ref int ApplicationID,ref byte LicenseClassID, ref int ApplicationPersonID, ref DateTime ApplicationDate, ref byte ApplicationTypeID, ref DateTime lastStatusDate, ref byte ApplicationStatus, ref double PaidFees, ref int CreatedByUserID)
+        public static bool GetLocalApplicationByID(int LocaLDLApplicationID,ref int ApplicationID,ref byte LicenseClassID, ref int ApplicationPersonID, ref DateTime ApplicationDate, ref byte ApplicationTypeID, ref DateTime lastStatusDate, ref byte ApplicationStatus, ref byte PassedTests, ref double PaidFees, ref int CreatedByUserID)
         {
             bool isFound = false;
 
             SqlConnection connection = new SqlConnection(clsSettings.ConnectionString);
 
-            string query = "SELECT * FROM LocalDLAppFullInfo WHERE LocalDrivingLicenseApplicationID = @LocalDLAppID";
+            string query = "SELECT * FROM LocalDLAppFullInfo WHERE LocalDrivingLicenseApplicationID = @LocaLDLApplicationID";
 
             SqlCommand command = new SqlCommand(query, connection);
 
-            command.Parameters.AddWithValue("@LocalDLAppID", LocalDLAppID);
+            command.Parameters.AddWithValue("@LocaLDLApplicationID", LocaLDLApplicationID);
           
 
             try
@@ -40,6 +40,7 @@ namespace DVLDDataAccessLayer
                     LicenseClassID = Convert.ToByte(reader["LicenseClassID"]);
                     ApplicationTypeID = Convert.ToByte(reader["ApplicationTypeID"]);
                     ApplicationStatus = Convert.ToByte(reader["ApplicationStatus"]);
+                    PassedTests = Convert.ToByte(reader["PassedTests"]);
 
                     reader.Close();
                 }
@@ -108,7 +109,7 @@ namespace DVLDDataAccessLayer
             return -1;
         }
 
-        public static bool UpdateApplication(int LocalDLAppID, int ApplicationID, byte LicenseClassID)
+        public static bool UpdateApplication(int LocaLDLApplicationID, int ApplicationID, byte LicenseClassID)
         {
 
             int rowsAffected = 0;
@@ -119,10 +120,10 @@ namespace DVLDDataAccessLayer
                                 LicenseClassID = @LicenseClassID
                                
 
-                                where LocalDrivingLicenseApplicationID = @LocalDLAppID";
+                                where LocalDrivingLicenseApplicationID = @LocaLDLApplicationID";
 
             SqlCommand command = new SqlCommand(query, connection);
-            command.Parameters.AddWithValue("@LocalDLAppID", LocalDLAppID);
+            command.Parameters.AddWithValue("@LocaLDLApplicationID", LocaLDLApplicationID);
             command.Parameters.AddWithValue("@ApplicationID", ApplicationID);
             command.Parameters.AddWithValue("@LicenseClassID", LicenseClassID);
             
@@ -183,16 +184,16 @@ namespace DVLDDataAccessLayer
 
         }
 
-        public static bool DeleteApplication(int LocalDLAppID)
+        public static bool DeleteApplication(int LocaLDLApplicationID)
         {
 
             SqlConnection connection = new SqlConnection(clsSettings.ConnectionString);
-            string query = "DELETE FROM LocalDrivingLicenseApplications WHERE LocalDrivingLicenseApplicationID = @LocalDLAppID";
+            string query = "DELETE FROM LocalDrivingLicenseApplications WHERE LocalDrivingLicenseApplicationID = @LocaLDLApplicationID";
 
             int RowAffected = 0;
             SqlCommand command = new SqlCommand(query, connection);
 
-            command.Parameters.AddWithValue("@LocalDLAppID", LocalDLAppID);
+            command.Parameters.AddWithValue("@LocaLDLApplicationID", LocaLDLApplicationID);
 
             try
             {
@@ -212,15 +213,15 @@ namespace DVLDDataAccessLayer
             return (RowAffected > 0);
         }
 
-        public static bool IsApplicationExists(int LocalDLAppID)
+        public static bool IsApplicationExists(int LocaLDLApplicationID)
         {
             SqlConnection connection = new SqlConnection(clsSettings.ConnectionString);
-            string query = "SELECT FOUND = 1 FROM LocalDrivingLicenseApplications WHERE LocalDrivingLicenseApplicationID = @LocalDLAppID";
+            string query = "SELECT FOUND = 1 FROM LocalDrivingLicenseApplications WHERE LocalDrivingLicenseApplicationID = @LocaLDLApplicationID";
 
             bool IsFound = false;
             SqlCommand command = new SqlCommand(query, connection);
 
-            command.Parameters.AddWithValue("@ApplicationID", LocalDLAppID);
+            command.Parameters.AddWithValue("@ApplicationID", LocaLDLApplicationID);
 
             try
             {

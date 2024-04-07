@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Drawing;
 using System.Windows.Forms;
 using DVLDBusinessLayer;
 
@@ -7,6 +7,7 @@ namespace DVLD_WindowsForm
 {
     public partial class ShowPersonForm : Form
     {
+       private int PersonID ;
        private clsPerson Person = null;
         private void _HandelImage(string ImagePath,string GendorChar)
         {
@@ -49,36 +50,40 @@ namespace DVLD_WindowsForm
         {
             InitializeComponent();
 
-             Person = clsPerson.Find(PersonID);
+            Person = clsPerson.Find(PersonID);
+            this.PersonID = PersonID;
 
+            _RefreshPersonInformation();
+
+        }
+        private void _RefreshPersonInformation()
+        {
             if (Person == null)
                 return;
 
             lbPersonID.Text = PersonID.ToString();
-            lbFirstName.Text = Person.FirstName;
-            lbLastName.Text = Person.LastName;
-            lbThirdName.Text = Person.ThirdName;
-            lbSecondName.Text = Person.SecondName;
+            lbName.Text = Person.FullName;
             lbEmail.Text = Person.Email;
             lbAddress.Text = Person.Address;
             lbDateOfBirth.Text = Person.DateOfBirth.ToString();
             lbPhone.Text = Person.Phone;
             lbNationalNo.Text = Person.NationalNo;
 
+            // Change color of label name to red
+            lbName.ForeColor = Color.Red;
+
             // handel Gerder
             _HandelGendor(Person.Gendor);
 
             // handel Image
-            
-            string ImagePath = Global.Path + Person.ImagePath + Global.ImgExtintion;
+
+            string ImagePath = Global.GlobalVars.Path + Person.ImagePath + Global.GlobalVars.ImgExtintion;
             _HandelImage(ImagePath, Person.Gendor);
 
 
             // handel country selected
             _HandleCountry(Person.CountryID);
-
         }
-
         // On Form Load
         private void ShowPersonForm_Load(object sender, EventArgs e)
         {            
@@ -89,7 +94,12 @@ namespace DVLD_WindowsForm
         private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
             AddEditPersonForm frmAdd_Update = new AddEditPersonForm(Person.PersonID);
+            frmAdd_Update.PersonAdded += People_PersonAdded;
             frmAdd_Update.Show();
+        }
+        private void People_PersonAdded(object sender, EventArgs e)
+        {
+            _RefreshPersonInformation();
         }
     }
 }

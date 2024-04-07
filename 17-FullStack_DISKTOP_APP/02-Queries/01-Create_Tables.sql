@@ -16,7 +16,7 @@ Create Table People
 		Email nvarchar(250),
 		Address nvarchar(500) not null,
 		CountryID int References Countries(CountryID) not null,
-		NationalID nvarchar(250) unique not null,
+		NationalNo nvarchar(250) unique not null,
 		ImagePath nvarchar(500) not null,
 
 		primary key(PersonID)
@@ -55,6 +55,10 @@ Create Table ApplicationTypes
 		primary key(ApplicationTypeID)
 	);
 --------------------------------------
+select * from LicenseClasses
+select * from TestTypes
+select * from  TestAppointments
+
 Create Table TestTypes
 	(
 		TestTypeID int identity(1,1) not null,
@@ -101,20 +105,79 @@ Create Table LocalDrivingLicenseApplications
 		primary key(LocalDrivingLicenseApplicationID)
 	);
 -------------------------------------------
+SELECT Top 1* FROM TestAppointments WHERE LDLApplicationID = 1008 and TestTypeID = 1 ORDER BY AppointmentDate Desc
+delete TestAppointments where TestTypeID =1;
+Create Table TestAppointments 
+	(
+		TestAppointmentID int identity(1,1) not null,
+		TestTypeID int References TestTypes(TestTypeID) not null,
+		LDLApplicationID int References LocalDrivingLicenseApplications(LocalDrivingLicenseApplicationID) not null,
+		PaidFees smallMoney not null,
+		AppointmentDate DateTime not null,
+		CreatedByUserID int References Users(UserID) not null,
+		IsLocked bit not null
 
-select * from ApplicationTypes ;
+		primary key(TestAppointmentID)
+	);
+
+	select * from TestAppointments
+-------------------------------------------
+Create Table Tests 
+	(
+		TestID int identity(1,1) not null,
+		TestAppointmentID int References TestAppointments(TestAppointmentID) not null,
+		TestResult bit not null,
+		Notes nvarchar(1500) null,
+		CreatedByUserID int References Users(UserID) not null
+
+		primary key(TestID)
+	);
+-------------------------------------------
+Create Table Drivers 
+	(
+		DriverID int identity(1,1) not null,
+		PersonID int References People(PersonID) not null,		
+		CreatedByUserID int References Users(UserID) not null,
+		CreatedDate DateTime not null
+
+		primary key(DriverID)
+	);
+-------------------------------------------
+Create Table Licenses 
+	(
+		LicenseID int identity(1,1) not null,
+		ApplicationID int References Applications(ApplicationID) not null,
+		DriverID int References Drivers(DriverID) not null,
+		LicenseClassID int References LicenseClasses(LicenseClasseID) not null,
+		IssueDate DateTime not null,
+		ExpirationDate DateTime not null,
+		Notes nvarchar(1500) null,
+		PaidFees smallMoney not null,
+		IsActive Bit not null,
+		IssueReason tinyint Not null,
+		CreatedByUserID int References Users(UserID) not null
+
+		primary key(LicenseID)
+	);
+-------------------------------------------
+-------------------------------------------
+-------------------------------------------
+-------------------------------------------
+
+select * from Drivers ;
+select * from Licenses ;
 select * from Applications;
 select * from LocalDrivingLicenseApplications;
 select * from LicenseClasses ;
 select * from Users;
-select * from people;
+select * from TestTypes;
 
 
 -- Update NathionalN to uinque
 -- ...
-Alter Table Pepole
-Alter Column NationalID int unique nvarhar(250) not null;
+Alter Table People
+Alter Column NationalNo int unique nvarhar(250) not null;
 
 SELECT PersonID,FirstName,SecondName,ThirdName,LastName,
-Gander,DateOfBirth,Phone,Email,Address,NationaltyCountryID,NationalID,ImagePath FROM Pepole;
+Gander,DateOfBirth,Phone,Email,Address,CountryID,NationalNo,ImagePath FROM People;
 

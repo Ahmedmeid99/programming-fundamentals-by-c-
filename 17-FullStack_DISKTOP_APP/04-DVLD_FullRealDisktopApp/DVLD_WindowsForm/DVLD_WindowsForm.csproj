@@ -71,17 +71,89 @@
     <Compile Include="Applications\LocalApplication\ManageLocalDLApplication.Designer.cs">
       <DependentUpon>ManageLocalDLApplication.cs</DependentUpon>
     </Compile>
-    <Compile Include="Applications\TestTypes\ManageTestTypesForm.cs">
+    <Compile Include="Licenses\ShowLicenseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Applications\TestTypes\ManageTestTypesForm.Designer.cs">
+    <Compile Include="Licenses\ShowLicenseForm.Designer.cs">
+      <DependentUpon>ShowLicenseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Licenses\UCShowLicenseInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Licenses\UCShowLicenseInfo.Designer.cs">
+      <DependentUpon>UCShowLicenseInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Drivers\ManageDriversForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Drivers\ManageDriversForm.Designer.cs">
+      <DependentUpon>ManageDriversForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\MainTests\StreetTest\ManageStreetTestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tests\MainTests\StreetTest\ManageStreetTestForm.Designer.cs">
+      <DependentUpon>ManageStreetTestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\MainTests\Test Components\AddEditTestAppointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tests\MainTests\Test Components\AddEditTestAppointment.Designer.cs">
+      <DependentUpon>AddEditTestAppointment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\MainTests\Test Components\Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tests\MainTests\Test Components\Test.Designer.cs">
+      <DependentUpon>Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\TestTypes\ManageTestTypesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tests\TestTypes\ManageTestTypesForm.Designer.cs">
       <DependentUpon>ManageTestTypesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Applications\TestTypes\EditTestTypeForm.cs">
+    <Compile Include="Tests\TestTypes\EditTestTypeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Applications\TestTypes\EditTestTypeForm.Designer.cs">
+    <Compile Include="Tests\TestTypes\EditTestTypeForm.Designer.cs">
       <DependentUpon>EditTestTypeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\UC-TestApplication\UCDLApplicationInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tests\UC-TestApplication\UCDLApplicationInfo.Designer.cs">
+      <DependentUpon>UCDLApplicationInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\UC-TestApplication\UCApplicationInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tests\UC-TestApplication\UCApplicationInfo.Designer.cs">
+      <DependentUpon>UCApplicationInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\MainTests\VisionTest\ManageVisionTestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tests\MainTests\VisionTest\ManageVisionTestForm.Designer.cs">
+      <DependentUpon>ManageVisionTestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\MainTests\WrittenTest\ManageWrittenTestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tests\MainTests\WrittenTest\ManageWrittenTestForm.Designer.cs">
+      <DependentUpon>ManageWrittenTestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\UC-TestAppointment\UCAddEidTestAppointment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tests\UC-TestAppointment\UCAddEidTestAppointment.Designer.cs">
+      <DependentUpon>UCAddEidTestAppointment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\UC-TestAppointment\UCRetakeTest.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tests\UC-TestAppointment\UCRetakeTest.Designer.cs">
+      <DependentUpon>UCRetakeTest.cs</DependentUpon>
     </Compile>
     <Compile Include="Users\ChangePasswordForm.cs">
       <SubType>Form</SubType>
@@ -113,7 +185,7 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GlobalMethods.cs" />
+    <Compile Include="HelperFunctions\GlobalMethods.cs" />
     <Compile Include="People\Manage_Pepole.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,10 +206,10 @@
     <Compile Include="Users\ShowUserForm.Designer.cs">
       <DependentUpon>ShowUserForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UC_Add_Edite.cs">
+    <Compile Include="People\UC-AddEditPerson\UC_Add_Edite.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UC_Add_Edite.Designer.cs">
+    <Compile Include="People\UC-AddEditPerson\UC_Add_Edite.Designer.cs">
       <DependentUpon>UC_Add_Edite.cs</DependentUpon>
     </Compile>
     <Compile Include="Users\Manage_Users.cs">
@@ -158,11 +230,47 @@
     <EmbeddedResource Include="Applications\LocalApplication\ManageLocalDLApplication.resx">
       <DependentUpon>ManageLocalDLApplication.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Applications\TestTypes\EditTestTypeForm.resx">
+    <EmbeddedResource Include="Drivers\ManageDriversForm.resx">
+      <DependentUpon>ManageDriversForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Licenses\ShowLicenseForm.resx">
+      <DependentUpon>ShowLicenseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Licenses\UCShowLicenseInfo.resx">
+      <DependentUpon>UCShowLicenseInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tests\MainTests\StreetTest\ManageStreetTestForm.resx">
+      <DependentUpon>ManageStreetTestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tests\MainTests\Test Components\AddEditTestAppointment.resx">
+      <DependentUpon>AddEditTestAppointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tests\MainTests\Test Components\Test.resx">
+      <DependentUpon>Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tests\TestTypes\EditTestTypeForm.resx">
       <DependentUpon>EditTestTypeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Applications\TestTypes\ManageTestTypesForm.resx">
+    <EmbeddedResource Include="Tests\TestTypes\ManageTestTypesForm.resx">
       <DependentUpon>ManageTestTypesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tests\UC-TestApplication\UCApplicationInfo.resx">
+      <DependentUpon>UCApplicationInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tests\UC-TestApplication\UCDLApplicationInfo.resx">
+      <DependentUpon>UCDLApplicationInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tests\MainTests\VisionTest\ManageVisionTestForm.resx">
+      <DependentUpon>ManageVisionTestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tests\MainTests\WrittenTest\ManageWrittenTestForm.resx">
+      <DependentUpon>ManageWrittenTestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tests\UC-TestAppointment\UCAddEidTestAppointment.resx">
+      <DependentUpon>UCAddEidTestAppointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tests\UC-TestAppointment\UCRetakeTest.resx">
+      <DependentUpon>UCRetakeTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Users\ChangePasswordForm.resx">
       <DependentUpon>ChangePasswordForm.cs</DependentUpon>
@@ -201,7 +309,7 @@
     <EmbeddedResource Include="People\ShowPersonForm.resx">
       <DependentUpon>ShowPersonForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UC_Add_Edite.resx">
+    <EmbeddedResource Include="People\UC-AddEditPerson\UC_Add_Edite.resx">
       <DependentUpon>UC_Add_Edite.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -310,8 +418,28 @@
   <ItemGroup>
     <None Include="Icons\DVLD Logo.png" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
+    <Content Include="Login\Users.txt" />
+    <None Include="Resources\Driver Main.png" />
+    <None Include="Resources\LicenseView 400.png" />
+    <None Include="Resources\Question 32.png" />
+    <None Include="Resources\Notes 32.png" />
+    <None Include="Resources\driving-test 5121.png" />
+    <None Include="Resources\Test 32.png" />
+    <None Include="Resources\Count 32.png" />
+    <None Include="Resources\driving-test 512.png" />
+    <None Include="Resources\Written Test 512.png" />
+    <None Include="Resources\AddAppointment 32.png" />
+    <None Include="Resources\Vision 512.png" />
+    <None Include="Resources\User 32 -2.png" />
+    <None Include="Resources\Person 32.png" />
+    <None Include="Resources\ApplicationType.png" />
+    <None Include="Resources\PassedTests 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Written Test 32.png" />
+    <None Include="Resources\Vision Test 32.png" />
+    <None Include="Resources\Street Test 32.png" />
     <None Include="Icons\Add New User 32.png" />
     <None Include="Icons\SearchPerson.png" />
     <None Include="Icons\AddPerson 32.png" />
@@ -340,7 +468,7 @@
     <None Include="Icons\New Application 64.png" />
     <None Include="Icons\Schedule Test 32.png" />
     <None Include="Icons\PersonLicenseHistory 32.png" />
-    <Content Include="Login\Users.txt" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

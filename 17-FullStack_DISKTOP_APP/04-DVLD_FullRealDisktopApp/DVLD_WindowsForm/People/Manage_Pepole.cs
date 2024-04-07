@@ -106,16 +106,17 @@ namespace DVLD_WindowsForm
         {
             // open use control to add person
             AddEditPersonForm frmAdd_Update = new AddEditPersonForm(-1);
+            frmAdd_Update.PersonAdded += People_PersonAdded;
             frmAdd_Update.Show();
-            _RefreshPeopleList();
         }
 
         private void addNewPersonToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // open use control to add person
             AddEditPersonForm frmAdd_Update = new AddEditPersonForm(-1);
+            frmAdd_Update.PersonAdded += People_PersonAdded;
+
             frmAdd_Update.Show();
-            _RefreshPeopleList();
         }
 
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
@@ -123,8 +124,8 @@ namespace DVLD_WindowsForm
             // open use control to add person
             int PersonID = (int)dgvPeople.CurrentRow.Cells[0].Value;
             AddEditPersonForm frmAdd_Update = new AddEditPersonForm(PersonID);
+            frmAdd_Update.PersonAdded += People_PersonAdded;
             frmAdd_Update.Show();
-            _RefreshPeopleList();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -170,7 +171,7 @@ namespace DVLD_WindowsForm
         private void button1_Click(object sender, EventArgs e)
         {
             _RefreshPeopleList();
-        }
+        }    
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -195,6 +196,10 @@ namespace DVLD_WindowsForm
             }
         }
     
+        private void People_PersonAdded(object sender, EventArgs e)
+        {
+            _RefreshPeopleList();
+        }
     
     }
 }

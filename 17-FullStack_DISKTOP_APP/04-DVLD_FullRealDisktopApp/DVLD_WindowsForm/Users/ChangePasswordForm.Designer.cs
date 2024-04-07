@@ -45,7 +45,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.lbFirstName = new System.Windows.Forms.Label();
+            this.lbName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
@@ -58,9 +58,6 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.lbSecondName = new System.Windows.Forms.Label();
-            this.lbThirdName = new System.Windows.Forms.Label();
-            this.lbLastName = new System.Windows.Forms.Label();
             this.pbPersonImage = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -261,15 +258,15 @@
             this.label10.TabIndex = 151;
             this.label10.Text = "Is Active : ";
             // 
-            // lbFirstName
+            // lbName
             // 
-            this.lbFirstName.AutoSize = true;
-            this.lbFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFirstName.Location = new System.Drawing.Point(175, 75);
-            this.lbFirstName.Name = "lbFirstName";
-            this.lbFirstName.Size = new System.Drawing.Size(20, 17);
-            this.lbFirstName.TabIndex = 172;
-            this.lbFirstName.Text = "...";
+            this.lbName.AutoSize = true;
+            this.lbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbName.Location = new System.Drawing.Point(175, 75);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(20, 17);
+            this.lbName.TabIndex = 172;
+            this.lbName.Text = "...";
             // 
             // label2
             // 
@@ -291,7 +288,7 @@
             this.groupBox1.Controls.Add(this.lbAddress);
             this.groupBox1.Controls.Add(this.lbGendor);
             this.groupBox1.Controls.Add(this.lbNationalNo);
-            this.groupBox1.Controls.Add(this.lbFirstName);
+            this.groupBox1.Controls.Add(this.lbName);
             this.groupBox1.Controls.Add(this.lbPersonID);
             this.groupBox1.Controls.Add(this.pictureBox11);
             this.groupBox1.Controls.Add(this.label2);
@@ -304,9 +301,6 @@
             this.groupBox1.Controls.Add(this.pictureBox4);
             this.groupBox1.Controls.Add(this.pictureBox3);
             this.groupBox1.Controls.Add(this.pictureBox2);
-            this.groupBox1.Controls.Add(this.lbSecondName);
-            this.groupBox1.Controls.Add(this.lbThirdName);
-            this.groupBox1.Controls.Add(this.lbLastName);
             this.groupBox1.Controls.Add(this.pbPersonImage);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
@@ -424,36 +418,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 149;
             this.pictureBox2.TabStop = false;
-            // 
-            // lbSecondName
-            // 
-            this.lbSecondName.AutoSize = true;
-            this.lbSecondName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSecondName.Location = new System.Drawing.Point(244, 74);
-            this.lbSecondName.Name = "lbSecondName";
-            this.lbSecondName.Size = new System.Drawing.Size(20, 17);
-            this.lbSecondName.TabIndex = 160;
-            this.lbSecondName.Text = "...";
-            // 
-            // lbThirdName
-            // 
-            this.lbThirdName.AutoSize = true;
-            this.lbThirdName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbThirdName.Location = new System.Drawing.Point(334, 75);
-            this.lbThirdName.Name = "lbThirdName";
-            this.lbThirdName.Size = new System.Drawing.Size(20, 17);
-            this.lbThirdName.TabIndex = 159;
-            this.lbThirdName.Text = "...";
-            // 
-            // lbLastName
-            // 
-            this.lbLastName.AutoSize = true;
-            this.lbLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbLastName.Location = new System.Drawing.Point(416, 75);
-            this.lbLastName.Name = "lbLastName";
-            this.lbLastName.Size = new System.Drawing.Size(20, 17);
-            this.lbLastName.TabIndex = 158;
-            this.lbLastName.Text = "...";
             // 
             // pbPersonImage
             // 
@@ -691,7 +655,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label lbFirstName;
+        private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox4;
@@ -703,9 +667,6 @@
         private System.Windows.Forms.PictureBox pbManIcon;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label lbSecondName;
-        private System.Windows.Forms.Label lbThirdName;
-        private System.Windows.Forms.Label lbLastName;
         private System.Windows.Forms.PictureBox pbPersonImage;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;

@@ -91,24 +91,14 @@ INSERT INTO LicenseClasses (ClassName,ClassDescription,MinimumAllowedAge ,Defaul
 	('Class 5 - Agricultural',null,21,10,50),
 	('Class 6 - Small and medium bus',null,21,10,250),
 	('Class 7 - Truck and heavy vehicle',null,21,10,300)
+---------------------------------------------------------------
+INSERT INTO TestAppointments (TestTypeID,LDLApplicationID,AppointmentDate,PaidFees,CreatedByUserID,IsLocked)
+VALUES (1,1,GetDate(),10,1,0)
 
 
+Update Applications  
+                set ApplicationStatus = 1
 
-Update Pepole  
-                set FirstName = 'Ali', 
-                    SecondName ='Eid', 
-                    ThirdName = 'mo', 
-                    LastName = 'hassan', 
-                    Gander = 'M', 
-                    NationalID = '13244252', 
-                    Email = 'ali@gmail.com', 
-                    Phone ='01022342223', 
-                    Address ='str 123 egy', 
-                    DateOfBirth = GetDate(),
-                    NationaltyCountryID = 1,
-                    ImagePath ='E:\Test\images\friend-04.png'
-
-                                where PersonID = 3;
 
 --------------------------------------------------------
 

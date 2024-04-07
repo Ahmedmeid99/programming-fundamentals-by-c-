@@ -16,10 +16,14 @@ namespace DVLD_WindowsForm
         private clsPerson _Person;
 
         // ----------------------------------- 
-        // -----------[Delegation]------------ 
+        // -----------[Delegations]-----------
         // ----------------------------------- 
         public delegate void DataBackEventHandler(object sender, int PersonID);
         public event DataBackEventHandler DataBack;
+
+        
+        public delegate void PersonAddedEventHandler(object sender, EventArgs e);
+        public event PersonAddedEventHandler PersonAdded;
 
         // call this function when click btnclose
         private void SendDataBack(object sender,EventArgs e)
@@ -224,6 +228,8 @@ namespace DVLD_WindowsForm
         private void btnClose_Click(object sender, EventArgs e)
         {
             SendDataBack(sender,e);
+
+            PersonAdded?.Invoke(this, e);
             this.Close();
         }
     }

@@ -43,11 +43,16 @@
   <ItemGroup>
     <Compile Include="Applocations\clsApplication.cs" />
     <Compile Include="Applocations\clsApplicationType.cs" />
-    <Compile Include="Applocations\clsLicenseClass.cs" />
+    <Compile Include="Global\GlobalEnums.cs" />
+    <Compile Include="Global\GlobalVars.cs" />
+    <Compile Include="Licenses\clsLicense.cs" />
+    <Compile Include="Licenses\clsLicenseClass.cs" />
     <Compile Include="Applocations\clsLocalDLApplication.cs" />
-    <Compile Include="Applocations\Tests\clsTestType.cs" />
+    <Compile Include="Drivers\clsDriver.cs" />
+    <Compile Include="Tests\clsTest.cs" />
+    <Compile Include="Tests\clsTestAppointment.cs" />
+    <Compile Include="Tests\clsTestType.cs" />
     <Compile Include="People\Country.cs" />
-    <Compile Include="Global\Global.cs" />
     <Compile Include="Users\clsUsers.cs" />
     <Compile Include="People\PersonBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
