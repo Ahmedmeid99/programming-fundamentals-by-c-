@@ -77,12 +77,6 @@
     <Compile Include="Licenses\ShowLicenseForm.Designer.cs">
       <DependentUpon>ShowLicenseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Licenses\UCShowLicenseInfo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Licenses\UCShowLicenseInfo.Designer.cs">
-      <DependentUpon>UCShowLicenseInfo.cs</DependentUpon>
-    </Compile>
     <Compile Include="Drivers\ManageDriversForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,9 +229,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Licenses\ShowLicenseForm.resx">
       <DependentUpon>ShowLicenseForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Licenses\UCShowLicenseInfo.resx">
-      <DependentUpon>UCShowLicenseInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tests\MainTests\StreetTest\ManageStreetTestForm.resx">
       <DependentUpon>ManageStreetTestForm.cs</DependentUpon>
