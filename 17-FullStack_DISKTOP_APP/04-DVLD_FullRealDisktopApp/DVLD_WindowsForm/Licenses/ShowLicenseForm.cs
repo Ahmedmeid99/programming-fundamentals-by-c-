@@ -20,11 +20,11 @@ namespace DVLD_WindowsForm.Licenses
 
             _License = License;
 
-            ucShowLicenseInfo.FillControlsWithData(_License);
+            uC_ShoLicenseInfo.FillControlsWithData(_License);
 
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
         }

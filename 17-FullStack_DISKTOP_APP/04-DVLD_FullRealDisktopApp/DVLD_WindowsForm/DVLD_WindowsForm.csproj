@@ -71,6 +71,12 @@
     <Compile Include="Applications\LocalApplication\ManageLocalDLApplication.Designer.cs">
       <DependentUpon>ManageLocalDLApplication.cs</DependentUpon>
     </Compile>
+    <Compile Include="Licenses\LicensesHistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Licenses\LicensesHistoryForm.Designer.cs">
+      <DependentUpon>LicensesHistoryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Licenses\ShowLicenseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +88,12 @@
     </Compile>
     <Compile Include="Drivers\ManageDriversForm.Designer.cs">
       <DependentUpon>ManageDriversForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Licenses\UserControls\UC-ShoLicenseInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Licenses\UserControls\UC-ShoLicenseInfo.Designer.cs">
+      <DependentUpon>UC-ShoLicenseInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Tests\MainTests\StreetTest\ManageStreetTestForm.cs">
       <SubType>Form</SubType>
@@ -227,8 +239,14 @@
     <EmbeddedResource Include="Drivers\ManageDriversForm.resx">
       <DependentUpon>ManageDriversForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Licenses\LicensesHistoryForm.resx">
+      <DependentUpon>LicensesHistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Licenses\ShowLicenseForm.resx">
       <DependentUpon>ShowLicenseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Licenses\UserControls\UC-ShoLicenseInfo.resx">
+      <DependentUpon>UC-ShoLicenseInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tests\MainTests\StreetTest\ManageStreetTestForm.resx">
       <DependentUpon>ManageStreetTestForm.cs</DependentUpon>

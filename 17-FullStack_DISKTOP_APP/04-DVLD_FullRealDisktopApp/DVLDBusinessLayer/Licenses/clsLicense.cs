@@ -144,9 +144,14 @@ namespace DVLDBusinessLayer.Licenses
             return false;
         }
 
-        public static DataTable GetAllDrivers()
+        public static DataTable GetAllLicenses()
         {
             return LicenseDataAccess.GetAllLicenses();
+        }
+          
+        public static DataTable GetAllDriverLicenses(int DriverID)
+        {
+            return LicenseDataAccess.GetAllDriverLicenses(DriverID);
         }
 
         public static bool IsExists(int LicenseID)

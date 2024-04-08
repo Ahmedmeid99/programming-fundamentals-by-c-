@@ -38,5 +38,6 @@ E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisk
 E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Debug\DVLD_WindowsForm.Tests.MainTests.Test.TakeTestForm.resources
 E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Debug\DVLD_WindowsForm.Tests.MainTests.Test.AddEditTestAppointment.resources
 E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Debug\DVLD_WindowsForm.Licenses.ShowLicenseForm.resources
-E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Debug\DVLD_WindowsForm.Licenses.UCShowLicenseInfo.resources
 E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Debug\DVLD_WindowsForm.ManageDriversForm.resources
+E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Debug\DVLD_WindowsForm.Licenses.UserControls.UC_ShoLicenseInfo.resources
+E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Debug\DVLD_WindowsForm.Licenses.LicensesHistoryForm.resources

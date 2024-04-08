@@ -411,6 +411,12 @@ namespace DVLD_WindowsForm.Applications.LocalApplication
         private void cmShowPersonHistory_Click(object sender, EventArgs e)
         {
             // Show form
+            int LDLApplicationID = (int)dgvLDLApps.CurrentRow.Cells[0].Value;
+            clsLocalDLApplication LDLApplication = clsLocalDLApplication.Find(LDLApplicationID);
+            clsLicense License = clsLicense.FindByApplicationID(LDLApplication.ApplicationID);
+
+            LicensesHistoryForm frm = new LicensesHistoryForm(License);
+            frm.Show();
         }
     }
 }

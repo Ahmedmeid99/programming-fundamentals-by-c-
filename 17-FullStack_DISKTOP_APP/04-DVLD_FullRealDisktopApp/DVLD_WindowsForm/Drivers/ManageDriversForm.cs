@@ -53,7 +53,7 @@ namespace DVLD_WindowsForm
             else if (string.IsNullOrEmpty(txtFilter.Text))
                 FilterString = "";
 
-            else if (cmbFilter.Text == "DriverID" ||cmbFilter.Text == "PersonID" || cmbFilter.Text == "Active Licenses")
+            else if (cmbFilter.Text == "DriverID" ||cmbFilter.Text == "PersonID" || cmbFilter.Text == "Licenses") // Active Licenses
             {
                 if (txtFilter.Text != "")
                     FilterString = $"{cmbFilter.SelectedItem} = {txtFilter.Text}";

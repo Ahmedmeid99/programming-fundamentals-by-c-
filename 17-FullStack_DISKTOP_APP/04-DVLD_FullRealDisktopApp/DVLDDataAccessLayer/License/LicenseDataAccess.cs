@@ -354,7 +354,44 @@ namespace DVLDDataAccessLayer.License
             return dt;
 
         }
-    
-    
+
+        public static DataTable GetAllDriverLicenses(int DriverID)
+        {
+
+            SqlConnection connection = new SqlConnection(clsSettings.ConnectionString);
+
+            string query = "SELECT * FROM Licenses Where DriverID = @DriverID";
+
+            SqlCommand command = new SqlCommand(query, connection);
+            
+            command.Parameters.AddWithValue("@DriverID", DriverID);
+            
+            DataTable dt = new DataTable();
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.HasRows)
+
+                {
+                    dt.Load(reader);
+                }
+                reader.Close();
+
+
+            }
+            catch (Exception ex)
+            {
+                //Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return dt;
+
+        }
+
     }
 }

@@ -265,5 +265,7 @@ namespace DVLD_WindowsForm
             UserUpdated?.Invoke(this, e);
             this.Close();
         }
+
+        
     }
 }
