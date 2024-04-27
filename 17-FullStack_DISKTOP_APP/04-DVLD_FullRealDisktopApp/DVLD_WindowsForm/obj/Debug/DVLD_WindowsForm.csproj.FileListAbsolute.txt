@@ -41,3 +41,15 @@ E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisk
 E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Debug\DVLD_WindowsForm.ManageDriversForm.resources
 E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Debug\DVLD_WindowsForm.Licenses.UserControls.UC_ShoLicenseInfo.resources
 E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Debug\DVLD_WindowsForm.Licenses.LicensesHistoryForm.resources
+E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Debug\DVLD_WindowsForm.Applications.InternationalApplication.AddInternarionalAppForm.resources
+E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Debug\DVLD_WindowsForm.Applications.InternationalApplication.UserControls.UCInterApplicationInfo.resources
+E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Debug\DVLD_WindowsForm.Applications.InternationalApplication.ManageInternationalAppForm.resources
+E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Debug\DVLD_WindowsForm.Licenses.InternationalLicense.Controls.UCShowInternationalLicense.resources
+E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Debug\DVLD_WindowsForm.Licenses.InternationalLicense.InternationalLicenseInfoForm.resources
+E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Debug\DVLD_WindowsForm.Applications.RenewApplication.UserControls.UCRenewLicenseInfo.resources
+E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Debug\DVLD_WindowsForm.Applications.RenewLicenseApplication.RenewLocalDrivingLicense.resources
+E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Debug\DVLD_WindowsForm.Applications.ReplaceLicenseApp.UCReplacementApplication.resources
+E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Debug\DVLD_WindowsForm.Applications.ReplaceLicenseApp.ReplacementLicenseForm.resources
+E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Debug\DVLD_WindowsForm.Applications.Release_DetaineLicenseApp.DetainLicense.DetainLicenseForm.resources
+E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Debug\DVLD_WindowsForm.Applications.Release_DetaineLicenseApp.ReleaseLicense.ReleaseLicenseForm.resources
+E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\obj\Debug\DVLD_WindowsForm.Applications.Release_DetaineLicenseApp.ManageDetainedLicensesForm.resources

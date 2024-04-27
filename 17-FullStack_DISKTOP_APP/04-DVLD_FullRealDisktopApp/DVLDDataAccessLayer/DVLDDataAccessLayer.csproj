@@ -44,7 +44,10 @@
     <Compile Include="Applications\ApplicationDataAccess.cs" />
     <Compile Include="Applications\ApplicationType.cs" />
     <Compile Include="Dreiver\DriverDataAccess.cs" />
+    <Compile Include="License\DetainedLicenseDataAccess.cs" />
+    <Compile Include="License\InternationalLicenseDataAccess.cs" />
     <Compile Include="License\LicenseDataAccess.cs" />
+    <Compile Include="License\ReleasedLicenseDataAccess.cs" />
     <Compile Include="Tests\TestAppointmentDataAccess.cs" />
     <Compile Include="Tests\TestDataAccess.cs" />
     <Compile Include="Tests\TestTypeDataAccess.cs" />

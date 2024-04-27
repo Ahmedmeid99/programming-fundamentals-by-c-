@@ -76,15 +76,39 @@ FROM            Drivers INNER JOIN
                          Licenses ON Drivers.DriverID = Licenses.DriverID INNER JOIN
                          People ON Drivers.PersonID = People.PersonID
 ------------------------------------------------------------------------------------
+Create view DriversView AS
 SELECT	Drivers.DriverID, Drivers.PersonID, People.NationalNo,
-		FullName = People.FirstName +' '+ People.SecondName +' '+ People.ThirdName +' '+ People.LastName, 
-		count(Licenses.LicenseID) As 'Active Licenses'
-FROM	Drivers INNER JOIN
-                         Licenses ON Drivers.DriverID = Licenses.DriverID INNER JOIN
-                         People ON Drivers.PersonID = People.PersonID
+				FullName = People.FirstName +' '+ People.SecondName +' '+ People.ThirdName +' '+ People.LastName,
+				Drivers.CreatedDate as Date,
+		count(Licenses.LicenseID) As Active_Licenses
+FROM	Drivers
+		INNER JOIN People ON Drivers.PersonID = People.PersonID
+		
+		LEFT JOIN Licenses ON Drivers.DriverID = Licenses.DriverID And Licenses.IsActive = 1
+		GROUP BY Drivers.CreatedDate,People.FirstName,People.SecondName,People.ThirdName,People.LastName,People.NationalNo,Drivers.PersonID,Drivers.DriverID 
 ------------------------------------------------------------------------------------
+
+SELECT        Licenses.LicenseID, Licenses.ApplicationID, LicenseClasses.ClassName, Licenses.IssueDate, Licenses.ExpirationDate, Licenses.IsActive
+FROM            Licenses INNER JOIN
+                         LicenseClasses ON Licenses.LicenseClassID = LicenseClasses.LicenseClasseID and Licenses.DriverID =7
 ------------------------------------------------------------------------------------
-SELECT * FROM LicenseClasses WHERE LicenseClasseID = 1
+SELECT        InternationalLicenseID AS InterLicenseID, ApplicationID, DriverID, IssuedUsingLocalLicenseID AS L_LicenseID, IssueDate, ExpirationDate, IsActive
+FROM            InternationalLicenses;
+------------------------------------------------------------------------------------
+CREATE VIEW  DetainedLicensesView AS
+SELECT        DetainedLicenses.DetainID, DetainedLicenses.LicenseID, DetainedLicenses.DetainedDate, DetainedLicenses.IsReleased, DetainedLicenses.FineFees, ReleasedLicenses.ReleasedDate, People.NationalNo, 
+                         FullName = People.FirstName +' '+ People.SecondName +' '+ People.ThirdName +' '+ People.LastName,
+						 ReleasedLicenses.ReleaseApplicationID
+FROM            DetainedLicenses left JOIN
+                         ReleasedLicenses ON DetainedLicenses.DetainID = ReleasedLicenses.DetainID -- right join DetainedLicenses_View
+                         INNER JOIN People ON DetainedLicenses.PersonID = People.PersonID ;
+
+------------------------------------------------------------------------------------
+
+SELECT * FROM DetainedLicensesView;
+SELECT * FROM DetainedLicenses;
+SELECT * FROM Licenses;
+
 select * from UsersImportantInfo;
 select * from LocalDLAppFullInfo;
 select * from  LocalDLAppImportantInfo;
@@ -106,5 +130,6 @@ select * from dbo.Drivers;
 select * from dbo.InternationalLicenses;
 select * from dbo.LicenseClasses;
 select * from dbo.Licenses;
+
 select * from dbo.LocalDrivingLicenseApplications;
 select * from TestTypes;

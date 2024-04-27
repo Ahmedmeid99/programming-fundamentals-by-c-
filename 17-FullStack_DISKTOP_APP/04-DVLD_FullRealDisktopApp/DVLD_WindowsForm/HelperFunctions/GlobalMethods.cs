@@ -12,8 +12,16 @@ namespace DVLD_WindowsForm
         {
             switch (AppTypeID)
             {
-                case (byte)GlobalEnums.enApplicationType.NewLocalApp:
-                    return "First Time";
+                case (byte)GlobalEnums.enApplicationType.NewDrivingLicense:
+                    return "First Time";  
+                case (byte)GlobalEnums.enApplicationType.ReNewDrivingLicense:
+                    return "ReNew"; 
+                case (byte)GlobalEnums.enApplicationType.NewInternationalLicense:
+                    return "First Time";       
+                case (byte)GlobalEnums.enApplicationType.ReplaceDamagedDrivingLicense:
+                    return "Replacement for Damage";       
+                case (byte)GlobalEnums.enApplicationType.ReplaceLostDrivingLicense:
+                    return "Replacement for Lost";
                 case (byte)GlobalEnums.enApplicationType.ReTakeTest:
                     return "ReTake Test";
                 default:

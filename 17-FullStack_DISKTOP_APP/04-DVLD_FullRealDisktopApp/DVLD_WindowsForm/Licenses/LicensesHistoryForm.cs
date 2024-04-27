@@ -1,4 +1,5 @@
-﻿using DVLDBusinessLayer;
+﻿using DVLD_WindowsForm.Licenses.InternationalLicense;
+using DVLDBusinessLayer;
 using DVLDBusinessLayer.Licenses;
 using System;
 using System.Collections.Generic;
@@ -24,7 +25,12 @@ namespace DVLD_WindowsForm.Licenses
         {
             InitializeComponent();
 
-            if(License == null)
+            // CenterToParent this form
+            this.StartPosition = FormStartPosition.CenterScreen;
+            dgvLocalLicenses.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvInterLicense.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            if (License == null)
                 return;
 
             this.License = License;
@@ -34,7 +40,7 @@ namespace DVLD_WindowsForm.Licenses
             this.PersonID = Person.PersonID;
 
             _SetPersonInformation();
-            _SetLocalLicensesList();
+            _SetLicensesList();
 
         }
         private void _SetPersonInformation()
@@ -66,11 +72,25 @@ namespace DVLD_WindowsForm.Licenses
             _HandleCountry(Person.CountryID);
         }
        
+       
         private void _SetLocalLicensesList()
         {
             dgvLocalLicenses.DataSource = clsLicense.GetAllDriverLicenses(License.DriverInfo.DriverID);
             lbLocslLicenseCount.Text = dgvLocalLicenses.RowCount.ToString();
+        } 
+        
+        private void _SetInterLicensesList()
+        {
+            dgvInterLicense.DataSource = clsInternationalLicense.GetDriverInternationalLicenses(License.DriverInfo.DriverID);
+            lbInterLicenseCount.Text = dgvInterLicense.RowCount.ToString();
+        } 
+        
+        private void _SetLicensesList()
+        {
+            _SetLocalLicensesList();
+            _SetInterLicensesList();
         }
+        
         private void _HandelImage(string ImagePath, string GendorChar)
         {
             try
@@ -114,6 +134,19 @@ namespace DVLD_WindowsForm.Licenses
             this.Close();
         }
 
-       
+        private void cmShowLocalLicense_Click(object sender, EventArgs e)
+        {
+            int LicenseID = (int)dgvLocalLicenses.CurrentRow.Cells[0].Value;
+            clsLicense License = clsLicense.Find(LicenseID);
+            ShowLicenseForm frm = new ShowLicenseForm(License);
+            frm.Show();
+        }  
+        private void cmShowInterLicense_Click(object sender, EventArgs e)
+        {
+            int InterLicenseID = (int)dgvInterLicense.CurrentRow.Cells[0].Value;
+
+            InternationalLicenseInfoForm frm = new InternationalLicenseInfoForm(InterLicenseID);
+            frm.Show();
+        }
     }
 }

@@ -53,7 +53,7 @@ namespace DVLD_WindowsForm
             else if (string.IsNullOrEmpty(txtFilter.Text))
                 FilterString = "";
 
-            else if (cmbFilter.Text == "DriverID" ||cmbFilter.Text == "PersonID" || cmbFilter.Text == "Licenses") // Active Licenses
+            else if (cmbFilter.Text == "DriverID" ||cmbFilter.Text == "PersonID" || cmbFilter.Text == "Active_Licenses") // Active Licenses
             {
                 if (txtFilter.Text != "")
                     FilterString = $"{cmbFilter.SelectedItem} = {txtFilter.Text}";
@@ -163,7 +163,7 @@ namespace DVLD_WindowsForm
 
         private void txtFilter_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (cmbFilter.Text == "DriverID" || cmbFilter.Text == "Phone")
+            if (cmbFilter.Text == "DriverID" || cmbFilter.Text == "PersonID"|| cmbFilter.Text == "Active_Licenses")
             {
 
                 if (!GlobalMethods.CheckIsDigit(e))

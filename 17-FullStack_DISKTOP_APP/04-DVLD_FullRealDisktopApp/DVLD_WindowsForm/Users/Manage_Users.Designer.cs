@@ -32,7 +32,6 @@
             this.txtFilter = new System.Windows.Forms.TextBox();
             this.cmbFilter = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnRefresh = new System.Windows.Forms.Button();
             this.lbUsersCount = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,25 +42,25 @@
             this.mbtnAddNewUser = new System.Windows.Forms.ToolStripMenuItem();
             this.mbtnEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.mbtnDelete = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmChangePassword = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.mbtnSendEmail = new System.Windows.Forms.ToolStripMenuItem();
             this.mbtnPhoneCall = new System.Windows.Forms.ToolStripMenuItem();
             this.label4 = new System.Windows.Forms.Label();
             this.cmbActive = new System.Windows.Forms.ComboBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pbAddNewUser = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             this.cmpUser.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAddNewUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtFilter
             // 
-            this.txtFilter.Location = new System.Drawing.Point(237, 169);
+            this.txtFilter.Location = new System.Drawing.Point(267, 169);
             this.txtFilter.Name = "txtFilter";
-            this.txtFilter.Size = new System.Drawing.Size(121, 20);
+            this.txtFilter.Size = new System.Drawing.Size(140, 20);
             this.txtFilter.TabIndex = 19;
             this.txtFilter.TextChanged += new System.EventHandler(this.txtFilter_TextChanged);
             this.txtFilter.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFilter_KeyPress);
@@ -71,7 +70,7 @@
             this.cmbFilter.FormattingEnabled = true;
             this.cmbFilter.Location = new System.Drawing.Point(101, 169);
             this.cmbFilter.Name = "cmbFilter";
-            this.cmbFilter.Size = new System.Drawing.Size(130, 21);
+            this.cmbFilter.Size = new System.Drawing.Size(160, 21);
             this.cmbFilter.TabIndex = 18;
             this.cmbFilter.SelectedIndexChanged += new System.EventHandler(this.cmbFilter_SelectedIndexChanged);
             // 
@@ -84,16 +83,6 @@
             this.label3.Size = new System.Drawing.Size(70, 17);
             this.label3.TabIndex = 17;
             this.label3.Text = "Filter By : ";
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Location = new System.Drawing.Point(364, 168);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(57, 21);
-            this.btnRefresh.TabIndex = 16;
-            this.btnRefresh.Text = "Refresh";
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // lbUsersCount
             // 
@@ -147,31 +136,31 @@
             this.mbtnAddNewUser,
             this.mbtnEdit,
             this.mbtnDelete,
-            this.toolStripMenuItem2,
+            this.cmChangePassword,
             this.toolStripMenuItem1,
             this.mbtnSendEmail,
             this.mbtnPhoneCall});
             this.cmpUser.Name = "contextMenuStrip1";
-            this.cmpUser.Size = new System.Drawing.Size(169, 170);
+            this.cmpUser.Size = new System.Drawing.Size(181, 192);
             // 
             // sToolStripMenuItem
             // 
             this.sToolStripMenuItem.Image = global::DVLD_WindowsForm.Properties.Resources.PersonDetails_321;
             this.sToolStripMenuItem.Name = "sToolStripMenuItem";
-            this.sToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.sToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.sToolStripMenuItem.Text = "Show Details";
             this.sToolStripMenuItem.Click += new System.EventHandler(this.sToolStripMenuItem_Click);
             // 
             // mbtnShowUserInfo
             // 
             this.mbtnShowUserInfo.Name = "mbtnShowUserInfo";
-            this.mbtnShowUserInfo.Size = new System.Drawing.Size(165, 6);
+            this.mbtnShowUserInfo.Size = new System.Drawing.Size(177, 6);
             // 
             // mbtnAddNewUser
             // 
             this.mbtnAddNewUser.Image = global::DVLD_WindowsForm.Properties.Resources.Add_Person_40;
             this.mbtnAddNewUser.Name = "mbtnAddNewUser";
-            this.mbtnAddNewUser.Size = new System.Drawing.Size(168, 22);
+            this.mbtnAddNewUser.Size = new System.Drawing.Size(180, 22);
             this.mbtnAddNewUser.Text = "Add New User";
             this.mbtnAddNewUser.Click += new System.EventHandler(this.mbtnAddNewUser_Click);
             // 
@@ -179,7 +168,7 @@
             // 
             this.mbtnEdit.Image = global::DVLD_WindowsForm.Properties.Resources.edit_32;
             this.mbtnEdit.Name = "mbtnEdit";
-            this.mbtnEdit.Size = new System.Drawing.Size(168, 22);
+            this.mbtnEdit.Size = new System.Drawing.Size(180, 22);
             this.mbtnEdit.Text = "Edit";
             this.mbtnEdit.Click += new System.EventHandler(this.mbtnEdit_Click);
             // 
@@ -187,28 +176,28 @@
             // 
             this.mbtnDelete.Image = global::DVLD_WindowsForm.Properties.Resources.Delete_32;
             this.mbtnDelete.Name = "mbtnDelete";
-            this.mbtnDelete.Size = new System.Drawing.Size(168, 22);
+            this.mbtnDelete.Size = new System.Drawing.Size(180, 22);
             this.mbtnDelete.Text = "Delete";
             this.mbtnDelete.Click += new System.EventHandler(this.mbtnDelete_Click);
             // 
-            // toolStripMenuItem2
+            // cmChangePassword
             // 
-            this.toolStripMenuItem2.Image = global::DVLD_WindowsForm.Properties.Resources.Password_32;
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(168, 22);
-            this.toolStripMenuItem2.Text = "Change Password";
-            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
+            this.cmChangePassword.Image = global::DVLD_WindowsForm.Properties.Resources.Password_32;
+            this.cmChangePassword.Name = "cmChangePassword";
+            this.cmChangePassword.Size = new System.Drawing.Size(180, 22);
+            this.cmChangePassword.Text = "Change Password";
+            this.cmChangePassword.Click += new System.EventHandler(this.cmChangePassword_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(165, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
             // 
             // mbtnSendEmail
             // 
             this.mbtnSendEmail.Image = global::DVLD_WindowsForm.Properties.Resources.send_email_32;
             this.mbtnSendEmail.Name = "mbtnSendEmail";
-            this.mbtnSendEmail.Size = new System.Drawing.Size(168, 22);
+            this.mbtnSendEmail.Size = new System.Drawing.Size(180, 22);
             this.mbtnSendEmail.Text = "Send Email";
             this.mbtnSendEmail.Click += new System.EventHandler(this.mbtnSendEmail_Click);
             // 
@@ -216,7 +205,7 @@
             // 
             this.mbtnPhoneCall.Image = global::DVLD_WindowsForm.Properties.Resources.call_32;
             this.mbtnPhoneCall.Name = "mbtnPhoneCall";
-            this.mbtnPhoneCall.Size = new System.Drawing.Size(168, 22);
+            this.mbtnPhoneCall.Size = new System.Drawing.Size(180, 22);
             this.mbtnPhoneCall.Text = "Phone Call";
             this.mbtnPhoneCall.Click += new System.EventHandler(this.mbtnPhoneCall_Click);
             // 
@@ -237,23 +226,23 @@
             "All",
             "Yes",
             "No"});
-            this.cmbActive.Location = new System.Drawing.Point(237, 168);
+            this.cmbActive.Location = new System.Drawing.Point(267, 168);
             this.cmbActive.Name = "cmbActive";
-            this.cmbActive.Size = new System.Drawing.Size(121, 21);
+            this.cmbActive.Size = new System.Drawing.Size(140, 21);
             this.cmbActive.TabIndex = 23;
             this.cmbActive.SelectedIndexChanged += new System.EventHandler(this.cmbActive_SelectedIndexChanged);
             // 
-            // pictureBox2
+            // pbAddNewUser
             // 
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Image = global::DVLD_WindowsForm.Properties.Resources.Add_New_User_32;
-            this.pictureBox2.Location = new System.Drawing.Point(995, 159);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(55, 35);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 21;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click_1);
+            this.pbAddNewUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbAddNewUser.Image = global::DVLD_WindowsForm.Properties.Resources.Add_New_User_32;
+            this.pbAddNewUser.Location = new System.Drawing.Point(995, 159);
+            this.pbAddNewUser.Name = "pbAddNewUser";
+            this.pbAddNewUser.Size = new System.Drawing.Size(55, 35);
+            this.pbAddNewUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbAddNewUser.TabIndex = 21;
+            this.pbAddNewUser.TabStop = false;
+            this.pbAddNewUser.Click += new System.EventHandler(this.mbtnAddNewUser_Click);
             // 
             // pictureBox1
             // 
@@ -271,12 +260,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1062, 473);
             this.Controls.Add(this.cmbActive);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pbAddNewUser);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtFilter);
             this.Controls.Add(this.cmbFilter);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.lbUsersCount);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -288,7 +276,7 @@
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFilter_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).EndInit();
             this.cmpUser.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAddNewUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -300,14 +288,13 @@
         private System.Windows.Forms.TextBox txtFilter;
         private System.Windows.Forms.ComboBox cmbFilter;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Label lbUsersCount;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView dgvUsers;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pbAddNewUser;
         private System.Windows.Forms.ContextMenuStrip cmpUser;
         private System.Windows.Forms.ToolStripMenuItem sToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator mbtnShowUserInfo;
@@ -318,6 +305,6 @@
         private System.Windows.Forms.ToolStripMenuItem mbtnSendEmail;
         private System.Windows.Forms.ToolStripMenuItem mbtnPhoneCall;
         private System.Windows.Forms.ComboBox cmbActive;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem cmChangePassword;
     }
 }

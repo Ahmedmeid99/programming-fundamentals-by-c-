@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.cmpLocalLicense = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cmShowLicense = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dgvLocalLicenses = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
@@ -72,8 +75,11 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pbPersonImage = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cmpInterLicense = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            this.cmpLocalLicense.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLocalLicenses)).BeginInit();
             this.tabPage2.SuspendLayout();
@@ -90,6 +96,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPersonImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.cmpInterLicense.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -115,6 +122,7 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.ContextMenuStrip = this.cmpLocalLicense;
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Location = new System.Drawing.Point(6, 19);
@@ -122,6 +130,21 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1082, 216);
             this.tabControl1.TabIndex = 18;
+            // 
+            // cmpLocalLicense
+            // 
+            this.cmpLocalLicense.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cmShowLicense});
+            this.cmpLocalLicense.Name = "contextMenuStrip1";
+            this.cmpLocalLicense.Size = new System.Drawing.Size(184, 26);
+            // 
+            // cmShowLicense
+            // 
+            this.cmShowLicense.Image = global::DVLD_WindowsForm.Properties.Resources.License_View_32;
+            this.cmShowLicense.Name = "cmShowLicense";
+            this.cmShowLicense.Size = new System.Drawing.Size(183, 22);
+            this.cmShowLicense.Text = "Show License Details";
+            this.cmShowLicense.Click += new System.EventHandler(this.cmShowLocalLicense_Click);
             // 
             // tabPage1
             // 
@@ -144,7 +167,9 @@
             this.dgvLocalLicenses.AllowUserToResizeColumns = false;
             this.dgvLocalLicenses.AllowUserToResizeRows = false;
             this.dgvLocalLicenses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLocalLicenses.ContextMenuStrip = this.cmpLocalLicense;
             this.dgvLocalLicenses.Location = new System.Drawing.Point(19, 40);
+            this.dgvLocalLicenses.MultiSelect = false;
             this.dgvLocalLicenses.Name = "dgvLocalLicenses";
             this.dgvLocalLicenses.ReadOnly = true;
             this.dgvLocalLicenses.Size = new System.Drawing.Size(1036, 113);
@@ -201,6 +226,7 @@
             this.dgvInterLicense.AllowUserToResizeColumns = false;
             this.dgvInterLicense.AllowUserToResizeRows = false;
             this.dgvInterLicense.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInterLicense.ContextMenuStrip = this.cmpInterLicense;
             this.dgvInterLicense.Location = new System.Drawing.Point(20, 40);
             this.dgvInterLicense.MultiSelect = false;
             this.dgvInterLicense.Name = "dgvInterLicense";
@@ -252,7 +278,7 @@
             // 
             this.lbDateOfBirth.AutoSize = true;
             this.lbDateOfBirth.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDateOfBirth.Location = new System.Drawing.Point(510, 122);
+            this.lbDateOfBirth.Location = new System.Drawing.Point(508, 141);
             this.lbDateOfBirth.Name = "lbDateOfBirth";
             this.lbDateOfBirth.Size = new System.Drawing.Size(21, 19);
             this.lbDateOfBirth.TabIndex = 179;
@@ -262,7 +288,7 @@
             // 
             this.lbPhone.AutoSize = true;
             this.lbPhone.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPhone.Location = new System.Drawing.Point(510, 156);
+            this.lbPhone.Location = new System.Drawing.Point(508, 175);
             this.lbPhone.Name = "lbPhone";
             this.lbPhone.Size = new System.Drawing.Size(21, 19);
             this.lbPhone.TabIndex = 178;
@@ -272,7 +298,7 @@
             // 
             this.lbCountry.AutoSize = true;
             this.lbCountry.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCountry.Location = new System.Drawing.Point(510, 188);
+            this.lbCountry.Location = new System.Drawing.Point(508, 207);
             this.lbCountry.Name = "lbCountry";
             this.lbCountry.Size = new System.Drawing.Size(21, 19);
             this.lbCountry.TabIndex = 177;
@@ -282,7 +308,7 @@
             // 
             this.lbEmail.AutoSize = true;
             this.lbEmail.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEmail.Location = new System.Drawing.Point(159, 176);
+            this.lbEmail.Location = new System.Drawing.Point(159, 108);
             this.lbEmail.Name = "lbEmail";
             this.lbEmail.Size = new System.Drawing.Size(21, 19);
             this.lbEmail.TabIndex = 176;
@@ -312,7 +338,7 @@
             // 
             this.lbNationalNo.AutoSize = true;
             this.lbNationalNo.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNationalNo.Location = new System.Drawing.Point(159, 113);
+            this.lbNationalNo.Location = new System.Drawing.Point(159, 175);
             this.lbNationalNo.Name = "lbNationalNo";
             this.lbNationalNo.Size = new System.Drawing.Size(21, 19);
             this.lbNationalNo.TabIndex = 173;
@@ -352,7 +378,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(349, 156);
+            this.label9.Location = new System.Drawing.Point(347, 175);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(113, 19);
             this.label9.TabIndex = 156;
@@ -362,7 +388,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(349, 188);
+            this.label8.Location = new System.Drawing.Point(347, 207);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(113, 19);
             this.label8.TabIndex = 155;
@@ -372,7 +398,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(15, 114);
+            this.label7.Location = new System.Drawing.Point(15, 176);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(97, 19);
             this.label7.TabIndex = 154;
@@ -392,7 +418,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(15, 176);
+            this.label11.Location = new System.Drawing.Point(15, 108);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(99, 19);
             this.label11.TabIndex = 152;
@@ -412,7 +438,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(349, 122);
+            this.label13.Location = new System.Drawing.Point(347, 141);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(114, 19);
             this.label13.TabIndex = 150;
@@ -479,7 +505,7 @@
             // pictureBox9
             // 
             this.pictureBox9.Image = global::DVLD_WindowsForm.Properties.Resources.Calendar_32;
-            this.pictureBox9.Location = new System.Drawing.Point(469, 122);
+            this.pictureBox9.Location = new System.Drawing.Point(467, 141);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(26, 17);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -489,7 +515,7 @@
             // pictureBox8
             // 
             this.pictureBox8.Image = global::DVLD_WindowsForm.Properties.Resources.Phone_32;
-            this.pictureBox8.Location = new System.Drawing.Point(469, 154);
+            this.pictureBox8.Location = new System.Drawing.Point(467, 173);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(26, 19);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -499,7 +525,7 @@
             // pictureBox7
             // 
             this.pictureBox7.Image = global::DVLD_WindowsForm.Properties.Resources.Country_32;
-            this.pictureBox7.Location = new System.Drawing.Point(469, 188);
+            this.pictureBox7.Location = new System.Drawing.Point(467, 207);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(26, 17);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -509,7 +535,7 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = global::DVLD_WindowsForm.Properties.Resources.Number_32;
-            this.pictureBox6.Location = new System.Drawing.Point(118, 113);
+            this.pictureBox6.Location = new System.Drawing.Point(118, 175);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(26, 17);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -529,7 +555,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::DVLD_WindowsForm.Properties.Resources.Email_32;
-            this.pictureBox4.Location = new System.Drawing.Point(118, 176);
+            this.pictureBox4.Location = new System.Drawing.Point(118, 108);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(26, 17);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -576,6 +602,21 @@
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
             // 
+            // cmpInterLicense
+            // 
+            this.cmpInterLicense.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1});
+            this.cmpInterLicense.Name = "contextMenuStrip1";
+            this.cmpInterLicense.Size = new System.Drawing.Size(184, 26);
+            this.cmpInterLicense.Click += new System.EventHandler(this.cmShowInterLicense_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Image = global::DVLD_WindowsForm.Properties.Resources.License_View_32;
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(183, 22);
+            this.toolStripMenuItem1.Text = "Show License Details";
+            // 
             // LicensesHistoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -590,6 +631,7 @@
             this.Text = "LicensesHisoryForm";
             this.groupBox1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
+            this.cmpLocalLicense.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLocalLicenses)).EndInit();
@@ -609,6 +651,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPersonImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.cmpInterLicense.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -660,5 +703,9 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ContextMenuStrip cmpLocalLicense;
+        private System.Windows.Forms.ToolStripMenuItem cmShowLicense;
+        private System.Windows.Forms.ContextMenuStrip cmpInterLicense;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     }
 }

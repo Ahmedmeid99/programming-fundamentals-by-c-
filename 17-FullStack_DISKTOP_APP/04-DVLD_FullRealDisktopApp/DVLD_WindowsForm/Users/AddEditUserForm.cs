@@ -272,25 +272,82 @@ namespace DVLD_WindowsForm
             txtPassword.Text = User.Password;
             txtConfirmPassword.Text = User.Password;
             ckbActive.Checked = User.Active;
+
+            _SetPermission(User.Permission);  // NEED FIX <<
         }
 
         private void _FillControlsWithData()
         {
-            //--------------------------------
-            // if use edit button
-            //-------------------------------- 
-            
-            //--------------------------------
-            // if use filter
-            // person = PersonDataView[0] 
-            //--------------------------------
-            
+                       
             // Fill ather data if you need
             _PersonID = _User.PersonID;
             _Person = clsPerson.Find(_PersonID);
 
             _FillPersonControls(_Person);
             _FillUserControls(_User);
+
+
+        }
+
+        private int _GetPermission()
+        {
+            int Permissions = 0;
+
+            if(cbAllPermission.Checked)
+                return (int)GlobalEnums.enUserPermission.AllPermission;
+            
+            if (cmAddEditUsers.Checked)
+                Permissions += (int)GlobalEnums.enUserPermission.AddEditUsers;
+
+            if (cmDeleteUsers.Checked)
+                Permissions += (int)GlobalEnums.enUserPermission.DeleteUsers;
+
+            if(cmEditTestTypes.Checked)
+                Permissions += (int)GlobalEnums.enUserPermission.EditTestTypes;
+
+            if(cmEditApplicationTypes.Checked)
+                Permissions += (int)GlobalEnums.enUserPermission.EditApplicationTypes;
+
+            if(cmManageDetainedLicenses.Checked)
+                Permissions += (int)GlobalEnums.enUserPermission.ManageDetainedLicenses;
+
+            if(cmManageDrivers.Checked)
+                Permissions += (int)GlobalEnums.enUserPermission.ManageDrivers;
+            
+            
+            return Permissions;
+        }
+        private void _SetPermission(int Permissions)
+        {
+            if (Permissions == (int) GlobalEnums.enUserPermission.AllPermission)
+            {
+                cbAllPermission.Checked = true;
+                cmDeleteUsers.Checked = true;
+                cmAddEditUsers.Checked = true;
+                cmManageDrivers.Checked = true;
+                cmEditTestTypes.Checked = true;
+                cmEditApplicationTypes.Checked = true;
+                cmManageDetainedLicenses.Checked = true;
+                return;
+            }
+
+            if(( (int)GlobalEnums.enUserPermission.AddEditUsers & Permissions) == (int)GlobalEnums.enUserPermission.AddEditUsers)
+                cmAddEditUsers.Checked = true;
+
+            if(((int)GlobalEnums.enUserPermission.DeleteUsers & Permissions) == (int)GlobalEnums.enUserPermission.DeleteUsers)
+                cmDeleteUsers.Checked = true;
+
+            if (((int)GlobalEnums.enUserPermission.EditApplicationTypes & Permissions) == (int)GlobalEnums.enUserPermission.EditApplicationTypes)
+                cmEditApplicationTypes.Checked = true;
+
+            if (((int)GlobalEnums.enUserPermission.EditTestTypes & Permissions) == (int)GlobalEnums.enUserPermission.EditTestTypes)
+                cmEditTestTypes.Checked = true;
+
+            if (((int)GlobalEnums.enUserPermission.ManageDetainedLicenses & Permissions) == (int)GlobalEnums.enUserPermission.ManageDetainedLicenses)
+                cmManageDetainedLicenses.Checked = true;
+
+            if (((int)GlobalEnums.enUserPermission.ManageDrivers & Permissions) == (int)GlobalEnums.enUserPermission.ManageDrivers)
+                cmManageDrivers.Checked = true;
 
 
         }
@@ -303,7 +360,7 @@ namespace DVLD_WindowsForm
             User.PersonID = _PersonID;
             User.UserName   = txtUserName.Text;
             User.Password    =txtPassword.Text;
-            User.Permission = -1;
+            User.Permission = _GetPermission(); ; // NEED FIX <<
             User.Active = ckbActive.Checked;
 
 
@@ -527,6 +584,17 @@ namespace DVLD_WindowsForm
             // find person
             _Person = clsPerson.Find(this._PersonID);
             _FillPersonControls(this._Person);
+        }
+
+        private void cbAllPermission_CheckedChanged(object sender, EventArgs e)
+        {
+            bool allStatus = cbAllPermission.Checked;
+            cmDeleteUsers.Checked = allStatus;
+            cmAddEditUsers.Checked = allStatus;
+            cmManageDrivers.Checked = allStatus;
+            cmEditTestTypes.Checked = allStatus;
+            cmEditApplicationTypes.Checked = allStatus;
+            cmManageDetainedLicenses.Checked = allStatus;
         }
     }
 }

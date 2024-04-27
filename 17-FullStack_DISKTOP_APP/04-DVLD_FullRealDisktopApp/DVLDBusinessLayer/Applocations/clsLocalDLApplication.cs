@@ -71,13 +71,11 @@ namespace DVLDBusinessLayer
             // add this object to database
             // in AddNew Mode 
             // add Genral application then Find it to add localApplication 
-            if (!IsExists(this.ApplicationPersonID, this.LicenseClassID))
-            {
-                this.ApplicationID = clsLocalDLApplication.AddNewGlobalApplication(this.ApplicationPersonID, this.ApplicationDate, this.ApplicationTypeID, this.lastStatusDate, this.ApplicationStatus, this.PassedTests, this.PaidFees, this.CreatedByUserID);
+            
+            this.ApplicationID = clsLocalDLApplication.AddNewGlobalApplication(this.ApplicationPersonID, this.ApplicationDate, this.ApplicationTypeID, this.lastStatusDate, this.ApplicationStatus, this.PassedTests, this.PaidFees, this.CreatedByUserID);
 
-                if (ApplicationID == -1)
-                    return false;
-            }
+            if (ApplicationID == -1)
+                return false;
 
             if (!IsExists(this.LocaLDLApplicationID))
             {
@@ -113,6 +111,22 @@ namespace DVLDBusinessLayer
 
 
             if(LocalDrivingLicenseAppDataAccess.GetLocalApplicationByID(LocaLDLApplicationID, ref ApplicationID, ref LicenseClassID, ref ApplicationPersonID, ref ApplicationDate, ref ApplicationTypeID, ref lastStatusDate, ref ApplicationStatus, ref PassedTests, ref PaidFees, ref CreatedByUserID)) 
+            {
+                return new clsLocalDLApplication(ApplicationID, ApplicationPersonID, ApplicationDate, ApplicationTypeID, lastStatusDate, ApplicationStatus, PassedTests, PaidFees, CreatedByUserID ,LocaLDLApplicationID, LicenseClassID);
+            }
+            else 
+                return null;
+        } 
+        public static clsLocalDLApplication FindLocalAppByApp(int ApplicationID)
+        {
+
+            int  LocaLDLApplicationID= -1,ApplicationPersonID = -1, CreatedByUserID = -1;
+            byte LicenseClassID = 0,ApplicationTypeID = 0, ApplicationStatus = 0, PassedTests = 0;
+            double PaidFees = -1;
+            DateTime ApplicationDate = DateTime.Now , lastStatusDate=DateTime.Now;
+
+
+            if(LocalDrivingLicenseAppDataAccess.GetLocalApplicationByAppID( ApplicationID, ref LocaLDLApplicationID, ref LicenseClassID, ref ApplicationPersonID, ref ApplicationDate, ref ApplicationTypeID, ref lastStatusDate, ref ApplicationStatus, ref PassedTests, ref PaidFees, ref CreatedByUserID)) 
             {
                 return new clsLocalDLApplication(ApplicationID, ApplicationPersonID, ApplicationDate, ApplicationTypeID, lastStatusDate, ApplicationStatus, PassedTests, PaidFees, CreatedByUserID ,LocaLDLApplicationID, LicenseClassID);
             }

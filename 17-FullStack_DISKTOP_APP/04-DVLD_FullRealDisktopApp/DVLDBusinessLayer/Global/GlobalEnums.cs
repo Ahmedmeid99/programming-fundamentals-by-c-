@@ -11,10 +11,15 @@ namespace DVLDBusinessLayer
             CancledApplication = 2 ,
             CompletedApplication = 3 
         } 
-        public enum enUserStatus : byte     // for just test
+        public enum enUserPermission : int     // for just test
         {
-            NotActive = 0,
-            Active = 1 
+            AllPermission   = -1,
+            AddEditUsers    =  2,
+            DeleteUsers     =  4,
+            EditTestTypes   =  16,
+            ManageDrivers   =  32,
+            EditApplicationTypes = 8,
+            ManageDetainedLicenses  = 64
         }   
         public enum enApplicationPassedTests : byte
         {
@@ -30,16 +35,32 @@ namespace DVLDBusinessLayer
             StreetTest = 3 
         }
 
-        public enum enApplicationType : byte
+        public enum enApplicationType : byte   // issuereson
         {
-            NewLocalApp = 1 ,
-            ReTakeTest= 6
+            NewDrivingLicense = 1 ,
+            ReNewDrivingLicense = 2 ,
+            ReplaceLostDrivingLicense = 3,
+            ReplaceDamagedDrivingLicense = 4,
+            ReleaseDetainedLicense = 5 ,
+            NewInternationalLicense = 6 ,
+            ReTakeTest= 7
         } 
         
         public enum enTestResult : byte
         {
             Faild = 0,
             Passed = 1
+        }  
+        
+        public enum enLicenseClasses : byte
+        {
+            Class_1_SmallMotorcycle = 1,
+            Class_2_HeavyMotorcycleLicense = 2,
+            Class_3_OrdinaryDivingLicense  = 3,
+            Class_4_Commerical   = 4,
+            Class_5_Agricultural  = 5,
+            Class_6_SmallandMediumbus  = 6,
+            Class_7_TruckandHeavyVehicle = 7
         }
 
     }

@@ -104,6 +104,7 @@ Create Table LocalDrivingLicenseApplications
 
 		primary key(LocalDrivingLicenseApplicationID)
 	);
+
 -------------------------------------------
 SELECT Top 1* FROM TestAppointments WHERE LDLApplicationID = 1008 and TestTypeID = 1 ORDER BY AppointmentDate Desc
 delete TestAppointments where TestTypeID =1;
@@ -143,10 +144,17 @@ Create Table Drivers
 		primary key(DriverID)
 	);
 -------------------------------------------
+
+
+Alter table Licenses 
+Add constraint  LocalApplicationID
+foreign key (LocalDrivingLicenseApplicationID  )
+References LocalDrivingLicenseApplications(LocalDrivingLicenseApplicationID)
+select * from Licenses 
 Create Table Licenses 
 	(
 		LicenseID int identity(1,1) not null,
-		ApplicationID int References Applications(ApplicationID) not null,
+		ApplicationID int References LocalDrivingLicenseApplications(LocalDrivingLicenseApplicationID) not null,
 		DriverID int References Drivers(DriverID) not null,
 		LicenseClassID int References LicenseClasses(LicenseClasseID) not null,
 		IssueDate DateTime not null,
@@ -154,24 +162,88 @@ Create Table Licenses
 		Notes nvarchar(1500) null,
 		PaidFees smallMoney not null,
 		IsActive Bit not null,
+		IsDetained Bit null Default 0,
 		IssueReason tinyint Not null,
 		CreatedByUserID int References Users(UserID) not null
 
 		primary key(LicenseID)
 	);
 -------------------------------------------
--------------------------------------------
--------------------------------------------
+Create Table InternationalLicenses
+	(
+		InternationalLicenseID int identity(1,1) not null,
+		ApplicationID int References Applications(ApplicationID) not null,
+		DriverID int References Drivers(DriverID) not null,
+		IssuedUsingLocalLicenseID int References Licenses(LicenseID) not null,
+		IssueDate DateTime not null,
+		ExpirationDate DateTime not null,
+		IsActive Bit not null,
+		CreatedByUserID int References Users(UserID) not null
+
+		primary key(InternationalLicenseID)
+	);
+
+------------------------------------------------------------
+--Get constraint_name to remove References then drop table
+------------------------------------------------------------
+select constraint_name from INFORMATION_SCHEMA.TABLE_CONSTRAINTS where Table_name = 'ReleasedLicenses' ;
+
+alter table ReleasedLicenses
+drop constraint  FK__ReleasedL__Relea__178D7CA5 ;
+
+drop table ReleasedLicenses
+------------------------------------------------------------
+
+select * from DetainedLicenses
+select * from Licenses
+
+Create Table DetainedLicenses -- View DetainedLicensesView use join left
+	(
+		DetainID int identity(1,1) not null,
+		LicenseID int References Licenses(LicenseID) not null,
+		DetainedDate DateTime not null,
+		IsReleased Bit not null Default 0,
+		FineFees smallMoney not null,
+		PersonID int References People(PersonID) not null,
+
+		primary key(DetainID)
+	);
 -------------------------------------------
 
+Create Table ReleasedLicenses -- View DetainedLicensesView
+	(
+		ReleaseID int identity(1,1) not null,
+		DetainID int References DetainedLicenses(DetainID) not null,
+		LicenseID int References Licenses(LicenseID) not null,
+		PaidFees smallMoney not null,
+		ReleasedDate DateTime not null,
+		ReleaseApplicationID int References Applications(ApplicationID) null,
+
+		primary key(ReleaseID)
+	);
+-------------------------------------------
+-------------------------------------------
+--Alter table Licenses ADD Constraint ... Foreign key () References ON DELETE CASCADE;
+--Alter table Licenses ADD Constraint ApplicationID Foreign key (ApplicationID) References Applications(ApplicationID) ON DELETE CASCADE;
+SELECT * FROM DetainedLicenses WHERE LicenseID = 1032
+select * from People ;
+select * from ReleasedLicenses ;
 select * from Drivers ;
 select * from Licenses ;
-select * from Applications;
-select * from LocalDrivingLicenseApplications;
-select * from LicenseClasses ;
-select * from Users;
-select * from TestTypes;
+SELECT * FROM LocalDLAppFullInfo WHERE LocalDrivingLicenseApplicationID =2009
+select * from LocalDrivingLicenseApplications ;
+select * from LocalDLAppFullInfo;
+select * from ApplicationTypes ;
+SELECT * FROM Users WHERE UserName = 'Ali' and Password = '111111'
 
+
+select * from ApplicationTypes;
+select * from LocalDrivingLicenseApplications;
+select * from Users;
+select * from DetainedLicenses;
+select * from  ReleasedLicenses;
+
+select Found = 1 from Licenses where LicenseID = 11 and  ExpirationDate < GETDATE() ;
 
 -- Update NathionalN to uinque
 -- ...

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
-
+using DVLD_WindowsForm.Global;
+using DVLDBusinessLayer.Global;
 using DVLDDataAccessLayer;
 
 namespace DVLDBusinessLayer
@@ -27,7 +28,7 @@ namespace DVLDBusinessLayer
             this.UserName = "";
             this.Password = "";
             this.Permission = 0;
-            this.Active = true;
+            this.Active = false;
 
             Mode = enMode.AddNew;
            
@@ -52,6 +53,7 @@ namespace DVLDBusinessLayer
         {
             // add this object to database
             // in AddNew Mode 
+            //string Password = GlobalFunctions.Encrypt(this.Password, GlobalVars.Key);
             this.UserID = clsUserDataAccess.AddNewUser(this.PersonID,this.UserName, this.Password,this.Permission, this.Active);
 
             return (this.PersonID != -1);
@@ -60,7 +62,8 @@ namespace DVLDBusinessLayer
         private bool _UpdateContact()
         {
             // add this object to database
-            return clsUserDataAccess.UpdateUser(this.UserID, this.PersonID,this.UserName, this.Password,this.Permission, this.Active);
+            //string Password = GlobalFunctions.Encrypt(this.Password, GlobalVars.Key);
+            return clsUserDataAccess.UpdateUser(this.UserID, this.PersonID,this.UserName, this.Password, this.Permission, this.Active);
         }
         // find by ID , NationalNo
         public static clsUser Find(int UserID)
@@ -68,10 +71,11 @@ namespace DVLDBusinessLayer
             string  UserName = "", Password = "";
 
             int  PersonID = -1, Permission = 0 ;
-            bool Active = true;
+            bool Active = false;
 
             if (clsUserDataAccess.GetUserByID(UserID,ref PersonID,ref UserName, ref Password,ref Permission, ref Active))
             {
+                //string DecryptedPassword = GlobalFunctions.Decrypt(Password, GlobalVars.Key);
                 return new clsUser(UserID,PersonID, UserName, Password, Permission, Active);
             }
             else
@@ -83,10 +87,11 @@ namespace DVLDBusinessLayer
             string UserName = "", Password = "";
 
             int UserID = -1, Permission = 0;
-            bool Active = true;
+            bool Active = false;
 
             if (clsUserDataAccess.GetUserByPersonID(PersonID, ref  UserID, ref UserName, ref Password, ref Permission, ref Active))
             {
+                //string DecryptedPassword = GlobalFunctions.Decrypt(Password, GlobalVars.Key);
                 return new clsUser(UserID, PersonID, UserName, Password, Permission, Active);
             }
             else
@@ -99,10 +104,11 @@ namespace DVLDBusinessLayer
 
             int UserID = -1 , PersonID = -1, Permission = 0;
             
-            bool Active = true;
+            bool Active = false;
             
             if (clsUserDataAccess.GetUserByUserNPassword(UserName, Password,ref UserID, ref PersonID,ref Permission, ref Active))
             {
+                //string DecryptedPassword = GlobalFunctions.Decrypt(Password, GlobalVars.Key);
                 return new clsUser(UserID, PersonID, UserName, Password, Permission, Active);
             }
             else

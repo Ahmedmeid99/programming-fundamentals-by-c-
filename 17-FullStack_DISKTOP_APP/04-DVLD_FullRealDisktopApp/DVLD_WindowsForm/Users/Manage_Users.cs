@@ -4,6 +4,7 @@ using System.Data;
 
 using System.Windows.Forms;
 using DVLDBusinessLayer;
+using DVLDBusinessLayer.Global;
 
 namespace DVLD_WindowsForm
 {
@@ -17,6 +18,21 @@ namespace DVLD_WindowsForm
 
             // load data
             _RefreshUsersList();
+
+            // Check allowed access [ Data, Informations, Actions ]
+
+            if (!GlobalFunctions.CheckAccessPermission(Global.GlobalVars.CurrentUser.Permission, GlobalEnums.enUserPermission.AddEditUsers))
+            {
+                pbAddNewUser.Enabled = false;      // picture btn addNew
+                pbAddNewUser.Visible = false;      // picture btn addNew
+                mbtnAddNewUser.Enabled = false;    // Context Menue btn addNew
+                mbtnEdit.Enabled = false;
+                cmChangePassword.Enabled = false;    
+
+            }
+
+            if (!GlobalFunctions.CheckAccessPermission(Global.GlobalVars.CurrentUser.Permission, GlobalEnums.enUserPermission.DeleteUsers))
+                mbtnDelete.Enabled = false;
         }
 
         public static DataTable dtUsers;
@@ -116,13 +132,7 @@ namespace DVLD_WindowsForm
         // -----------------------------------------------------------
         // [ Show AddEditUse Form That is have userControl for users ]
         // -----------------------------------------------------------
-        private void pictureBox2_Click_1(object sender, EventArgs e)
-        {
-            // open use control to add person
-            AddEditUserForm frmAdd_Update = new AddEditUserForm(-1);
-            frmAdd_Update.UserAdded += Users_UserAdded;
-            frmAdd_Update.Show();
-        }
+        
 
         private void mbtnAddNewUser_Click(object sender, EventArgs e)
         {
@@ -145,7 +155,7 @@ namespace DVLD_WindowsForm
         {
             int UserID = (int)dgvUsers.CurrentRow.Cells[0].Value;
 
-            if (MessageBox.Show("Are you want to delete contact [ " + UserID + " ]", "delete contact", MessageBoxButtons.OK) == DialogResult.OK)
+            if (MessageBox.Show("Are you want to delete contact [ " + UserID + " ]", "delete contact", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 try
                 {
@@ -242,7 +252,7 @@ namespace DVLD_WindowsForm
 
         }
 
-        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        private void cmChangePassword_Click(object sender, EventArgs e)
         {
             // open from update user
             // open use control to add person

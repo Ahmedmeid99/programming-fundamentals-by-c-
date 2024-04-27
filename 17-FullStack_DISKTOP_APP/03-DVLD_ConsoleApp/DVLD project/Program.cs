@@ -1,7 +1,9 @@
 ﻿using System;
-
+using System.Security.Cryptography;
 using System.Data;
 using DVLDBusinessLayer;
+using System.IO;
+using System.Text;
 
 namespace DVLD_project
 {
@@ -129,17 +131,97 @@ namespace DVLD_project
             if(clsPersonBusiness.IsExists(ID))
                 Console.WriteLine("IsExists"); 
             else
-                Console.WriteLine("Is not Exists"); 
+                Console.WriteLine("Is not Exists");
 
+
+        }
+        static string Encrypt(string PlainText, byte[] Key)
+        {
+            byte[] PlainBytes = Encoding.UTF8.GetBytes(PlainText);
+
+            using (Aes aesAlg = Aes.Create())
+            {
+                aesAlg.Key = Key;
+               // aesAlg.Key = Encoding.UTF8.GetBytes(Key);   {x}
+                aesAlg.Mode = CipherMode.CBC;
+
+                aesAlg.GenerateIV(); // new Iv For each encryption  {x}
+
+                ICryptoTransform encryptor = aesAlg.CreateEncryptor(aesAlg.Key, aesAlg.IV);
+
+                using (MemoryStream msEncrypt = new MemoryStream())
+                {
+                    msEncrypt.Write(BitConverter.GetBytes(aesAlg.IV.Length), 0, sizeof(int));
+                    msEncrypt.Write(aesAlg.IV, 0, aesAlg.IV.Length);
+
+                    using (CryptoStream csEncrypt = new CryptoStream(msEncrypt, encryptor, CryptoStreamMode.Write))
+                    {
+                        csEncrypt.Write(PlainBytes, 0, PlainBytes.Length);
+                        csEncrypt.FlushFinalBlock();
+                    }
+
+                    return Convert.ToBase64String(msEncrypt.ToArray());
+                }
+            }
+
+        }
+
+        static string Decrypt(string CipherText, byte [] Key)
+        {
+            byte[] CipherBytes = Convert.FromBase64String(CipherText);
+
+            using (Aes aesAlg = Aes.Create())
+            {
+                aesAlg.Key = Key;
+                //aesAlg.Key = Encoding.UTF8.GetBytes(Key);
+                aesAlg.Mode = CipherMode.CBC;
+
+                int IvLength = BitConverter.ToInt32(CipherBytes, 0);
+                byte[] Iv = new byte[IvLength];
+
+                Array.Copy(CipherBytes, sizeof(int), Iv, 0, IvLength);
+
+                ICryptoTransform decryptor = aesAlg.CreateEncryptor(aesAlg.Key, Iv);
+
+                using (MemoryStream msDecrypt = new MemoryStream(CipherBytes, sizeof(int) + IvLength, CipherBytes.Length - sizeof(int) - IvLength))
+                {
+
+                    using (CryptoStream csDecrypt = new CryptoStream(msDecrypt, decryptor, CryptoStreamMode.Read))
+                    {
+                        using (StreamReader srDecrypt = new StreamReader(csDecrypt))
+                        {
+                            return srDecrypt.ReadToEnd();
+                        }
+                    }
+
+                }
+            }
+        }
+
+        private static  byte[] _GenerateKeyFromText(string Text, int KeySizeInBytes)
+        {
+            using (var sha256 = SHA256.Create())
+            {
+                byte[] textBytes = Encoding.UTF8.GetBytes(Text);
+                byte[] hashBytes = sha256.ComputeHash(textBytes);
+
+                // choose part of result as key with needed size
+                byte[] key = new byte[KeySizeInBytes];
+                Array.Copy(hashBytes, key, Math.Min(KeySizeInBytes, hashBytes.Length));
+
+                return key;
+            }
         }
         static void Main(string[] args)
         {
             //testAddNewPerson();
             //Console.WriteLine("------------------");
-
+            //string stringKey = "AhmedMohamedEidA";// 16
+            string stringKey = "AhmedMohamedEidA";// 16
+            byte[] Key = _GenerateKeyFromText(stringKey, 16);
             //testUpdatePerson();
             //Console.WriteLine("------------------");   
-            
+
             //testDeletePerson(3);
             //Console.WriteLine("------------------");
 
@@ -152,10 +234,17 @@ namespace DVLD_project
             //testPersonIsExist(5);        //  Is Exist
             //testPersonIsExist(31);       //  Is not Exist
 
-            Console.WriteLine("------------------");
-            testFindAll();
-            Console.WriteLine("------------------");
+            //Console.WriteLine("------------------");
+            //testFindAll();
+            //Console.WriteLine("------------------");
 
+            //EAAAABfs/GxXQ3iylHUsjqqnH6dnikQd4Pz7yFTzMPg7NxK4
+            //o↕??bQ?,?????;> {E?⌂rfu?~LO?↨ 
+            string EncryptedPass = Encrypt("Ahmedali", Key);
+            Console.WriteLine(EncryptedPass);
+            Console.WriteLine("------------------");
+            Console.WriteLine(Decrypt(EncryptedPass, Key));
+            Console.WriteLine("------------------");
 
             Console.ReadKey();
         }

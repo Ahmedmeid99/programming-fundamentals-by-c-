@@ -92,10 +92,11 @@ namespace DVLD_WindowsForm
 
             else if(User != null && User.Active)
             {
+                Global.GlobalVars.CurrentUser  = User; // Set Current User
+                
                 Form MainFrm= new MainForm();                           
                 MainFrm.Show();
 
-                Global.GlobalVars.CurrentUser  = User; // Set Current User
 
                 //  remember this login
                 if (_IsRememberMeChecked())

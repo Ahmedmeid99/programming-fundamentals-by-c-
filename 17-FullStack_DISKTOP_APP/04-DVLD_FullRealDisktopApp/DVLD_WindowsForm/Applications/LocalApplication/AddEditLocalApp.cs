@@ -26,7 +26,7 @@ namespace DVLD_WindowsForm.Applications.LocalApplication
         public static DataTable dtPeople;
         public static DataView dtPeopleView;
         private GlobalEnums.enApplicationStatus ApplicationStatus =GlobalEnums.enApplicationStatus.NewApplication;
-        private GlobalEnums.enApplicationType ApplicationType = GlobalEnums.enApplicationType.NewLocalApp;
+        private GlobalEnums.enApplicationType ApplicationType = GlobalEnums.enApplicationType.NewDrivingLicense;
 
         public AddEditLocalApp(int LocaLDLApplicationID)
         {

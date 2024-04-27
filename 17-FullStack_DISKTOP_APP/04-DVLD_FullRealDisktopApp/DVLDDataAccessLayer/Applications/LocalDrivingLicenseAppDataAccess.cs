@@ -62,6 +62,61 @@ namespace DVLDDataAccessLayer
 
             return isFound;
         }
+        public static bool GetLocalApplicationByAppID(int ApplicationID,ref int LocaLDLApplicationID ,ref byte LicenseClassID, ref int ApplicationPersonID, ref DateTime ApplicationDate, ref byte ApplicationTypeID, ref DateTime lastStatusDate, ref byte ApplicationStatus, ref byte PassedTests, ref double PaidFees, ref int CreatedByUserID)
+        {
+            bool isFound = false;
+
+            SqlConnection connection = new SqlConnection(clsSettings.ConnectionString);
+
+            string query = "SELECT * FROM LocalDLAppFullInfo WHERE ApplicationID = @ApplicationID";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@ApplicationID", ApplicationID);
+          
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+
+                    // The record was found
+                    isFound = true;
+
+                    LocaLDLApplicationID = (int)reader["LocaLDLApplicationID"];
+                    ApplicationPersonID = (int)reader["ApplicationPersonID"];
+                    ApplicationDate = (DateTime)reader["ApplicationDate"];
+                    lastStatusDate = (DateTime)reader["lastStatusDate"];
+                    CreatedByUserID = (int)reader["CreatedByUserID"];
+                    PaidFees = Convert.ToDouble(reader["PaidFees"]);
+                    LicenseClassID = Convert.ToByte(reader["LicenseClassID"]);
+                    ApplicationTypeID = Convert.ToByte(reader["ApplicationTypeID"]);
+                    ApplicationStatus = Convert.ToByte(reader["ApplicationStatus"]);
+                    PassedTests = Convert.ToByte(reader["PassedTests"]);
+
+                    reader.Close();
+                }
+                else
+                {
+                    // The record was not found
+                    isFound = false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                //Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return isFound;
+        }
 
         public static int AddNewApplication( int ApplicationID, byte LicenseClassID)
         {

@@ -47,12 +47,24 @@
             this.label10 = new System.Windows.Forms.Label();
             this.lbName = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtCurrentPass = new System.Windows.Forms.TextBox();
+            this.txtConfirmPass = new System.Windows.Forms.TextBox();
+            this.txtNewPass = new System.Windows.Forms.TextBox();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.txtErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.pbWomanIcon = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
@@ -64,20 +76,9 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pbPersonImage = new System.Windows.Forms.PictureBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.txtCurrentPass = new System.Windows.Forms.TextBox();
-            this.txtConfirmPass = new System.Windows.Forms.TextBox();
-            this.txtNewPass = new System.Windows.Forms.TextBox();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.txtErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbWomanIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -89,7 +90,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPersonImage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // lbIsActive
@@ -234,7 +234,7 @@
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Location = new System.Drawing.Point(0, 286);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(925, 73);
+            this.groupBox2.Size = new System.Drawing.Size(978, 73);
             this.groupBox2.TabIndex = 152;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Login Information";
@@ -310,6 +310,36 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Person Information";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(386, 163);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(113, 19);
+            this.label1.TabIndex = 198;
+            this.label1.Text = "Phone             : ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(386, 195);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(113, 19);
+            this.label2.TabIndex = 197;
+            this.label2.Text = "Country          : ";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(386, 129);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(114, 19);
+            this.label4.TabIndex = 196;
+            this.label4.Text = "Date Of Birth : ";
+            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -370,6 +400,93 @@
             this.label21.Size = new System.Drawing.Size(99, 19);
             this.label21.TabIndex = 190;
             this.label21.Text = "Name          : ";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(33, 477);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(147, 19);
+            this.label14.TabIndex = 182;
+            this.label14.Text = "Confirm Passwodr   :";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(33, 436);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(145, 19);
+            this.label15.TabIndex = 183;
+            this.label15.Text = "New Passwod          :";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(33, 397);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(143, 19);
+            this.label16.TabIndex = 184;
+            this.label16.Text = "Current Password   :";
+            // 
+            // txtCurrentPass
+            // 
+            this.txtCurrentPass.Location = new System.Drawing.Point(187, 398);
+            this.txtCurrentPass.MaximumSize = new System.Drawing.Size(166, 40);
+            this.txtCurrentPass.MinimumSize = new System.Drawing.Size(166, 20);
+            this.txtCurrentPass.Name = "txtCurrentPass";
+            this.txtCurrentPass.PasswordChar = '*';
+            this.txtCurrentPass.Size = new System.Drawing.Size(166, 20);
+            this.txtCurrentPass.TabIndex = 185;
+            this.txtCurrentPass.Leave += new System.EventHandler(this.CheckCurrentPassWord_Leave);
+            // 
+            // txtConfirmPass
+            // 
+            this.txtConfirmPass.Location = new System.Drawing.Point(188, 478);
+            this.txtConfirmPass.MaximumSize = new System.Drawing.Size(166, 40);
+            this.txtConfirmPass.MinimumSize = new System.Drawing.Size(166, 20);
+            this.txtConfirmPass.Name = "txtConfirmPass";
+            this.txtConfirmPass.PasswordChar = '*';
+            this.txtConfirmPass.Size = new System.Drawing.Size(166, 20);
+            this.txtConfirmPass.TabIndex = 186;
+            this.txtConfirmPass.Leave += new System.EventHandler(this.txtConfirmPassword_Leave);
+            // 
+            // txtNewPass
+            // 
+            this.txtNewPass.Location = new System.Drawing.Point(187, 437);
+            this.txtNewPass.MaximumSize = new System.Drawing.Size(166, 40);
+            this.txtNewPass.MinimumSize = new System.Drawing.Size(166, 20);
+            this.txtNewPass.Name = "txtNewPass";
+            this.txtNewPass.PasswordChar = '*';
+            this.txtNewPass.Size = new System.Drawing.Size(166, 20);
+            this.txtNewPass.TabIndex = 187;
+            this.txtNewPass.Leave += new System.EventHandler(this.CheckIsEmpty);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(746, 490);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(85, 32);
+            this.btnClose.TabIndex = 188;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(840, 490);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(85, 32);
+            this.btnSave.TabIndex = 189;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // txtErrorProvider
+            // 
+            this.txtErrorProvider.ContainerControl = this;
             // 
             // pictureBox11
             // 
@@ -482,128 +599,11 @@
             this.pbPersonImage.TabIndex = 157;
             this.pbPersonImage.TabStop = false;
             // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(33, 477);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(147, 19);
-            this.label14.TabIndex = 182;
-            this.label14.Text = "Confirm Passwodr   :";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(33, 436);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(145, 19);
-            this.label15.TabIndex = 183;
-            this.label15.Text = "New Passwod          :";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(33, 397);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(143, 19);
-            this.label16.TabIndex = 184;
-            this.label16.Text = "Current Password   :";
-            // 
-            // txtCurrentPass
-            // 
-            this.txtCurrentPass.Location = new System.Drawing.Point(187, 398);
-            this.txtCurrentPass.MaximumSize = new System.Drawing.Size(166, 40);
-            this.txtCurrentPass.MinimumSize = new System.Drawing.Size(166, 20);
-            this.txtCurrentPass.Name = "txtCurrentPass";
-            this.txtCurrentPass.PasswordChar = '*';
-            this.txtCurrentPass.Size = new System.Drawing.Size(166, 20);
-            this.txtCurrentPass.TabIndex = 185;
-            this.txtCurrentPass.Leave += new System.EventHandler(this.CheckCurrentPassWord_Leave);
-            // 
-            // txtConfirmPass
-            // 
-            this.txtConfirmPass.Location = new System.Drawing.Point(188, 478);
-            this.txtConfirmPass.MaximumSize = new System.Drawing.Size(166, 40);
-            this.txtConfirmPass.MinimumSize = new System.Drawing.Size(166, 20);
-            this.txtConfirmPass.Name = "txtConfirmPass";
-            this.txtConfirmPass.PasswordChar = '*';
-            this.txtConfirmPass.Size = new System.Drawing.Size(166, 20);
-            this.txtConfirmPass.TabIndex = 186;
-            this.txtConfirmPass.Leave += new System.EventHandler(this.txtConfirmPassword_Leave);
-            // 
-            // txtNewPass
-            // 
-            this.txtNewPass.Location = new System.Drawing.Point(187, 437);
-            this.txtNewPass.MaximumSize = new System.Drawing.Size(166, 40);
-            this.txtNewPass.MinimumSize = new System.Drawing.Size(166, 20);
-            this.txtNewPass.Name = "txtNewPass";
-            this.txtNewPass.PasswordChar = '*';
-            this.txtNewPass.Size = new System.Drawing.Size(166, 20);
-            this.txtNewPass.TabIndex = 187;
-            this.txtNewPass.Leave += new System.EventHandler(this.CheckIsEmpty);
-            // 
-            // btnClose
-            // 
-            this.btnClose.Location = new System.Drawing.Point(746, 490);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(85, 32);
-            this.btnClose.TabIndex = 188;
-            this.btnClose.Text = "Close";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(840, 490);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(85, 32);
-            this.btnSave.TabIndex = 189;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // txtErrorProvider
-            // 
-            this.txtErrorProvider.ContainerControl = this;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(386, 163);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 19);
-            this.label1.TabIndex = 198;
-            this.label1.Text = "Phone             : ";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(386, 195);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 19);
-            this.label2.TabIndex = 197;
-            this.label2.Text = "Country          : ";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(386, 129);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(114, 19);
-            this.label4.TabIndex = 196;
-            this.label4.Text = "Date Of Birth : ";
-            // 
             // ChangePasswordForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(990, 512);
+            this.ClientSize = new System.Drawing.Size(990, 532);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtNewPass);
@@ -621,6 +621,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbWomanIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
@@ -632,7 +633,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPersonImage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

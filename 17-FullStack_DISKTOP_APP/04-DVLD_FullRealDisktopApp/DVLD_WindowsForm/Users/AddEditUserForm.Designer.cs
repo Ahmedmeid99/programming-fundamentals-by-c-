@@ -87,6 +87,15 @@
             this.lbMode = new System.Windows.Forms.Label();
             this.UserTabControl = new System.Windows.Forms.TabControl();
             this.txtErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.cmManageDrivers = new System.Windows.Forms.CheckBox();
+            this.cmAddEditUsers = new System.Windows.Forms.CheckBox();
+            this.cmManageDetainedLicenses = new System.Windows.Forms.CheckBox();
+            this.cbAllPermission = new System.Windows.Forms.CheckBox();
+            this.cmEditTestTypes = new System.Windows.Forms.CheckBox();
+            this.cmDeleteUsers = new System.Windows.Forms.CheckBox();
+            this.cmEditApplicationTypes = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbWomanIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -106,6 +115,8 @@
             this.tabPage2.SuspendLayout();
             this.UserTabControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtErrorProvider)).BeginInit();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             this.SuspendLayout();
             // 
             // linkLabel1
@@ -422,7 +433,7 @@
             // 
             // txtConfirmPassword
             // 
-            this.txtConfirmPassword.Location = new System.Drawing.Point(216, 198);
+            this.txtConfirmPassword.Location = new System.Drawing.Point(172, 198);
             this.txtConfirmPassword.MaximumSize = new System.Drawing.Size(166, 40);
             this.txtConfirmPassword.MinimumSize = new System.Drawing.Size(166, 20);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
@@ -433,7 +444,7 @@
             // 
             // txtUserName
             // 
-            this.txtUserName.Location = new System.Drawing.Point(216, 126);
+            this.txtUserName.Location = new System.Drawing.Point(172, 126);
             this.txtUserName.MaximumSize = new System.Drawing.Size(166, 40);
             this.txtUserName.MinimumSize = new System.Drawing.Size(166, 20);
             this.txtUserName.Name = "txtUserName";
@@ -445,7 +456,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(75, 129);
+            this.label15.Location = new System.Drawing.Point(31, 129);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(130, 17);
             this.label15.TabIndex = 16;
@@ -455,7 +466,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(75, 165);
+            this.label14.Location = new System.Drawing.Point(31, 165);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(129, 17);
             this.label14.TabIndex = 15;
@@ -465,7 +476,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(74, 201);
+            this.label13.Location = new System.Drawing.Point(30, 201);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(131, 17);
             this.label13.TabIndex = 14;
@@ -485,7 +496,7 @@
             // 
             this.lbUserID.AutoSize = true;
             this.lbUserID.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUserID.Location = new System.Drawing.Point(223, 94);
+            this.lbUserID.Location = new System.Drawing.Point(179, 94);
             this.lbUserID.Name = "lbUserID";
             this.lbUserID.Size = new System.Drawing.Size(17, 17);
             this.lbUserID.TabIndex = 20;
@@ -596,7 +607,7 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(216, 162);
+            this.txtPassword.Location = new System.Drawing.Point(172, 162);
             this.txtPassword.MaximumSize = new System.Drawing.Size(166, 40);
             this.txtPassword.MinimumSize = new System.Drawing.Size(166, 20);
             this.txtPassword.Name = "txtPassword";
@@ -662,6 +673,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.groupBox3);
             this.tabPage2.Controls.Add(this.btnprev);
             this.tabPage2.Controls.Add(this.ckbActive);
             this.tabPage2.Controls.Add(this.lbUserID);
@@ -693,9 +705,10 @@
             // ckbActive
             // 
             this.ckbActive.AutoSize = true;
-            this.ckbActive.Location = new System.Drawing.Point(216, 241);
+            this.ckbActive.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbActive.Location = new System.Drawing.Point(172, 241);
             this.ckbActive.Name = "ckbActive";
-            this.ckbActive.Size = new System.Drawing.Size(67, 17);
+            this.ckbActive.Size = new System.Drawing.Size(79, 21);
             this.ckbActive.TabIndex = 20;
             this.ckbActive.Text = "Is Active";
             this.ckbActive.UseVisualStyleBackColor = true;
@@ -704,7 +717,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(73, 94);
+            this.label11.Location = new System.Drawing.Point(29, 94);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(132, 17);
             this.label11.TabIndex = 12;
@@ -734,6 +747,112 @@
             // txtErrorProvider
             // 
             this.txtErrorProvider.ContainerControl = this;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.pictureBox10);
+            this.groupBox3.Controls.Add(this.cmManageDrivers);
+            this.groupBox3.Controls.Add(this.cmAddEditUsers);
+            this.groupBox3.Controls.Add(this.cmManageDetainedLicenses);
+            this.groupBox3.Controls.Add(this.cbAllPermission);
+            this.groupBox3.Controls.Add(this.cmEditTestTypes);
+            this.groupBox3.Controls.Add(this.cmDeleteUsers);
+            this.groupBox3.Controls.Add(this.cmEditApplicationTypes);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(372, 94);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(576, 168);
+            this.groupBox3.TabIndex = 159;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Permission Settings";
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Image = global::DVLD_WindowsForm.Properties.Resources.users_64;
+            this.pictureBox10.Location = new System.Drawing.Point(12, 67);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(124, 82);
+            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox10.TabIndex = 199;
+            this.pictureBox10.TabStop = false;
+            // 
+            // cmManageDrivers
+            // 
+            this.cmManageDrivers.AutoSize = true;
+            this.cmManageDrivers.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmManageDrivers.Location = new System.Drawing.Point(155, 126);
+            this.cmManageDrivers.Name = "cmManageDrivers";
+            this.cmManageDrivers.Size = new System.Drawing.Size(134, 23);
+            this.cmManageDrivers.TabIndex = 198;
+            this.cmManageDrivers.Text = "Manage Drivers";
+            this.cmManageDrivers.UseVisualStyleBackColor = true;
+            // 
+            // cmAddEditUsers
+            // 
+            this.cmAddEditUsers.AutoSize = true;
+            this.cmAddEditUsers.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmAddEditUsers.Location = new System.Drawing.Point(155, 68);
+            this.cmAddEditUsers.Name = "cmAddEditUsers";
+            this.cmAddEditUsers.Size = new System.Drawing.Size(135, 23);
+            this.cmAddEditUsers.TabIndex = 196;
+            this.cmAddEditUsers.Text = "Add / Edit Users";
+            this.cmAddEditUsers.UseVisualStyleBackColor = true;
+            // 
+            // cmManageDetainedLicenses
+            // 
+            this.cmManageDetainedLicenses.AutoSize = true;
+            this.cmManageDetainedLicenses.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmManageDetainedLicenses.Location = new System.Drawing.Point(369, 126);
+            this.cmManageDetainedLicenses.Name = "cmManageDetainedLicenses";
+            this.cmManageDetainedLicenses.Size = new System.Drawing.Size(204, 23);
+            this.cmManageDetainedLicenses.TabIndex = 197;
+            this.cmManageDetainedLicenses.Text = "Manage Detained Licenses";
+            this.cmManageDetainedLicenses.UseVisualStyleBackColor = true;
+            // 
+            // cbAllPermission
+            // 
+            this.cbAllPermission.AutoSize = true;
+            this.cbAllPermission.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbAllPermission.Location = new System.Drawing.Point(12, 28);
+            this.cbAllPermission.Name = "cbAllPermission";
+            this.cbAllPermission.Size = new System.Drawing.Size(160, 23);
+            this.cbAllPermission.TabIndex = 192;
+            this.cbAllPermission.Text = "All (Full Permission)";
+            this.cbAllPermission.UseVisualStyleBackColor = true;
+            this.cbAllPermission.CheckedChanged += new System.EventHandler(this.cbAllPermission_CheckedChanged);
+            // 
+            // cmEditTestTypes
+            // 
+            this.cmEditTestTypes.AutoSize = true;
+            this.cmEditTestTypes.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmEditTestTypes.Location = new System.Drawing.Point(369, 97);
+            this.cmEditTestTypes.Name = "cmEditTestTypes";
+            this.cmEditTestTypes.Size = new System.Drawing.Size(126, 23);
+            this.cmEditTestTypes.TabIndex = 193;
+            this.cmEditTestTypes.Text = "Edit Test Types";
+            this.cmEditTestTypes.UseVisualStyleBackColor = true;
+            // 
+            // cmDeleteUsers
+            // 
+            this.cmDeleteUsers.AutoSize = true;
+            this.cmDeleteUsers.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmDeleteUsers.Location = new System.Drawing.Point(369, 68);
+            this.cmDeleteUsers.Name = "cmDeleteUsers";
+            this.cmDeleteUsers.Size = new System.Drawing.Size(111, 23);
+            this.cmDeleteUsers.TabIndex = 195;
+            this.cmDeleteUsers.Text = "Delete Users";
+            this.cmDeleteUsers.UseVisualStyleBackColor = true;
+            // 
+            // cmEditApplicationTypes
+            // 
+            this.cmEditApplicationTypes.AutoSize = true;
+            this.cmEditApplicationTypes.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmEditApplicationTypes.Location = new System.Drawing.Point(155, 97);
+            this.cmEditApplicationTypes.Name = "cmEditApplicationTypes";
+            this.cmEditApplicationTypes.Size = new System.Drawing.Size(176, 23);
+            this.cmEditApplicationTypes.TabIndex = 194;
+            this.cmEditApplicationTypes.Text = "Edit Application Types";
+            this.cmEditApplicationTypes.UseVisualStyleBackColor = true;
             // 
             // AddEditUserForm
             // 
@@ -769,6 +888,9 @@
             this.tabPage2.PerformLayout();
             this.UserTabControl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtErrorProvider)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -834,5 +956,14 @@
         private System.Windows.Forms.CheckBox ckbActive;
         private System.Windows.Forms.Button btnprev;
         private System.Windows.Forms.ErrorProvider txtErrorProvider;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.CheckBox cmManageDrivers;
+        private System.Windows.Forms.CheckBox cmAddEditUsers;
+        private System.Windows.Forms.CheckBox cmManageDetainedLicenses;
+        private System.Windows.Forms.CheckBox cbAllPermission;
+        private System.Windows.Forms.CheckBox cmEditTestTypes;
+        private System.Windows.Forms.CheckBox cmDeleteUsers;
+        private System.Windows.Forms.CheckBox cmEditApplicationTypes;
     }
 }

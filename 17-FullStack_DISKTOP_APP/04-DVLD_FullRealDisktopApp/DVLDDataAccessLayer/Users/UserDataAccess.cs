@@ -35,7 +35,7 @@ namespace DVLDDataAccessLayer
                     UserName = (string)reader["UserName"];
                     Password = (string)reader["Password"];
                     Permission = (int)reader["Permission"];
-                    Active = (((int)reader["Active"]) == 1) ? true : false; 
+                    Active = Convert.ToBoolean(reader["Active"]); 
                     reader.Close();
                 }
                 else
@@ -84,7 +84,7 @@ namespace DVLDDataAccessLayer
                     UserName = (string)reader["UserName"];
                     Password = (string)reader["Password"];
                     Permission = (int)reader["Permission"];
-                    Active = ( ((string)reader["Active"]) == "1") ? true : false;
+                    Active = Convert.ToBoolean(reader["Active"]);
                     reader.Close();
                 }
                 else
@@ -122,7 +122,7 @@ namespace DVLDDataAccessLayer
             try
             {
                 connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
+                SqlDataReader reader = command.ExecuteReader();       
 
                 if (reader.Read())
                 {
@@ -132,8 +132,9 @@ namespace DVLDDataAccessLayer
 
                     UserID = (int)reader["UserID"];
                     PersonID = (int)reader["PersonID"];
-                    Permission = (int)reader["Permmission"];
-                    Active = (((int)reader["Active"]) == 1) ? true : false; reader.Close();
+                    Permission = (int)reader["Permission"];
+                    Active = Convert.ToBoolean(reader["Active"]);
+                    reader.Close();
                 }
                 else
                 {

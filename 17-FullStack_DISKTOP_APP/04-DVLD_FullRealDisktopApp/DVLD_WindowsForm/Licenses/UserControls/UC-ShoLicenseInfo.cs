@@ -27,7 +27,7 @@ namespace DVLD_WindowsForm.Licenses.UserControls
         public string IssueReson { get; set; }
         public string Notes { get; set; }
         public bool IsActive { get; set; }
-        public bool IsDetained { get; set; } // 13
+        public bool IsDetained { get; set; }
         public string PersonImagePath { get; set; } // 13
 
 
@@ -74,7 +74,7 @@ namespace DVLD_WindowsForm.Licenses.UserControls
             ExpirationDate = License.ExpirationDate;
             SetExpirationDateUI(ExpirationDate);
 
-            IssueReson = GlobalMethods.GetIssueReason(License.IssueReason);
+            IssueReson = GlobalMethods.GetIssueReason(License.ApplicationInfo.ApplicationTypeID);
             SetIssueResonUI(IssueReson);
 
             Notes = License.Notes;
@@ -83,7 +83,7 @@ namespace DVLD_WindowsForm.Licenses.UserControls
             IsActive = License.IsActive;
             SetIsActiveUI(IsActive);
 
-            IsDetained = false;          // Fix it << -
+            IsDetained = License.IsDetained;       
             SetIsDetainedUI(IsDetained);
 
             PersonImagePath = Person.ImagePath;
@@ -121,11 +121,11 @@ namespace DVLD_WindowsForm.Licenses.UserControls
         }
         private void SetIssueDateUI(DateTime IssueDate)
         {
-            lbIssueDate.Text = DateOfBirth.ToString("dd-MM-yyyy");
+            lbIssueDate.Text = IssueDate.ToString("dd-MM-yyyy");
         }
         private void SetExpirationDateUI(DateTime ExpirationDate)
         {
-            lbExpirationDate.Text = DateOfBirth.ToString("dd-MM-yyyy");
+            lbExpirationDate.Text = ExpirationDate.ToString("dd-MM-yyyy");
         }
         private void SetIssueResonUI(string IssueReson)
         {
@@ -141,7 +141,7 @@ namespace DVLD_WindowsForm.Licenses.UserControls
         }
         private void SetIsDetainedUI(bool IsDetained)
         {
-            lbIsDetained.Text = (IsDetained) ? "Yes" : "No";   //  Fix it <<-
+            lbIsDetained.Text = (IsDetained == true) ? "Yes" : "No";   
         }
         private void SetPersonImageUI(string PersonImagePath)
         {

@@ -266,7 +266,7 @@ namespace DVLD_WindowsForm.Applications.LocalApplication
 
                 // if he has a License  disable cmIssueDriving
                 // else enable it
-                if (clsLicense.IsApplicationExists(CurrentApplication.ApplicationID))
+                if (clsLicense.IsApplicationExists(CurrentApplication.ApplicationID))  //LDLApplicationID
                     cmpApplication.Items["cmIssueDriving"].Enabled = false;
                 else
                     cmpApplication.Items["cmIssueDriving"].Enabled = true;
@@ -345,25 +345,26 @@ namespace DVLD_WindowsForm.Applications.LocalApplication
             Driver.CreatedDate = DateTime.Now;
 
         } 
-        private void _FillLicenseWithData(ref clsLicense License, int DriverID,clsLocalDLApplication LDLApplication)
+        private void _FillLicenseWithData(ref clsLicense License, int DriverID, clsLocalDLApplication LDLApplication)
         {
-            License.ApplicationInfo = clsApplication.FindApplication(LDLApplication.ApplicationID);
+            License.ApplicationInfo =clsApplication.FindApplication(LDLApplication.ApplicationID);
             License.LicenseClassInfo = clsLicenseClass.Find(LDLApplication.LicenseClassID);
             License.DriverInfo = clsDriver.Find(DriverID);
-            License.IssueReason =(byte) GlobalEnums.enApplicationType.NewLocalApp;
+            License.IssueReason =(byte) GlobalEnums.enApplicationType.NewDrivingLicense;
             License.PaidFees = License.LicenseClassInfo.ClassFees;
             License.UserInfo = clsUser.Find(Global.GlobalVars.CurrentUser.UserID);
             License.Notes = "";
             License.IsActive = true;
             License.IssueDate = DateTime.Now;
             License.ExpirationDate = License.IssueDate.AddYears(License.LicenseClassInfo.DefaultValidityLength);
+            
 
         }
-        private void cmIssueDriving_Click(object sender, EventArgs e)
-        {
             // IF Application Completed status
             // - create New Driver if Not Exist
             // - Create New License
+        private void cmIssueDriving_Click(object sender, EventArgs e)
+        {
             int LDLApplicationID = (int)dgvLDLApps.CurrentRow.Cells[0].Value;
             clsLocalDLApplication LDLApplication = clsLocalDLApplication.Find(LDLApplicationID);
 
@@ -386,8 +387,9 @@ namespace DVLD_WindowsForm.Applications.LocalApplication
             clsLicense License = new clsLicense();
             _FillLicenseWithData(ref License, Driver.DriverID, LDLApplication);
 
-            if (!clsLicense.IsApplicationExists(LDLApplication.ApplicationID))
+            if (!clsLicense.IsApplicationExists(LDLApplicationID))    //LDLApplicationID
             {
+                License.ApplicationInfo = LDLApplication;
                 if (License.Save())
                     MessageBox.Show($"and Driving License Added Successfly LicenseID = {License.LicenseID}");
             }

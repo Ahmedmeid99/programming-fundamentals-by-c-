@@ -59,6 +59,24 @@
     <Compile Include="Applications\ApplicationTypes\ManageApplicationTypesForm.Designer.cs">
       <DependentUpon>ManageApplicationTypesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Applications\InternationalApplication\AddInternarionalAppForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Applications\InternationalApplication\AddInternarionalAppForm.Designer.cs">
+      <DependentUpon>AddInternarionalAppForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Applications\InternationalApplication\ManageInternationalAppForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Applications\InternationalApplication\ManageInternationalAppForm.Designer.cs">
+      <DependentUpon>ManageInternationalAppForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Applications\InternationalApplication\UserControls\UCInterApplicationInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Applications\InternationalApplication\UserControls\UCInterApplicationInfo.Designer.cs">
+      <DependentUpon>UCInterApplicationInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Applications\LocalApplication\AddEditLocalApp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +88,60 @@
     </Compile>
     <Compile Include="Applications\LocalApplication\ManageLocalDLApplication.Designer.cs">
       <DependentUpon>ManageLocalDLApplication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Applications\Release_DetaineLicenseApp\DetainLicense\DetaineLicenseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Applications\Release_DetaineLicenseApp\DetainLicense\DetaineLicenseForm.Designer.cs">
+      <DependentUpon>DetaineLicenseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Applications\Release_DetaineLicenseApp\ManageDetainedLicensesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Applications\Release_DetaineLicenseApp\ManageDetainedLicensesForm.Designer.cs">
+      <DependentUpon>ManageDetainedLicensesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Applications\Release_DetaineLicenseApp\ReleaseLicense\ReleaseLicenseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Applications\Release_DetaineLicenseApp\ReleaseLicense\ReleaseLicenseForm.Designer.cs">
+      <DependentUpon>ReleaseLicenseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Applications\RenewLicenseApplication\RenewLocalDrivingLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Applications\RenewLicenseApplication\RenewLocalDrivingLicense.Designer.cs">
+      <DependentUpon>RenewLocalDrivingLicense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Applications\RenewLicenseApplication\UserControls\UCRenewLicenseInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Applications\RenewLicenseApplication\UserControls\UCRenewLicenseInfo.Designer.cs">
+      <DependentUpon>UCRenewLicenseInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Applications\ReplaceLicenseApp\ReplacementLicenseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Applications\ReplaceLicenseApp\ReplacementLicenseForm.Designer.cs">
+      <DependentUpon>ReplacementLicenseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Applications\ReplaceLicenseApp\Usercontrols\UCReplacementApplication.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Applications\ReplaceLicenseApp\Usercontrols\UCReplacementApplication.Designer.cs">
+      <DependentUpon>UCReplacementApplication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Licenses\InternationalLicense\Controls\UCShowInternationalLicense.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Licenses\InternationalLicense\Controls\UCShowInternationalLicense.Designer.cs">
+      <DependentUpon>UCShowInternationalLicense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Licenses\InternationalLicense\InternationalLicenseInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Licenses\InternationalLicense\InternationalLicenseInfoForm.Designer.cs">
+      <DependentUpon>InternationalLicenseInfoForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Licenses\LicensesHistoryForm.cs">
       <SubType>Form</SubType>
@@ -230,17 +302,53 @@
     <EmbeddedResource Include="Applications\ApplicationTypes\ManageApplicationTypesForm.resx">
       <DependentUpon>ManageApplicationTypesForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Applications\InternationalApplication\AddInternarionalAppForm.resx">
+      <DependentUpon>AddInternarionalAppForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Applications\InternationalApplication\ManageInternationalAppForm.resx">
+      <DependentUpon>ManageInternationalAppForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Applications\InternationalApplication\UserControls\UCInterApplicationInfo.resx">
+      <DependentUpon>UCInterApplicationInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Applications\LocalApplication\AddEditLocalApp.resx">
       <DependentUpon>AddEditLocalApp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Applications\LocalApplication\ManageLocalDLApplication.resx">
       <DependentUpon>ManageLocalDLApplication.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Applications\Release_DetaineLicenseApp\DetainLicense\DetaineLicenseForm.resx">
+      <DependentUpon>DetaineLicenseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Applications\Release_DetaineLicenseApp\ManageDetainedLicensesForm.resx">
+      <DependentUpon>ManageDetainedLicensesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Applications\Release_DetaineLicenseApp\ReleaseLicense\ReleaseLicenseForm.resx">
+      <DependentUpon>ReleaseLicenseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Applications\RenewLicenseApplication\RenewLocalDrivingLicense.resx">
+      <DependentUpon>RenewLocalDrivingLicense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Applications\ReplaceLicenseApp\ReplacementLicenseForm.resx">
+      <DependentUpon>ReplacementLicenseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Applications\ReplaceLicenseApp\Usercontrols\UCReplacementApplication.resx">
+      <DependentUpon>UCReplacementApplication.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Drivers\ManageDriversForm.resx">
       <DependentUpon>ManageDriversForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Licenses\InternationalLicense\Controls\UCShowInternationalLicense.resx">
+      <DependentUpon>UCShowInternationalLicense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Licenses\InternationalLicense\InternationalLicenseInfoForm.resx">
+      <DependentUpon>InternationalLicenseInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Licenses\LicensesHistoryForm.resx">
       <DependentUpon>LicensesHistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Applications\RenewLicenseApplication\UserControls\UCRenewLicenseInfo.resx">
+      <DependentUpon>UCRenewLicenseInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Licenses\ShowLicenseForm.resx">
       <DependentUpon>ShowLicenseForm.cs</DependentUpon>
@@ -428,7 +536,13 @@
     <None Include="Icons\DVLD Logo.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Icons\Release Detained License 32.png" />
+    <None Include="Icons\Detain 512.png" />
+    <None Include="Icons\Detain 64.png" />
+    <None Include="Icons\Release Detained License 64.png" />
+    <None Include="Icons\users 64.png" />
     <Content Include="Login\Users.txt" />
+    <None Include="Resources\LocalDriving License.png" />
     <None Include="Resources\Driver Main.png" />
     <None Include="Resources\LicenseView 400.png" />
     <None Include="Resources\Question 32.png" />
