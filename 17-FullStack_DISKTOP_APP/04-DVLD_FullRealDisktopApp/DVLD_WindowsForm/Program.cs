@@ -18,6 +18,7 @@ namespace DVLD_WindowsForm
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LoginForm());
 
+            // for development ( before add users to database )
             // Application.Run(new MainForm());
         }
     }

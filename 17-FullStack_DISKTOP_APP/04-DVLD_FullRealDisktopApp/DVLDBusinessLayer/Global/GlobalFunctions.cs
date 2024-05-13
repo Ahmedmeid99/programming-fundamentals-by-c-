@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Net.Security;
@@ -11,6 +12,7 @@ namespace DVLDBusinessLayer.Global
 {
     public static class GlobalFunctions
     {
+        [Obsolete("Dont use this function didnt completed yet !!!")]
         public static string Encrypt(string PlainText, string Key)
         {
             byte[] PlainBytes = Encoding.UTF8.GetBytes(PlainText);
@@ -38,7 +40,8 @@ namespace DVLDBusinessLayer.Global
             }
 
         }
-
+        
+        [Obsolete("Dont use this function didnt completed yet !!!")]
         public static string Decrypt(string CipherText, string Key)
         {
             byte[] CipherBytes = Convert.FromBase64String(CipherText);
@@ -70,6 +73,15 @@ namespace DVLDBusinessLayer.Global
             }
         }
 
+        public static string HashingPassword(string Password)
+        {
+            using(SHA256 sHA256 = SHA256.Create())
+            {
+
+                byte[] hashBytes = sHA256.ComputeHash(Encoding.UTF8.GetBytes(Password));
+                return  BitConverter.ToString(hashBytes).Replace("-","").ToLower(); 
+            }
+        }
         public static bool CheckAccessPermission(int UserPermissions, GlobalEnums.enUserPermission enAccessPermission)
         {
             int AccessPermission = (int)enAccessPermission;

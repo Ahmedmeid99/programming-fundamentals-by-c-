@@ -3,22 +3,29 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using DVLDBusinessLayer;
+using DVLDBusinessLayer.Global;
+using Microsoft.Win32;
 
 namespace DVLD_WindowsForm
 {
     public partial class LoginForm : Form
     {
         
-        private static string _Separator = "#||#";
-        private static string _FilePath = @"E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\Login\Users.txt";
+        //private static string _Separator = "#||#";
+        //private static string _FilePath = @"E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLD_WindowsForm\Login\Users.txt";
 
-        private  string _UserName = "";
-        private  string _Password = "";
+        private static string KeyPath = @"HKEY_CURRENT_USER\SOFTWARE\DVLD_DISKTOP_APP";
+
+        private  string _UserNameValue = "";
+        private  string _PasswordValue = "";
+        
+        private  string _UserNameKey = "UserName";
+        private  string _PasswordKey = "Password";
        
         public LoginForm()
         {
             InitializeComponent();
-            _FillLoginForm(_FilePath);
+            _FillLoginFormWindowsRegisterater();
         }
        
         private bool _IsRememberMeChecked()
@@ -33,44 +40,107 @@ namespace DVLD_WindowsForm
             return RememberOption;
         }
 
-        private string _UserRecord(string Separator)
-        {
-            return (txtUserName.Text + Separator + txtPassword.Text);
-        }
+        //private string _UserRecord(string Separator)
+        //{
+        //    return (txtUserName.Text + Separator + txtPassword.Text);
+        //}
 
-        private void _FillLoginForm(string FilePath)
-        {
-            
-            string Line = File.ReadLines(_FilePath).FirstOrDefault();
+        //private void _FillLoginFormFromFile(string FilePath)
+        //{
+        //    
+        //    string Line = File.ReadLines(_FilePath).FirstOrDefault();
+        //
+        //    if (!File.Exists(_FilePath) || string.IsNullOrEmpty(Line))
+        //        return;
+        //    
+        //    string[] UserLoginParts = Line.Split(new String[] { _Separator }, StringSplitOptions.None);
+        //   
+        //    _UserName = UserLoginParts[0];
+        //    _Password = UserLoginParts[1];
+        //
+        //    _FillTxtBox(txtUserName, _UserName);
+        //    _FillTxtBox(txtPassword, _Password);
+        //
+        //    ckbRememberMe.Checked = true;
+        //
+        //}
 
-            if (!File.Exists(_FilePath) || string.IsNullOrEmpty(Line))
-                return;
-            
-            string[] UserLoginParts = Line.Split(new String[] { _Separator }, StringSplitOptions.None);
-           
-            _UserName = UserLoginParts[0];
-            _Password = UserLoginParts[1];
 
-            _FillTxtBox(txtUserName, _UserName);
-            _FillTxtBox(txtPassword, _Password);
+        //private void _RegesterLoginInFile(string FilePath,string UserRecord)
+        //{
+        //    try
+        //    {
+        // _UserRecord(_Separator)
+        //      File.WriteAllText(_FilePath,UserRecord);
+        //    }
+        //    catch (Exception Ex)
+        //    {
+        //        MessageBox.Show(Ex.Message);
+        //    }
+        //
+        //}
 
-            ckbRememberMe.Checked = true;
-
-
-        }
-
-
-        private void _RegesterLogin(string FilePath)
+        private void _FillLoginFormWindowsRegisterater()
         {
             try
             {
-              File.WriteAllText(_FilePath,_UserRecord(_Separator));
+                // Get UserName Password (WindowsRegisterater)
+                string UserName = Registry.GetValue(KeyPath, _UserNameKey, null) as string;
+                string Password = Registry.GetValue(KeyPath, _PasswordKey, null) as string;
+
+                _FillTxtBox(txtUserName, UserName);
+                _FillTxtBox(txtPassword, Password);
+
+                ckbRememberMe.Checked = true;
             }
             catch (Exception Ex)
             {
                 MessageBox.Show(Ex.Message);
             }
 
+        }
+
+        private void _RegesterLoginInWindowsRegisterater()
+        {
+            
+            try
+            {
+                // Set UserName Password (WindowsRegisterater)
+                Registry.SetValue(KeyPath,_UserNameKey,_UserNameValue,RegistryValueKind.String);
+                Registry.SetValue(KeyPath,_PasswordKey, _PasswordValue, RegistryValueKind.String);
+
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
+        
+        }  
+        private void _RemoveLoginInWindowsRegisterater()
+        {
+            try
+            {
+                using(RegistryKey baseKey = RegistryKey.OpenBaseKey(RegistryHive.CurrentUser,RegistryView.Registry64))
+                {
+                    using(RegistryKey Key = baseKey.OpenSubKey(KeyPath,true))
+                    {
+                        if(Key != null)
+                        {
+                            // delete username and password
+                            Key.DeleteValue(_UserNameKey);
+                            Key.DeleteValue(_PasswordKey);
+                        }
+
+                    } 
+
+                }
+
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
+        
         }
 
         private void _FillTxtBox(TextBox txtbox,string Value)
@@ -97,28 +167,24 @@ namespace DVLD_WindowsForm
                 Form MainFrm= new MainForm();                           
                 MainFrm.Show();
 
+                 // fill Vars
+                _UserNameValue = txtUserName.Text;
+                _PasswordValue = txtPassword.Text; 
 
                 //  remember this login
                 if (_IsRememberMeChecked())
                 {
-                    _RegesterLogin(_FilePath);
+                    _RegesterLoginInWindowsRegisterater();
                     return;
                 }
 
-                // else (dont remember this login)
-                if(txtUserName.Text == _UserName && txtPassword.Text == _Password)
+                // else (dont remember this login) if he is the same user
+                if(txtUserName.Text == _UserNameValue && txtPassword.Text == _PasswordValue)
                 {
                     // remove it from loging file if Exists (Clear)
-                    try
-                    {
-                        File.WriteAllText(_FilePath, String.Empty);
-                    }
-                    catch (Exception Ex)
-                    {
-                        MessageBox.Show(Ex.Message);
-                    }
+                    _RemoveLoginInWindowsRegisterater();
                 }
-                
+
 
                 //this.Hide(); // Close()
             }
@@ -128,6 +194,6 @@ namespace DVLD_WindowsForm
         {
         }
 
-      
+        
     }
 }

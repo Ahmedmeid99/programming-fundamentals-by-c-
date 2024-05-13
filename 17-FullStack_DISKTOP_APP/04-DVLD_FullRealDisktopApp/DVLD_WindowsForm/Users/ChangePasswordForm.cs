@@ -2,6 +2,7 @@
 using DVLDBusinessLayer;
 using System.Windows.Forms;
 using System.Drawing;
+using DVLDBusinessLayer.Global;
 
 namespace DVLD_WindowsForm
 {
@@ -164,7 +165,10 @@ namespace DVLD_WindowsForm
         private void CheckCurrentPassWord(object sender)
         {
             TextBox textBox = sender as TextBox;
-            if (textBox.Text != _User.Password)
+
+            string EnteredPassword = GlobalFunctions.HashingPassword(textBox.Text);
+
+            if (EnteredPassword != _User.Password)
                 txtErrorProvider.SetError(textBox, "This is not the Current Password !!!");
 
             else
