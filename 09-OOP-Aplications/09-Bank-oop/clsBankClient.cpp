@@ -344,7 +344,7 @@ public:
         Save();
     }
 
-    bool Transfer(float Amount, clsBankClient &Client_TransferTo)
+    bool Transfer(float Amount, clsBankClient & Client_TransferTo)
     {
         if (Amount > AccountBalance())
         {

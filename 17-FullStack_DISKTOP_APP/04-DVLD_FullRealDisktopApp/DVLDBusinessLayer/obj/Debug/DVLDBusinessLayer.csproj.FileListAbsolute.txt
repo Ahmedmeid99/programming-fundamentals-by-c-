@@ -16,3 +16,12 @@ E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisk
 E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLDBusinessLayer\obj\Debug\DVLDBusinessLayer.csproj.CopyComplete
 E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLDBusinessLayer\obj\Debug\DVLDBusinessLayer.dll
 E:\programming fundamentals by c++\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLDBusinessLayer\obj\Debug\DVLDBusinessLayer.pdb
+E:\programming-fundamentals-by-c-\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLDBusinessLayer\bin\Debug\DVLDBusinessLayer.dll
+E:\programming-fundamentals-by-c-\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLDBusinessLayer\bin\Debug\DVLDBusinessLayer.pdb
+E:\programming-fundamentals-by-c-\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLDBusinessLayer\bin\Debug\DVLDDataAccessLayer.dll
+E:\programming-fundamentals-by-c-\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLDBusinessLayer\bin\Debug\DVLDDataAccessLayer.pdb
+E:\programming-fundamentals-by-c-\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLDBusinessLayer\obj\Debug\DVLDBusinessLayer.csproj.AssemblyReference.cache
+E:\programming-fundamentals-by-c-\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLDBusinessLayer\obj\Debug\DVLDBusinessLayer.csproj.CoreCompileInputs.cache
+E:\programming-fundamentals-by-c-\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLDBusinessLayer\obj\Debug\DVLDBusi.7D6D57CA.Up2Date
+E:\programming-fundamentals-by-c-\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLDBusinessLayer\obj\Debug\DVLDBusinessLayer.dll
+E:\programming-fundamentals-by-c-\17-FullStack_DISKTOP_APP\04-DVLD_FullRealDisktopApp\DVLDBusinessLayer\obj\Debug\DVLDBusinessLayer.pdb

@@ -45,7 +45,7 @@ enum enMainMenuePermissions
     pDeleteClient = 4,
     pUpdateClient = 8,
     pFindClient = 16,
-    pTransactions = 31,
+    pTransactions = 32,
     pMangeUsers = 64
 };
 

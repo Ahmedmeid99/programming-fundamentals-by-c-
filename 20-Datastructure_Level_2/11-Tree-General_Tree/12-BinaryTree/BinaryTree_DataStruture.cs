@@ -10,6 +10,8 @@ namespace BinaryTree_Datastruture
     public class BinaryTreeNode<T>
     {
         public T Value { get; set; }
+        
+        // Sub Tree Nodes 
         public BinaryTreeNode<T> Left { get; set; }
         public BinaryTreeNode<T> Right { get; set; }
 
@@ -30,27 +32,32 @@ namespace BinaryTree_Datastruture
         {
             Root = null;
         }
+
         public BinaryTree(T value)
         {
             Root = new BinaryTreeNode<T>(value) ;
         }
 
+        // Over Loading
         public void PrintTree()
         {
             PrintTree(Root, 0);
         }
+
         private void PrintTree(BinaryTreeNode<T> root ,int space)
         {
-            int COUNT = 10;
+            int SPACE_COUNT = 10;
 
+            // base state
             if (root == null)
                 return;
 
-            space += COUNT;
+            space += SPACE_COUNT;
+
             PrintTree(root.Right, space);
 
             Console.WriteLine();
-            for (int i = COUNT; i < space; i++)
+            for (int i = SPACE_COUNT; i < space; i++)
             {
                 Console.Write(" ");
             }
@@ -58,6 +65,7 @@ namespace BinaryTree_Datastruture
             Console.WriteLine(root.Value);
             PrintTree(root.Left, space);
         }
+      
         public void Insert(T value)
         {
             // create node

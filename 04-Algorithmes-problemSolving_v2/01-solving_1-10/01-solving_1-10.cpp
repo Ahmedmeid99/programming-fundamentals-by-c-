@@ -139,13 +139,13 @@ int ReverseNumber_v1(int Number)
 
 /////////////////////////////////////
 int ReverseNumber(int Number)
-{
+{ // 1234
     int Remainder = 0, Number2 = 0;
     while(Number > 0)
     {
-        Remainder = Number % 10;
-        Number = Number / 10;
-        Number2 = Number2 * 10 + Remainder;
+        Remainder = Number % 10;             // 4      3    2    1
+        Number = Number / 10;                // 123    12   1    0
+        Number2 = Number2 * 10 + Remainder;  // 4      43   432  4321
     }
     return Number2;
 }

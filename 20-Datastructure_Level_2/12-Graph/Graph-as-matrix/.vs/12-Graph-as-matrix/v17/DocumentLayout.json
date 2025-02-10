@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\programming-fundamentals-by-c-\\20-Datastructure_Level_2\\12-Graph\\Graph-as-matrix\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{23ED4151-777C-4464-B0BC-59281A5F6F20}|12-Graph\\12-Graph.csproj|e:\\programming-fundamentals-by-c-\\20-datastructure_level_2\\12-graph\\graph-as-matrix\\12-graph\\graph.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23ED4151-777C-4464-B0BC-59281A5F6F20}|12-Graph\\12-Graph.csproj|solutionrelative:12-graph\\graph.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23ED4151-777C-4464-B0BC-59281A5F6F20}|12-Graph\\12-Graph.csproj|e:\\programming-fundamentals-by-c-\\20-datastructure_level_2\\12-graph\\graph-as-matrix\\12-graph\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23ED4151-777C-4464-B0BC-59281A5F6F20}|12-Graph\\12-Graph.csproj|solutionrelative:12-graph\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Graph.cs",
+              "DocumentMoniker": "E:\\programming-fundamentals-by-c-\\20-Datastructure_Level_2\\12-Graph\\Graph-as-matrix\\12-Graph\\Graph.cs",
+              "RelativeDocumentMoniker": "12-Graph\\Graph.cs",
+              "ToolTip": "E:\\programming-fundamentals-by-c-\\20-Datastructure_Level_2\\12-Graph\\Graph-as-matrix\\12-Graph\\Graph.cs",
+              "RelativeToolTip": "12-Graph\\Graph.cs",
+              "ViewState": "AQIAAGQAAAAAMJmZmZkBwG4AAABHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-08T18:24:42.335Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\programming-fundamentals-by-c-\\20-Datastructure_Level_2\\12-Graph\\Graph-as-matrix\\12-Graph\\Program.cs",
+              "RelativeDocumentMoniker": "12-Graph\\Program.cs",
+              "ToolTip": "E:\\programming-fundamentals-by-c-\\20-Datastructure_Level_2\\12-Graph\\Graph-as-matrix\\12-Graph\\Program.cs",
+              "RelativeToolTip": "12-Graph\\Program.cs",
+              "ViewState": "AQIAACsAAAAAAAAAAAAAAC8AAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-08T18:23:57.421Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

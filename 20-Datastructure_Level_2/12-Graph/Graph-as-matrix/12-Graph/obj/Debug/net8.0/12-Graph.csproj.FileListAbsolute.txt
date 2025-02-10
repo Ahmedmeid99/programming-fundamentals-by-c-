@@ -1,0 +1,15 @@
+E:\programming-fundamentals-by-c-\20-Datastructure_Level_2\12-Graph-as-matrix\12-Graph\bin\Debug\net8.0\12-Graph.exe
+E:\programming-fundamentals-by-c-\20-Datastructure_Level_2\12-Graph-as-matrix\12-Graph\bin\Debug\net8.0\12-Graph.deps.json
+E:\programming-fundamentals-by-c-\20-Datastructure_Level_2\12-Graph-as-matrix\12-Graph\bin\Debug\net8.0\12-Graph.runtimeconfig.json
+E:\programming-fundamentals-by-c-\20-Datastructure_Level_2\12-Graph-as-matrix\12-Graph\bin\Debug\net8.0\12-Graph.dll
+E:\programming-fundamentals-by-c-\20-Datastructure_Level_2\12-Graph-as-matrix\12-Graph\bin\Debug\net8.0\12-Graph.pdb
+E:\programming-fundamentals-by-c-\20-Datastructure_Level_2\12-Graph-as-matrix\12-Graph\obj\Debug\net8.0\12-Graph.GeneratedMSBuildEditorConfig.editorconfig
+E:\programming-fundamentals-by-c-\20-Datastructure_Level_2\12-Graph-as-matrix\12-Graph\obj\Debug\net8.0\12-Graph.AssemblyInfoInputs.cache
+E:\programming-fundamentals-by-c-\20-Datastructure_Level_2\12-Graph-as-matrix\12-Graph\obj\Debug\net8.0\12-Graph.AssemblyInfo.cs
+E:\programming-fundamentals-by-c-\20-Datastructure_Level_2\12-Graph-as-matrix\12-Graph\obj\Debug\net8.0\12-Graph.csproj.CoreCompileInputs.cache
+E:\programming-fundamentals-by-c-\20-Datastructure_Level_2\12-Graph-as-matrix\12-Graph\obj\Debug\net8.0\12-Graph.sourcelink.json
+E:\programming-fundamentals-by-c-\20-Datastructure_Level_2\12-Graph-as-matrix\12-Graph\obj\Debug\net8.0\12-Graph.dll
+E:\programming-fundamentals-by-c-\20-Datastructure_Level_2\12-Graph-as-matrix\12-Graph\obj\Debug\net8.0\refint\12-Graph.dll
+E:\programming-fundamentals-by-c-\20-Datastructure_Level_2\12-Graph-as-matrix\12-Graph\obj\Debug\net8.0\12-Graph.pdb
+E:\programming-fundamentals-by-c-\20-Datastructure_Level_2\12-Graph-as-matrix\12-Graph\obj\Debug\net8.0\12-Graph.genruntimeconfig.cache
+E:\programming-fundamentals-by-c-\20-Datastructure_Level_2\12-Graph-as-matrix\12-Graph\obj\Debug\net8.0\ref\12-Graph.dll
